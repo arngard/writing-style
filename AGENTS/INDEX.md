@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-05-14 (unit-task-workflow.md 설명에 PR 운영·재귀 정합화 풀이 추가)
+date modified: 2026-05-14
 tags: [agents]
 ---
 

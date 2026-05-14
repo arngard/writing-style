@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-09
-date modified: 2026-05-14 (scaffold sync — PR 운영 절 sub-section 2건 + reviewDecision + Gemini 리뷰 정정)
+date modified: 2026-05-14
 tags: [agents, 워크스페이스, 운영]
 ---
 
