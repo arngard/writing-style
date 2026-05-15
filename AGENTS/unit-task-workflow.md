@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-09
-date modified: 2026-05-15 (upstream 머지 d6b14f3 — 종료 흐름 머지 패턴 분기)
+date modified: 2026-05-15
 tags: [agents, 워크스페이스, 운영]
 ---
 
