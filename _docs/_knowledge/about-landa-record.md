@@ -13,7 +13,7 @@ tags: [knowledge, 란다, 작품]
 - 사용자(아릉)가 오랫동안 누적해 온 기록이다. ref. 사용자 짚음 2026-05-19.
 - 사용자 본인은 본 기록을 "하나의 세상에 관한 글"로 인식한다. ref. 사용자 짚음 2026-05-19.
 - 본 기록의 원본은 여러 형태로 흩어져 있다 — 사용자 옵시디언 vault·블로그 백업·웹 게시판 크롤링 자료 등. ref. 사용자 짚음 2026-05-19.
-- 원본은 훼손하지 않으며, 사용자가 별도 git 레포 [arngard/landa](https://github.com/arngard/landa)(devCode 산하 `landa/`)로 사본을 취합한다. 본 자식의 입력 흐름·운영 모델 SSOT는 [_strategy/project-overview.md](../_strategy/project-overview.md). ref. 사용자 짚음 2026-05-19.
+- 원본은 훼손하지 않으며, 사용자가 별도 git 레포 [arngard/landa](https://github.com/arngard/landa)(devCode 산하 `landa/`)로 정리본을 누적한다 — 초기에는 외부 자료를 옮겨오는 작업이 많고, 점차 작품의 본판으로 성장한다. 본 자식의 입력 흐름·운영 모델 SSOT는 [_strategy/project-overview.md](../_strategy/project-overview.md). ref. 사용자 짚음 2026-05-19.
 
 ## 잠정 자기 분류 [확실하지 않음]
 

@@ -26,7 +26,7 @@ importance 상 — 본 레포의 산출물은 사용자의 다른 모든 글쓰�
 
 ```
 원본들 (옵시디언 vault · 블로그 백업 · 웹 게시판 크롤링 자료 등)
-   ↓ 사본 취합 (원본은 훼손하지 않음)
+   ↓ 정리본 흡수 (원본은 훼손하지 않음)
 landa 레포 (devCode 산하 `landa/`, arngard/landa, private)
    ↓ 문체 추출
 landa-writing-style (본 레포)
@@ -43,7 +43,7 @@ landa-writing-style (본 레포)
 ### 미포함 범위
 
 - 작품의 장르·세계관·플롯·캐릭터 등 콘텐츠 분석. 본 레포는 문체에만 집중한다. 작품 콘텐츠의 SSOT는 [landa 레포](https://github.com/arngard/landa).
-- 원본 자료 자체의 보관·관리. 원본은 사용자 외부 도구가, 사본 취합은 landa 레포가 담당한다.
+- 원본 자료 자체의 보관·관리. 원본은 사용자 외부 도구가, 정리본은 landa 레포가 담당한다.
 
 ## 참고
 
