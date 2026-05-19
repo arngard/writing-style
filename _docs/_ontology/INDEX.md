@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-05-10
+date modified: 2026-05-19
 tags: [ontology]
 ---
 
@@ -35,5 +35,6 @@ tags: [ontology]
 
 | 파일 | 설명 |
 |------|------|
+| [landa.md](landa.md) | 란다 — 사용자(아릉)가 오랫동안 누적해 온 기록 전체의 명명. 외부 명명(현 시점 확정) + 내부 다각 정의(현 시점 미추출, 옵시디언 자료 흡수 시 갱신) 두 층위. |
 | [sample-term.md](sample-term.md) | (튜토리얼용 샘플) 용어 정의 문서의 위치/형식을 보여주는 예시. 실제 작성 시 삭제·교체. |
 | [unit-task.md](unit-task.md) | 단위 작업 — 의미적으로 atomic한 작업 단위. 작업 트리 한 노드에 대응. TBD에서는 보통 메인 머지 1회 = 브랜치 1개. |

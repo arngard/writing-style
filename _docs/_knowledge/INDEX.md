@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-04-18
+date modified: 2026-05-19
 tags: [knowledge]
 ---
 
@@ -22,4 +22,5 @@ tags: [knowledge]
 
 | 파일 | 설명 |
 |------|------|
+| [about-landa-record.md](about-landa-record.md) | 본 기록("란다")에 대한 외부 관찰 사실. 사용자 자기 진술 + 원본의 다양한 형태(옵시디언 vault·블로그 백업·웹 게시판 크롤링 자료 등) + 사본 취합 모델(landa 레포) + 잠정 자기 분류(스페이스 오페라·판타지, [확실하지 않음], 본 레포 핵심 관심사 아님). 추가 사실은 landa 레포 흡수 시 누적. |
 | [sample-fact.md](sample-fact.md) | (튜토리얼용 샘플) 외부 사실 문서의 위치/형식을 보여주는 예시. 실제 작성 시 삭제·교체. |
