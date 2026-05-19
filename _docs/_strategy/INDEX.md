@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-04-22
+date modified: 2026-05-19
 tags: [strategy]
 ---
 
@@ -60,5 +60,5 @@ urgency: 상 | 중 | 하
 
 | 파일 | 설명 |
 |------|------|
-| [project-overview.md](project-overview.md) | (튜토리얼용 샘플) 프로젝트 수준의 상위 결정을 전략 문서 형식으로 담는 예시. 실제 워크스페이스에서는 이 파일을 삭제하거나, 목표·첫 출시 범위·대상 고객 등을 각각의 `why-*.md`로 분리 작성한다. |
+| [project-overview.md](project-overview.md) | 본 레포의 정체성 SSOT. 목적(사용자 문체 추출 → AI 활용 가이드 생성), 입력 흐름(원본 → landa 레포 → 본 자식), 포함·미포함 범위. |
 | [sample-decision.md](sample-decision.md) | (튜토리얼용 샘플) 설계 결정 문서의 위치/형식을 보여주는 예시. 실제 작성 시 삭제·교체. |
