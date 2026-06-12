@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-05-19
+date modified: 2026-06-12
 tags: [strategy, 프로젝트]
 importance: 상
 urgency: 중
