@@ -61,4 +61,3 @@ urgency: 상 | 중 | 하
 | 파일 | 설명 |
 |------|------|
 | [project-overview.md](project-overview.md) | 본 레포의 정체성 SSOT. 목적(사용자 문체 추출 → AI 활용 가이드 생성), 입력 흐름(원본 → landa 레포 → 본 자식), 포함, 미포함 범위. |
-| [sample-decision.md](sample-decision.md) | (튜토리얼용 샘플) 설계 결정 문서의 위치/형식을 보여주는 예시. 실제 작성 시 삭제, 교체. |
