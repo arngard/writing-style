@@ -38,14 +38,14 @@ tags: [worklog]
     - `_docs/_strategy/INDEX.md`를 갱신한다.
   - [ ] 도메인 온톨로지 정의
     - 의미가 갈릴 수 있는 핵심 용어를 식별하고 [_docs/_ontology/](../_ontology/INDEX.md)에 정의한다.
-    - 튜토리얼용 `sample-term.md`를 삭제하고 실제 용어 정의 파일로 교체한 뒤 INDEX를 갱신한다.
+    - 튜토리얼용 `sample-term.md`는 upstream 동기화 시 제거됨. 실제 용어 정의 파일을 작성하고 INDEX를 갱신한다.
   - [ ] 핵심 제약 목록 작성
     - [_docs/_architecture/core-constraints.md](../_architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다.
     - 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `⚠️ 스캐폴드 상태` 주의문을 삭제한다.
   - [ ] 코딩 규약 확장
     - [_docs/_architecture/conventions.md](../_architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다.
     - 작성 완료 후 문서 상단의 `⚠️ 스캐폴드 상태` 주의문을 삭제한다.
-  - [ ] 남은 튜토리얼 샘플 제거
-    - [_docs/_knowledge/sample-fact.md](../_knowledge/sample-fact.md), [_docs/_architecture/sample-spec.md](../_architecture/sample-spec.md), [_docs/_strategy/sample-decision.md](../_strategy/sample-decision.md)를 실제 문서로 교체하거나 삭제하고 각 INDEX를 갱신한다.
+  - [ ] 남은 튜토리얼 샘플을 실제 문서로 교체
+    - `sample-fact.md`, `sample-spec.md`, `sample-decision.md`는 upstream 동기화 시 제거됨. 각 범주(`_knowledge`, `_architecture`, `_strategy`)에 실제 문서를 작성하고 각 INDEX를 갱신한다.
   - [ ] 구현 프로젝트 등록
     - 실제 소스 코드 프로젝트를 [_implementation/](../../_implementation/INDEX.md)에 추가하고 INDEX의 표에 등록한다.
