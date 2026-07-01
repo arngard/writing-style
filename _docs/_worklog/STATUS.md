@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-05-19
+date modified: 2026-07-01
 tags: [worklog]
 ---
 
@@ -14,7 +14,7 @@ tags: [worklog]
 > - "마지막 정합성 감사" 필드는 epistemic-auditor 호출 후 메인 에이전트가 그 시각으로 갱신한다 (cf. [../../AGENTS.md](../../AGENTS.md) "새 세션 시작 시" 3번).
 
 - 현재 단계: 도메인 콘텐츠 시드 입력 단계 (사용자 명시 트리거 시 진행).
-- 마지막 작업 일시: 2026-05-19
-- 마지막 작업 요약: "란다" 시드 정보 첫 등재 + 본 레포 정체성·입력 흐름 명문화 (`_ontology/landa.md` 신규 + `_knowledge/about-landa-record.md` 신규 + `_strategy/project-overview.md` sample 교체 + 세 INDEX 갱신). 본 단위와 함께 새 git 레포 [arngard/landa](https://github.com/arngard/landa)(private) 생성. 입력 흐름 명문화: 외부 원본(옵시디언 vault·블로그 백업·웹 게시판 크롤링 자료 등) → landa 레포(정리본) → 본 자식(문체 추출).
-- 다음 작업: 사용자 명시 트리거 시 (a) landa 레포 자료 흡수로 `_ontology/landa.md` "내부 다각 정의" 갱신 + `_knowledge/about-landa-record.md` 사실 누적 (b) devcode-management `_ontology/repos.md`에 새 `landa` 레포 등재 + 두 레포의 관계 명문화 (별도 단위). TASK_TREE의 "워크스페이스 초기 세팅" 서브트리(README 도메인 색깔 재작성·sample 정리·core-constraints·conventions 확장 등)는 별도 단위로 점진 진척.
-- 마지막 정합성 감사: (아직 없음. 첫 호출 시 yyyy-MM-dd HH:mm:ss로 기록.)
+- 마지막 작업 일시: 2026-07-01
+- 마지막 작업 요약: 정합성 감사 후속 (`chore/260701-audit-followup`). 기존 문서의 비ASCII 문장 부호를 conventions.md "문장 부호 표기" 규칙에 맞춰 일괄 정규화 (가운뎃점 -> 쉼표, em dash -> 하이픈/콜론/문장 분리, 화살표 -> `->`). `_ontology/INDEX.md`의 unit-task 설명 약어 병기 정정("트렁크 기반 개발(TBD)"). worklog 갱신. 직전 2026-06-29 작업은 스캐폴드 최신(822837b) upstream 동기화(0충돌 머지, 샘플 4종 제거, origin/main 반영).
+- 다음 작업: 사용자 명시 트리거 시 (a) landa 레포 자료 흡수로 `_ontology/landa.md` "내부 다각 정의" 갱신 + `_knowledge/about-landa-record.md` 사실 누적 (b) devcode-management `_ontology/repos.md`에 새 `landa` 레포 등재 + 두 레포의 관계 명문화 (별도 단위). TASK_TREE의 "워크스페이스 초기 세팅" 서브트리는 별도 단위로 점진 진척.
+- 마지막 정합성 감사: 2026-07-01 23:07 KST (epistemic-auditor 위임 감사). INDEX/링크/카테고리/메타-컨텐츠 이상 없음. 기존 문서 ASCII 미정규화 정정 완료, worklog 최신화. [확실하지 않음] unit-task.md 절차 중복은 스캐폴드 본체 사안.

@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-06-12
+date modified: 2026-07-01
 tags: [architecture, 제약, 설계원칙]
 ---
 
@@ -31,7 +31,7 @@ tags: [architecture, 제약, 설계원칙]
 
 ## 제약 목록
 
-> ⚠️ 프로젝트 고유의 핵심 제약을 번호 매겨 작성한다. 각 제약에 상세 문서가 있으면 `→ [파일명](파일명.md)`으로 연결한다. 작업은 [_docs/_worklog/TASK_TREE.md](../_worklog/TASK_TREE.md)에 등록되어 있다.
+> ⚠️ 프로젝트 고유의 핵심 제약을 번호 매겨 작성한다. 각 제약에 상세 문서가 있으면 `-> [파일명](파일명.md)`으로 연결한다. 작업은 [_docs/_worklog/TASK_TREE.md](../_worklog/TASK_TREE.md)에 등록되어 있다.
 
 <!-- 예시 포맷 (삭제 후 실제 제약으로 교체):
 1. {제약명}: {1-2문장 요약}. -> [상세문서.md](상세문서.md)

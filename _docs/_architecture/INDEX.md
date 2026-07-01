@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-06-12
+date modified: 2026-07-01
 tags: [architecture]
 ---
 
@@ -30,4 +30,4 @@ tags: [architecture]
 | 파일 | 설명 |
 |------|------|
 | [ingest-workflow.md](ingest-workflow.md) | 새 사실, 의견, 예측, 결정, 자료가 들어올 때의 표준 시퀀스. contradiction flagging, `_reference/` 처리, 빠뜨림 방지 자체 점검 포함. |
-| [audience-aware-document-placement.md](audience-aware-document-placement.md) | 글의 배치는 독자 시점을 고려해 결정한다 — 누가, 어느 시점에, 어느 진입점에서 보는가. |
+| [audience-aware-document-placement.md](audience-aware-document-placement.md) | 글의 배치는 독자 시점을 고려해 결정한다: 누가, 어느 시점에, 어느 진입점에서 보는가. |

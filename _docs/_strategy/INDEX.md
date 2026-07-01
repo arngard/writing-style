@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-06-12
+date modified: 2026-07-01
 tags: [strategy]
 ---
 
@@ -60,4 +60,4 @@ urgency: 상 | 중 | 하
 
 | 파일 | 설명 |
 |------|------|
-| [project-overview.md](project-overview.md) | 본 레포의 정체성 SSOT. 목적(사용자 문체 추출 → AI 활용 가이드 생성), 입력 흐름(원본 → landa 레포 → 본 자식), 포함, 미포함 범위. |
+| [project-overview.md](project-overview.md) | 본 레포의 정체성 SSOT. 목적(사용자 문체 추출 -> AI 활용 가이드 생성), 입력 흐름(원본 -> landa 레포 -> 본 자식), 포함, 미포함 범위. |
