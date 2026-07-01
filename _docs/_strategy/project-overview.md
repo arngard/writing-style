@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-07-01
+date modified: 2026-07-02
 tags: [strategy, 프로젝트]
 importance: 상
 urgency: 중
@@ -25,7 +25,7 @@ importance 상: 본 레포의 산출물은 사용자의 다른 모든 글쓰기 
 본 자식은 작품 원본을 직접 다루지 않는다. 입력 흐름:
 
 ```
-원본들 (옵시디언 vault · 블로그 백업 · 웹 게시판 크롤링 자료 등)
+원본들 (옵시디언 vault, 블로그 백업, 웹 게시판 크롤링 자료 등)
    ↓ 정리본 흡수 (원본은 훼손하지 않음)
 landa 레포 (devCode 산하 `landa/`, arngard/landa, private)
    ↓ 문체 추출
