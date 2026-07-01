@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-06-12
+date modified: 2026-07-02
 tags: [agents, 워크스페이스]
 ---
 
@@ -23,6 +23,11 @@ tags: [agents, 워크스페이스]
 
 어떤 문서가 길어져서 여러 하위 문서로 쪼개야 할 때, 상위 문서와 같은 이름의 폴더를 만들어 하위 문서를 넣는다. 예: `AGENTS.md`의 하위 문서들은 `AGENTS/`에 둔다.
 
+- 자식 파일명에 부모 이름을 프리픽스로 반복하지 않는다. 폴더 경로가 계층 맥락을 준다. 하이픈 나열(`X-sub.md`)이나 부모명과 다른 폴더명(`X.md` + `other/`)은 쓰지 않는다.
+- 자식이 또 자식을 가지면 같은 규칙을 재귀 적용한다 (`X.md`, `X/Y.md`, `X/Y/Z.md`).
+- `_docs/` 카테고리 하위라면 하위 폴더 안의 파일도 카테고리 INDEX 등재 의무의 대상이다 (cf. [AGENTS.md](../AGENTS.md) "색인(INDEX) 사용 규칙").
+- 이동, 리네임에 따른 연쇄 갱신은 [conventions.md "폴더, 파일 이동 시 연쇄 갱신"](conventions.md) 참조.
+
 ## 최상위 구조
 
 ```
@@ -41,7 +46,7 @@ tags: [agents, 워크스페이스]
     └── <project-B>/
 ```
 
-`_docs/` 하위 폴더에 새 문서를 배치할 때의 분류 기준은 [how-to-separate-docs-folders.md](how-to-separate-docs-folders.md) 참조. `_reference/` 운용은 [`../_reference/INDEX.md`](../_reference/INDEX.md)와 [`../_docs/_architecture/ingest-workflow.md`](../_docs/_architecture/ingest-workflow.md) 참조.
+`_docs/` 하위 폴더에 새 문서를 배치할 때의 분류 기준은 [how-to-separate-docs-folders.md](how-to-separate-docs-folders.md) 참조. `_reference/` 운용은 [`../_reference/INDEX.md`](../_reference/INDEX.md)와 [`ingest-workflow.md`](ingest-workflow.md) 참조.
 
 워크스페이스 안의 단위 작업(자료 N건 묶음 ingest, 메타 결정, 정책 변경, 큰 마이그레이션 등)은 진입, 진행, 종료 흐름이 정해져 있다. 단위 작업의 정의는 [_docs/_ontology/unit-task.md](../_docs/_ontology/unit-task.md): 의미적으로 atomic한 작업 단위, 작업 트리 한 노드에 대응. 단위 작업 시작 시 어떤 절차를 거쳐야 하는지는 [unit-task-workflow.md](unit-task-workflow.md) 참조. 워크로그(`_docs/_worklog/`)의 STATUS, TASK_TREE, DONE는 그 흐름의 진입, 종료 시점에서 갱신되는 운영 메타다.
 
