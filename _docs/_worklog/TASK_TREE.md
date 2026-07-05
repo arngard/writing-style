@@ -58,9 +58,9 @@ tags: [worklog]
   - [ ] 도메인 온톨로지 정의
     - 설명: 의미가 갈릴 수 있는 핵심 용어를 식별하고 [_docs/_ontology/](../_ontology/AGENTS.md)에 정의한다. 튜토리얼용 `sample-term.md`는 upstream 동기화 시 제거됨.
   - [ ] 핵심 제약 목록 작성
-    - 설명: [_docs/_architecture/core-constraints.md](../_architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다. 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `⚠️ 스캐폴드 상태` 주의문을 삭제한다.
+    - 설명: [_docs/_architecture/core-constraints.md](../_architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다. 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
   - [ ] 코딩 규약 확장
-    - 설명: [_docs/_architecture/conventions.md](../_architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다. 작성 완료 후 문서 상단의 `⚠️ 스캐폴드 상태` 주의문을 삭제한다.
+    - 설명: [_docs/_architecture/conventions.md](../_architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
   - [ ] 남은 튜토리얼 샘플을 실제 문서로 교체
     - 설명: `sample-fact.md`, `sample-spec.md`, `sample-decision.md`는 upstream 동기화 시 제거됨. 각 범주(`_knowledge`, `_architecture`, `_strategy`)에 실제 문서를 작성한다.
   - [ ] 구현 프로젝트 등록
