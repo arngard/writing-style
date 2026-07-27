@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-07-06
+date modified: 2026-07-26
 tags: [agents]
 ---
 
@@ -26,6 +26,7 @@ tags: [agents]
 | [writing-style.md](writing-style.md) | 일반 문서 작성 스타일 - 코드 블록 절제, 표준 표현, 출처와 주체 표기, 자체 완결성, 태그 중복 회피, 도구 전용 파일 예외. 하위 문서로 마크다운 링크 표시텍스트, ASCII 부호 규약 | 모든 문서 작성 시 |
 | [ingest-workflow.md](ingest-workflow.md) | 새 사실, 의견, 예측, 결정, 자료가 들어올 때의 표준 시퀀스. contradiction flagging, `_reference/` 처리, 빠뜨림 방지 자체 점검 | 새 정보 ingest 시 |
 | [original-protection-principle.md](original-protection-principle.md) | 원본 보호 원칙 (가역성 우선, 공유 기준선 보호) - 에이전트가 원본을 다룰 때의 안전 기준 | 원본 삭제, 대폭 재편, 머지 판단 시 |
+| [instance-specialization.md](instance-specialization.md) | 상속 자산의 변경과 특수화 - 상류 반영과 인스턴스 특수화의 분기, 특수화 방식(부모 불수정, 표준 포함, 역할 분담, 라우팅 등재) | 계승된 규범, 절차의 변경이나 특수화를 도출했을 때 |
 
 ## 작업 수행
 
@@ -38,8 +39,10 @@ tags: [agents]
 
 | 파일 | 설명 | 언제 읽는가 |
 |------|------|-------------|
-| [unit-task.md](unit-task.md) | 단위 작업과 워크플로우의 개념 - 원자 단위 ↔ 트리 노드(중위 노드 포함, 중첩), 워크플로우의 재귀와 조립 | 단위 작업 개념 확인, 워크플로우 조립 판단 시 |
-| [unit-task-workflow.md](unit-task-workflow.md) | 단위 작업 운영 프레임 (진입/진행/종료, 머지 타입 분기, 서브모듈 재귀 정합화, 끊김 재진입, 세션 격리) | 단위 작업 시작, 종료 시 |
+| [unit-task.md](unit-task.md) | 단위 작업과 워크플로우의 개념 - 원자 단위 ↔ 트리 노드(중위 노드 포함, 중첩), 크기 결정과 브랜치 소유, 워크플로우의 재귀와 조립 | 단위 작업 개념 확인, 단위 크기 판단, 워크플로우 조립 판단 시 |
+| [unit-task-workflow.md](unit-task-workflow.md) | 단위 작업 운영 프레임 (진입/진행/종료, 머지 타입 분기, 단발 작업과의 경계) | 단위 작업 시작, 종료 시 |
+| [session-boundaries.md](session-boundaries.md) | 세션 경계 규약 - 끊김 뒤 재진입, 다른 세션 산출물과의 격리 | 세션 재진입 시, 다른 세션 산출물을 발견했을 때 |
+| [submodule-pointer-sync.md](submodule-pointer-sync.md) | 서브모듈 커밋 포인트 재귀 정합화 - 상위 레포 pointer 갱신과 검증 | 본 레포가 상위 레포의 서브모듈일 때 단위 작업 종료 시 |
 | [pr-workflow.md](pr-workflow.md) | 종료 머지의 PR 타입에 조립되는 워크플로우 (PR 생성: 본문, 자기 검토, 속성). 리뷰 응답, 능동 확인은 [pr-workflow/](pr-workflow/AGENTS.md) 하위 | PR 생성, PR 검토 대응 시 |
 | [external-communication.md](external-communication.md) | 외부 협업 소통 규약 (명시적 멘션, AI 시그니처) - PR 밖 이슈, 댓글 등에도 적용 | 외부 협업 시스템에 글 쓸 때 |
 | [branch-strategy.md](branch-strategy.md) | 트렁크 기반 개발 모델, 브랜치 네이밍 룰 | 브랜치 생성 시 |
@@ -54,7 +57,7 @@ tags: [agents]
 
 | 파일 | 설명 | 언제 읽는가 |
 |------|------|-------------|
-| [agent-roles.md](agent-roles.md) | 서브에이전트 역할 정의 (epistemic-auditor 등)와 인스턴스 전용 감사자 확장 패턴. 도구 중립 정의. | 서브에이전트 호출, 감사자 확장 시 |
+| [agent-roles.md](agent-roles.md) | 서브에이전트 역할 정의 (모델 선택, epistemic-auditor)와 인스턴스 전용 감사자를 두는 방식. 도구 중립 정의. | 서브에이전트 호출, 감사자 확장 시 |
 
 ## 워크스페이스 조직화
 
