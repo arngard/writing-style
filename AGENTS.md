@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-07-10
+date modified: 2026-07-26
 tags: [규칙, 문서관리]
 ---
 
@@ -14,7 +14,7 @@ always-on 진입층이다. 정체성, 비협상 게이트, 소통 규약, 트리
 
 에피스테믹 워크스페이스다. 코드로 표현할 수 없는 지식을 인식론적 4범주로 나눠 상위 의도와 근거가 유실되지 않게 한다: `_docs/_ontology`(무엇이 존재하는가), `_knowledge`(우리 결정과 무관한 외부 사실, 환경), `_strategy`(우리가 왜 그렇게 결정했는가), `_architecture`(어떻게 만드는가). 근거는 [AGENTS/why-epistemic-workspace.md](AGENTS/why-epistemic-workspace.md).
 
-이 파일은 스캐폴드 template이다. 인스턴스(자식 워크스페이스)는 이 규범을 upstream으로 상속하고 본 절을 자기 도메인 정체성으로 특수화한다.
+이 파일은 스캐폴드 template이다. 인스턴스(자식 워크스페이스)는 이 규범을 upstream으로 상속하고 본 절을 자기 도메인 정체성으로 특수화한다. 상속 자산의 변경과 특수화는 [AGENTS/instance-specialization.md](AGENTS/instance-specialization.md)를 따른다 - 계승된 자산을 제자리에서 고치기 전에 상류 반영과 도메인 특수화를 분기해 사용자에게 짚는다.
 
 ## 비협상 게이트
 
@@ -31,7 +31,7 @@ always-on 진입층이다. 정체성, 비협상 게이트, 소통 규약, 트리
 
 1. [_docs/_worklog/TASK_TREE.md](_docs/_worklog/TASK_TREE.md)(진행 중, 다음 할 일)와 [_docs/_worklog/STATUS.md](_docs/_worklog/STATUS.md)(감사 시각)를 읽는다.
 2. 형식 감사 `python3 AGENTS/tools/audit.py .`를 실행하고, 보고된 위반은 정리하거나 사용자에게 짚는다 (cf. [AGENTS/tool-environment.md](AGENTS/tool-environment.md)).
-3. STATUS의 의미 감사 행이 주기/트리거 조건을 충족하면 착수 전 epistemic-auditor로 의미 감사를 받고 STATUS를 갱신한다 (판정 절차와 기준점 커밋은 [AGENTS/agent-roles.md](AGENTS/agent-roles.md) "호출 시점").
+3. 의미 감사 트리거를 `python3 AGENTS/tools/check_semantic_audit.py .`로 판정하고, 충족이면 착수 전 epistemic-auditor로 의미 감사를 받고 STATUS를 갱신한다 (판정 기준과 기준점 커밋은 [AGENTS/agent-roles.md](AGENTS/agent-roles.md) "호출 시점").
 4. [_reference/AGENTS.md](_reference/AGENTS.md)를 읽고 실제 내용과 대조한다. 미처리 자료는 [AGENTS/ingest-workflow.md](AGENTS/ingest-workflow.md)로 진행한다.
 5. 작업 범위의 `_docs/` 문서(아래 트리거 색인)를 읽고 기존 결정과 충돌이 없는지 확인한다. 세션 중 새 정보가 들어오면 [AGENTS/ingest-workflow.md](AGENTS/ingest-workflow.md)를 따른다.
 
