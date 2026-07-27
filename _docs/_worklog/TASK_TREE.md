@@ -47,10 +47,6 @@ tags: [worklog]
 >     - 노드에 대한 설명
 > ```
 
-- [x] 스캐폴드 업스트림 흡수 e993477 -> 7b30513
-  - 설명: 상속 자산 경계 규범 신설(`AGENTS/instance-specialization.md`), unit-task-workflow 분할(`session-boundaries.md`, `submodule-pointer-sync.md`), 감사 도구 정비(`check_semantic_audit.py` 신설, 디스크립터 마커 대조 검사 추가, folder-size의 `_reference` 미제외 버그 수정, 감사자 자율 머지 검출 신호 대체).
-  - 상태 상세: 충돌 없이 흡수(머지 8092722). 신규 마커 대조 검사가 잡은 core-constraints 마커 표류를 함께 정정했다 - 본문이 아직 플레이스홀더이므로 상류 표준 문안으로 복원했다. 형식 감사 위반 0건, 경고 0건.
-
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 인간 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 인간에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. cf. [AGENTS.md](../../AGENTS.md) "문서 작성 스타일".
   - [ ] 워크스페이스 폴더 이름을 프로젝트에 맞게 변경
