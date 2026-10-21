@@ -17,3 +17,8 @@ tags: [implementation]
 ## 이 레포에서의 구현 영역
 
 이 레포의 구현 영역은 코드가 아니라 정식 규약을 실제 문장에 적용하는 세부 규정을 담는다. 하위 폴더 하나가 갈래나 주제(어법, 표기 등) 하나의 세부 규정 묶음이며, 규정마다 고치기 전과 후의 예시를 함께 둔다. 형식 감사가 하위 폴더 내부를 검사하지 않더라도 front matter와 문서 작성 규약을 지킨다. 배치 기준은 [_docs/_architecture/category-placement.md](../_docs/_architecture/category-placement.md).
+
+### 세부 규정 묶음
+
+- [word-choice/](word-choice/README.md): 어휘 선택. 외래어, 번역어, 원문 표기의 선택.
+
