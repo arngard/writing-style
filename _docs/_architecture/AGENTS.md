@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-07-05
+date modified: 2026-10-21
 tags: [architecture]
 ---
 
@@ -25,3 +25,5 @@ tags: [architecture]
 | [core-constraints.md](core-constraints.md) | 설계 원칙 및 핵심 제약. 스캐폴드 상태 - 제약 목록 작성 필요 | 설계 결정, 구현 착수 전 |
 | [conventions.md](conventions.md) | 프로젝트 고유 코드, 빌드 규약의 자리 (현재는 Git 규약 포인터만). 워크스페이스 공통 규약은 [AGENTS/](../../AGENTS/AGENTS.md) 참조 | 코드 작성, 빌드 설정 시 |
 | [audience-aware-document-placement.md](audience-aware-document-placement.md) | 글의 배치는 독자 시점을 고려해 결정한다 - 누가, 어느 시점에, 어느 진입점에서 보는가 | 새 문서의 배치 위치 결정 시 |
+| [category-placement.md](category-placement.md) | 글쓰기 지식, 근거, 규정, 회고, 세부 규정을 어느 범주와 영역에 두는가 | 새 글쓰기 지식이나 규정을 추가할 때 |
+| [plain-prose-rules.md](plain-prose-rules.md) | 평서문 기록(문서, 보고, 분석, 커밋 메시지)의 정식 규약 | 평서문 기록을 쓰거나 윤문할 때 |

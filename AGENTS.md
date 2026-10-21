@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-10
+date modified: 2026-10-21
 tags: [규칙, 문서관리]
 ---
 
@@ -14,7 +14,7 @@ always-on 진입층이다. 정체성, 비협상 게이트, 소통 규약, 트리
 
 에피스테믹 워크스페이스다. 코드로 표현할 수 없는 지식을 인식론적 4범주로 나눠 상위 의도와 근거가 유실되지 않게 한다: `_docs/_ontology`(무엇이 존재하는가), `_knowledge`(우리 결정과 무관한 외부 사실, 환경), `_strategy`(우리가 왜 그렇게 결정했는가), `_architecture`(어떻게 만드는가). 근거는 [AGENTS/why-epistemic-workspace.md](AGENTS/why-epistemic-workspace.md).
 
-이 파일은 스캐폴드 template이다. 인스턴스(자식 워크스페이스)는 이 규범을 upstream으로 상속하고 본 절을 자기 도메인 정체성으로 특수화한다. 상속 자산의 변경과 특수화는 [AGENTS/instance-specialization.md](AGENTS/instance-specialization.md)를 따른다 - 계승된 자산을 제자리에서 고치기 전에 상류 반영과 도메인 특수화를 분기해 사용자에게 짚는다.
+이 레포(writing-style)는 사용자(아릉)의 모든 글쓰기에 대한 정식 규약을 연구, 회고, 규정하는 전문화 워크스페이스다. 대상은 평서문 기록(문서, 보고), 회고, 소설 같은 창작, 코드 주석과 커밋 메시지까지 사용자가 쓰는 모든 글이다. 다른 자리의 글쓰기 규칙(사용자 공통 지침, 스캐폴드 `AGENTS/writing-style.md`)은 약식 규칙이고, 이 레포가 그 근거와 전체 규정을 담는 정식 규약이다. 다른 레포에서 윤문할 때 윤문 에이전트가 이 레포를 기준으로 읽으며, 외부 독자의 진입점은 [README.md](README.md)다. 목적과 범위의 근거는 [_docs/_strategy/project-overview.md](_docs/_strategy/project-overview.md), 각 범주와 `_implementation`에 무엇을 두는지는 [_docs/_architecture/category-placement.md](_docs/_architecture/category-placement.md)를 따른다. 스캐폴드 template을 upstream으로 상속하고 본 절을 이 도메인 정체성으로 특수화한다. 상속 자산의 변경과 특수화는 [AGENTS/instance-specialization.md](AGENTS/instance-specialization.md)를 따른다 - 계승된 자산을 제자리에서 고치기 전에 상류 반영과 도메인 특수화를 분기해 사용자에게 짚는다.
 
 ## 비협상 게이트
 
@@ -77,6 +77,8 @@ AGENTS 계열이 정전(canonical) SSOT다. 도구별 진입점 파일(CLAUDE.md
 | [_docs/_ontology/AGENTS.md](_docs/_ontology/AGENTS.md) | 새 용어 도입, 도메인 클래스 설계 전 |
 | [_docs/_knowledge/AGENTS.md](_docs/_knowledge/AGENTS.md), [_docs/_strategy/AGENTS.md](_docs/_strategy/AGENTS.md) | 외부 사실, 결정 근거 확인 시 |
 | [_docs/_architecture/AGENTS.md](_docs/_architecture/AGENTS.md) | 새 클래스, 모듈 생성 시 |
+| [_docs/_architecture/category-placement.md](_docs/_architecture/category-placement.md) | 새 글쓰기 지식, 근거, 규정을 어느 범주에 둘지 정할 때 |
+| [_docs/_architecture/plain-prose-rules.md](_docs/_architecture/plain-prose-rules.md) | 평서문 기록을 쓰거나 윤문할 때 |
 
 ## 핵심 제약
 
