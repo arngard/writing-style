@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-07-01
+date modified: 2026-10-21
 tags: [ontology, 란다, 작품]
 ---
 
@@ -8,7 +8,7 @@ tags: [ontology, 란다, 작품]
 
 ## 정의
 
-사용자(아릉)가 오랫동안 누적해 온 기록 전체의 명명. 본 레포명 `landa-writing-style`의 "landa"와 같은 식별자를 가리킨다.
+사용자(아릉)가 오랫동안 누적해 온 기록 전체의 명명. landa 레포의 "landa"와 같은 식별자를 가리킨다.
 
 본 단어는 두 층위로 사용된다.
 
@@ -18,9 +18,9 @@ tags: [ontology, 란다, 작품]
 ## 표기
 
 - 한글: 란다 (사용자 발화 형태, 기록의 1차 표기)
-- 영문 식별자: Landa (본 레포명 `landa-writing-style`의 "landa"와 같은 형태. 시스템 식별자, 파일명, 코드 영역에서 사용)
+- 영문 식별자: Landa (landa 레포 이름과 같은 형태. 시스템 식별자, 파일명, 코드 영역에서 사용)
 
 ## 참고
 
 - [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 본 기록에 대한 외부 사실
-- [_strategy/project-overview.md](../_strategy/project-overview.md) - 본 자식의 정체성, 입력 흐름 SSOT (landa 레포 -> 본 자식 문체 추출)
+- [_strategy/project-overview.md](../_strategy/project-overview.md) - 이 레포의 정체성. 란다 작품의 문체는 창작 갈래의 한 대상이다
