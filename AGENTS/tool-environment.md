@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-10
+date modified: 2026-10-21
 tags: [agents, 도구, 환경, IDE]
 ---
 
@@ -25,9 +25,10 @@ tags: [agents, 도구, 환경, IDE]
 
 ## 기계 감사 스크립트
 
-[tools/audit.py](tools/audit.py)는 형식 정합성을 결정론적으로 검사한다. 점검 범위: front matter 필수 필드(선택 필드 `date closed`는 히스토리 문서 전용), 문서 유형별 분량 임계(지식/전략 노드, 히스토리 문서, 폴더 디스크립터), 현재적 문서의 시간성 혼합 패턴, 날짜 프리픽스 없는 문서의 `date closed`, STATUS 레지스트리 표 외 서술과 표 스키마/시각 형식, TASK_TREE 속성 노드 표준 키와 완료 노드의 브랜치 속성 잔존, 폴더 디스크립터(AGENTS.md) 부재, 규범 폴더 디스크립터의 파일별 안내 완전성, 폴더 직속 md 파일 수 임계, `_docs/` 4범주 직속 문서의 tags 첫 항목 정합, 실체 0건 폴더(골격 폴더 제외 - 성격 판단은 감사자 몫), 문서 간 상대 링크 정합(대소문자, 유니코드 정규화 불일치 포함), 마크다운 링크 표시텍스트-대상 실존 정합(파일명 형태 표시텍스트가 실존 대상을 가리키는지 - 자연어 문구와 타이틀은 제외), 파일명의 크로스 플랫폼 이식성(윈도우 금지 문자, 예약어), 비ASCII 문장 부호 검출(em dash, 화살표, 가운뎃점, 말줄임표, 둥근 따옴표 - 백틱/코드펜스 예시와 고정폭 box-drawing 트리는 제외), 디스크립터의 "스캐폴드 상태" 안내와 링크 대상 파일 마커의 대조. epistemic-auditor의 형식 점검을 이관받은 것이며, 의미 판단과 git 맥락 검출은 감사자 몫이다 (cf. [agent-roles.md](agent-roles.md)).
+[tools/audit.py](tools/audit.py)는 형식 정합성을 결정론적으로 검사한다. 점검 범위는 front matter와 시간성, 문서 분량, 워크로그(STATUS, TASK_TREE) 스키마, 폴더와 디스크립터, 링크와 섹션 참조, 파일명 이식성과 날짜 프리픽스 구분자, 문장 부호다. 점검 항목 목록의 SSOT는 audit.py 모듈 docstring의 "점검 항목"이며 여기에 다시 나열하지 않는다 - 목록을 여러 곳에 두면 검사가 추가될 때 어긋난다. 의미 판단과 git 맥락 검출은 감사자 몫이다 (cf. [agent-roles/epistemic-auditor.md](agent-roles/epistemic-auditor.md)).
 
-- 임계값은 보수적 초기값으로 두고 운영하며 조정한다. 스크립트 상단 상수(`SIZE_LIMIT_NODE`, `SIZE_LIMIT_TEMPORAL`, `FOLDER_MD_LIMIT`, `TEMPORAL_MIX_REPEAT`)로 관리한다.
+- 임계값은 보수적 초기값으로 두고 운영하며 조정한다. 공용 인프라 `tools/_audit_core.py` 상단의 상수로 관리한다.
+- `_tmp/`는 에이전트의 임시 작업 공간이다. gitignore 대상이며 감사에서 제외된다.
 - 실행: 워크스페이스 루트에서 `python3 AGENTS/tools/audit.py .` (윈도우는 `python` 또는 `py`).
 - 의존성: Python 3.8+ 표준 라이브러리만. 특정 AI 도구, OS(operating system)에 의존하지 않는다. git에도 의존하지 않는다 - git 맥락 검출은 epistemic-auditor가 담당한다. 사람, 어느 AI 도구의 협업자든 동일하게 실행 가능.
 - 자동 실행: GitHub Actions([.github/workflows/epistemic-audit.yml](../.github/workflows/epistemic-audit.yml))가 push, pull request 시점에 실행한다. 새 세션 시작 시의 실행 의무는 [session-boundaries.md](session-boundaries.md) "세션 시작" 참조.
@@ -44,6 +45,8 @@ tags: [agents, 도구, 환경, IDE]
 - 임계 시간과 trailer 문구를 스크립트에 하드코딩하지 않고 STATUS 레지스트리의 주기/트리거 셀에서 읽는다 - 그 셀이 임계 조건의 SSOT이고, 인스턴스가 주기를 조정하면 스크립트가 따라간다.
 - 시각 비교는 KST 고정이라 실행 머신의 시간대에 의존하지 않는다.
 
-## Claude Code 절차 스킬 래퍼
+## Claude Code 래퍼(절차 스킬, 서브에이전트)
 
 `.claude/skills/` 하위의 각 SKILL.md(ingest, unit-task-start, unit-task-finish, pr-create, pr-respond)는 절차 문서를 해당 시점에 로드하는 씬 래퍼다. 절차 내용을 복사하지 않고 트리거 조건과 SSOT(single source of truth) 링크만 담는다 - 복사하면 SSOT 위배 + drift. 다른 도구 사용자는 SSOT 절차 문서를 직접 읽으면 동일 효과를 얻는다.
+
+`.claude/agents/` 하위의 서브에이전트 정의도 같은 원칙을 따른다. 역할 정의 원본([agent-roles/](agent-roles/AGENTS.md))을 읽고 따르라는 지시, 도구별 제한, 호출 판단용 역할 요약(description)만 담고, 점검 항목이나 절차를 옮겨 적지 않는다 - 옮겨 적은 사본은 원본이 바뀔 때 어긋나며, 실제로 실행되는 것은 사본이다.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""에피스테믹 워크스페이스 기계 감사 (Layer 0, 도구 중립).
+"""에피스테믹 워크스페이스 기계 감사 (도구 중립).
 
 epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
 의미 판단(카테고리 배치 적절성, 워크로그 최신성)은 다루지 않는다 -
@@ -9,6 +9,7 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
 점검 항목:
   1. YAML front matter 필수 필드 (date created, date modified, tags)와 날짜
      필드 값 형식(yyyy-MM-dd). 선택 필드 date closed는 히스토리 문서 전용.
+     date created가 date modified보다 늦으면 경고.
   2. 문서 유형별 분량 임계 (일반 노드, 히스토리 문서, 진입층/폴더 디스크립터) - 경고
   3. 현재적 문서의 시간성 혼합 패턴 (날짜 헤더/불릿 반복) - 경고
   4. 날짜 프리픽스 없는 문서의 date closed (시간성 혼합 신호) - 위반
@@ -32,7 +33,8 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
       실제 관계 판단은 감사자 몫)
  17. 마크다운 링크 표시텍스트-대상 정합 - 위반
      (파일명 형태 표시텍스트가 대상 basename 또는 대상 전체와 일치해야 함.
-      자연어 문구, 타이틀은 제외. 폐지 파일명 잔재 오도를 검출)
+      공백 든 자연어 문구, 타이틀은 제외하되 날짜 문서, 폴더 이름은 검사.
+      폐지 파일명 잔재 오도를 검출)
  18. 전략 문서(_docs/_strategy 4범주 직속)의 추가 필수 속성 - 경고
      (importance, urgency. cf. _strategy/AGENTS.md. 하위 폴더/디스크립터 제외)
  19. 로컬 .md 링크 뒤 인용 섹션명의 대상 헤딩 실존 - 경고
@@ -44,6 +46,11 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
      (인스턴스가 플레이스홀더를 실제 내용으로 채우고 안내를 갱신하지 않은
       경우, 또는 대상에서 마커만 지운 경우를 검출. 어느 쪽이 낡았는지는
       사람/LLM 판단)
+ 22. 날짜 프리픽스 뒤를 하이픈으로 이은 문서, 폴더 - 경고
+     (규약은 띄어쓰기. _reference/ 하위 제외. 하이픈 구분자도 프리픽스로는 인정)
+ 23. 링크 대상에 공백이 든 로컬 파일, 폴더 링크 - 위반
+     (공백은 %20으로 쓴다. 대상이 확장자나 / 로 끝나는 것만 본다. 링크 제목
+      문법과 외부 URL은 제외)
 
 위치: AGENTS/tools/audit.py. 사용 안내 문서는 AGENTS/tool-environment.md "기계 감사 스크립트".
 
@@ -67,14 +74,14 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
 - 순회는 심볼릭 링크를 따르지 않고(루트 밖 탈출/순환 방지) 중첩 git 레포와
   도구 전용 폴더를 가지치기한다.
 
-구조 (2026-07-07 모듈 분할):
+구조:
 - 공용 인프라(Finding, 상수, 순회/읽기/링크 해석 헬퍼)는 _audit_core.py.
 - 검사 함수는 의미별 모듈에 나뉜다: audit_frontmatter(front matter/스키마),
   audit_links(링크/참조), audit_structure(폴더/디스크립터/이식성),
   audit_worklog(STATUS/TASK_TREE), audit_content(분량/시간성/문장 부호).
 - 각 검사 함수는 Finding 리스트를 반환하고 전역 가변 상태를 두지 않는다.
 - 본 파일 audit.py가 진입점 - run_audit(root)가 검사들을 모으고, main()은 인자
-  해석, 인코딩 설정, 출력, 종료 코드를 담당한다. 실행법과 출력은 분할 전과 동일.
+  해석, 인코딩 설정, 출력, 종료 코드를 담당한다.
 """
 
 import sys
@@ -82,10 +89,11 @@ from pathlib import Path
 
 from _audit_core import Finding, VIOLATION, WARNING
 from audit_frontmatter import check_front_matter, check_strategy_fields, check_tags_category
-from audit_links import check_links, check_link_text, check_section_refs
+from audit_links import check_links, check_link_text, check_section_refs, check_link_whitespace
 from audit_structure import (
     check_descriptors, check_normative_guides, check_empty_folders,
     check_name_collision, check_filename_portability, check_scaffold_state_markers,
+    check_date_prefix_separator,
 )
 from audit_worklog import (
     check_status_registry, check_status_schema,
@@ -103,6 +111,7 @@ def run_audit(root: Path) -> list[Finding]:
     findings: list[Finding] = []
     findings += check_front_matter(root)
     findings += check_links(root)
+    findings += check_link_whitespace(root)
     findings += check_link_text(root)
     findings += check_section_refs(root)
     findings += check_descriptors(root)
@@ -118,6 +127,7 @@ def run_audit(root: Path) -> list[Finding]:
     findings += check_empty_folders(root)
     findings += check_name_collision(root)
     findings += check_filename_portability(root)
+    findings += check_date_prefix_separator(root)
     findings += check_ascii_punctuation(root)
     findings += check_scaffold_state_markers(root)
     return findings
@@ -131,7 +141,7 @@ def main() -> int:
 
     root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd()
     if not root.is_dir():
-        print(f"오류: 디렉토리가 아님 - {root}", file=sys.stderr)
+        print(f"Error: not a directory. 디렉토리가 아님 - {root}", file=sys.stderr)
         return 2
 
     findings = run_audit(root)
