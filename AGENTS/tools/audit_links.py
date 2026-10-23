@@ -30,6 +30,42 @@ def check_links(root: Path) -> list[Finding]:
     return out
 
 
+# 대상에 공백이 든 링크. LINK_RE는 공백 든 대상을 링크로 인식하지 않으므로
+# 깨진 링크 검사에도 걸리지 않고 조용히 통과한다. 링크 제목 문법
+# [x](path "title")은 정당하므로 제외한다.
+SPACED_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)\n]*\s[^)\n]*)\)")
+LINK_TITLE_RE = re.compile(r"""^\S+\s+(?:"[^"]*"|'[^']*')$""")
+# 파일이나 폴더 링크로 보이는 대상만 검사한다(확장자나 / 로 끝남, 앵커 허용).
+# 대괄호 뒤에 괄호 설명을 붙인 일반 문장을 링크로 오인하지 않기 위함이다.
+DOC_TARGET_RE = re.compile(r"(\.[A-Za-z0-9]{1,8}(#.*)?|/)$")
+
+
+def check_link_whitespace(root: Path) -> list[Finding]:
+    """링크 대상에 공백이 든 로컬 파일, 폴더 링크를 검출한다 (위반).
+
+    링크 대상의 공백은 %20으로 쓴다 (cf. document-temporality.md). 공백 든
+    대상은 링크 해석에서 빠져 실존 검사를 받지 못한다.
+    """
+    out: list[Finding] = []
+    for path in iter_md_files(root):
+        rel = str(path.relative_to(root))
+        text = FRONT_MATTER_RE.sub("", read(path))
+        text = re.sub(r"```.*?```", "", text, flags=re.DOTALL)
+        text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+        text = re.sub(r"`[^`\n]*`", "", text)
+        for target in SPACED_LINK_RE.findall(text):
+            t = target.strip()
+            if not re.search(r"\s", t):
+                continue  # 대상 앞뒤 공백만 있음 (공백 든 대상이 아님)
+            if SCHEME_RE.match(t) or LINK_TITLE_RE.match(t) or not DOC_TARGET_RE.search(t):
+                continue
+            out.append(Finding(
+                VIOLATION, "link", rel,
+                f"링크 대상에 공백 - %20으로 쓴다 -> ({target})",
+            ))
+    return out
+
+
 def check_link_text(root: Path) -> list[Finding]:
     """마크다운 링크 표시텍스트가 실존하지 않는 파일을 지칭하는지 검사.
 
@@ -37,8 +73,11 @@ def check_link_text(root: Path) -> list[Finding]:
     폐지된 파일명이나 옛 경로가 표시텍스트로 남으면 링크가 깨지지 않은 채
     독자를 없는 파일로 오도한다 (예: [_strategy/INDEX.md](../AGENTS.md)는 대상이
     실존해 링크는 성립하나 표시텍스트 _strategy/INDEX.md는 부재 파일). 본 검사가
-    그 사각을 닫는다. 파일명 형태(공백 없이 .md로 끝나거나 / 포함)의 표시텍스트만
-    보며, 자연어 문구와 타이틀은 공백을 포함해 자연 제외된다.
+    그 사각을 닫는다. 파일명 형태의 표시텍스트만 본다 - 공백 없이 (.md로 끝나거나
+    / 를 포함한 것), 그리고 경로 성분 중 하나가 날짜 프리픽스로 시작하면서 .md나
+    / 로 끝나는 것(날짜 문서와 폴더는 이름에 공백이 든다). 그 밖에 공백이 든
+    자연어 문구와 타이틀은 제외된다. 표시텍스트와 대상 모두 %20 등을 디코딩해
+    비교한다.
     """
     out: list[Finding] = []
     for path in iter_md_files(root):
@@ -48,14 +87,19 @@ def check_link_text(root: Path) -> list[Finding]:
         text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
         text = re.sub(r"`[^`\n]*`", "", text)  # 인라인 코드 - 규약 설명의 예시 링크 오탐 방지
         for disp, target in LINK_TEXT_RE.findall(text):
-            disp_clean = disp.strip()
-            if not disp_clean or " " in disp_clean:
-                continue  # 빈 표시텍스트 또는 자연어 문구/타이틀
+            disp_clean = urllib.parse.unquote(disp.strip())
+            if not disp_clean:
+                continue
+            if " " in disp_clean and not (
+                any(DATE_PREFIX_RE.match(c) for c in disp_clean.split("/"))
+                and (disp_clean.endswith(".md") or disp_clean.endswith("/"))
+            ):
+                continue  # 자연어 문구/타이틀 (공백 든 날짜 문서, 폴더 이름은 검사)
             if not (disp_clean.endswith(".md") or "/" in disp_clean):
                 continue  # 파일명 형태가 아님 (일반 텍스트)
             if SCHEME_RE.match(target):
                 continue  # 외부 URL (https: 등)
-            target_path = target.split("#", 1)[0]
+            target_path = urllib.parse.unquote(target.split("#", 1)[0])
             if not target_path:
                 continue  # 순수 앵커 링크 (#절)
             if link_text_points_to_real(root, path, disp_clean, target_path):
