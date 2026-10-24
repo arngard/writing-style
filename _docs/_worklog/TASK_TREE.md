@@ -62,7 +62,7 @@ tags: [worklog]
     - 설명: [AGENTS.md](../../AGENTS.md) "이 워크스페이스의 정체" 절을 도메인 정체성으로 특수화한다. 그 밖의 계승 자산은 [AGENTS/instance-specialization.md](../../AGENTS/instance-specialization.md)를 따른다.
   - [/] README와 LICENSE 정리
     - 설명: 스캐폴드 소개문인 README.md, README.en.md를 이 워크스페이스의 소개로 교체하고(상류를 받으면 충돌 유의), LICENSE를 정한다.
-    - 상태 상세: README.md는 이 레포의 소개로 교체했고 README.en.md는 상류 원문 그대로다. LICENSE는 상류의 MIT 라이선스 그대로이며 사용자 결정 대기.
+    - 상태 상세: README 두 편은 이 레포의 소개로 교체했다. LICENSE는 상류의 MIT 라이선스 그대로이며 사용자 결정 대기.
   - [ ] 감사 주기 값 검토
     - 설명: [STATUS.md](STATUS.md)의 주기/트리거 값이 작업 빈도에 맞는지 검토한다.
   - [x] 프로젝트 수준 상위 결정 기록
@@ -86,8 +86,8 @@ tags: [worklog]
   - 브랜치: docs/261024-audit-findings-decided
   - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
     - 설명: [category-placement.md](../_architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `_knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다.
-  - [ ] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
-    - 설명: 내용이 상류 스캐폴드 소개 원문과 같다. 삭제는 사람 확인이 필요하다.
+  - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
+    - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
   - [ ] conventions.md의 스캐폴드 상태 마커를 복원할지 코딩 규약 확장 노드를 닫을지 정한다
     - 설명: 마커 없이 플레이스홀더만 남았는데 초기 세팅의 코딩 규약 확장 노드는 마커 삭제를 지시한다.
   - [ ] 상류 흡수 단위의 착수 등재 누락과 의미 정합 지연을 스캐폴드 격상 후보로 평가한다
