@@ -1,8 +1,10 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-21
+date modified: 2026-10-24
 tags: [소개]
 ---
+
+한국어 | [English](README.en.md)
 
 # writing-style
 

@@ -1,52 +1,36 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-23
+date modified: 2026-10-24
 tags: [소개]
 ---
 
 [한국어](README.md) | English
 
-# Epistemic Workspace Scaffold
+# writing-style
 
-A workspace scaffold that partitions documentation by epistemic category. Keeps higher-level intent and rationale from getting lost when humans and AI work together. Design documents are classified into four categories.
+A workspace that researches, reviews, and specifies the formal rules for all of the user's (Arngard's) writing. It covers every genre: plain-prose records (documents, reports), retrospectives, creative writing such as fiction, code comments, and commit messages. Writing rules kept elsewhere, such as the user's common guidelines and the scaffold's document-writing rules, are short-form rules applied to each task; this repository holds the formal rules, with their rationale and complete specification.
 
-- Ontology: What exists
-- Knowledge: How the world is
-- Strategy: Why we decided this way
-- Architecture: How we build it
+## When revising text against this repository
 
-For the rationale, see [AGENTS/why-epistemic-workspace.md](AGENTS/why-epistemic-workspace.md) (Korean); for operating guidance and principles, the single entry point [AGENTS.md](AGENTS.md).
+An agent revising text in another repository reads in this order.
 
-## Directory structure
+1. Determine the genre of the text from [_docs/_ontology/writing-genres.md](_docs/_ontology/writing-genres.md).
+2. Find and apply the rules for that genre through the file guide in [_docs/_architecture/AGENTS.md](_docs/_architecture/AGENTS.md). Plain-prose records follow [_docs/_architecture/plain-prose-rules.md](_docs/_architecture/plain-prose-rules.md).
+3. For details such as usage and notation, see the example-based detailed rules in [_implementation/](_implementation/AGENTS.md).
+4. When the reason for a rule is needed, see the rationale documents in [_docs/_strategy/](_docs/_strategy/AGENTS.md).
 
-```
-(workspace-root)/
-├── _docs/             <- Knowledge not expressible in code
-│   ├── _ontology/         <- Domain concepts
-│   ├── _knowledge/        <- External facts
-│   ├── _strategy/         <- Decisions and rationale
-│   ├── _architecture/     <- Design specifications
-│   └── _worklog/          <- Work status, history
-├── _reference/        <- Immutable raw materials dumped by the user
-├── AGENTS/            <- Agent operating norms (entry point: AGENTS.md)
-└── _implementation/   <- Implementation projects (one subfolder per project)
-    ├── <project-A>/
-    └── <project-B>/
-```
+The target of revision is the text in that repository; this repository is read only. If this repository's rules and the short-form rules the target repository follows disagree, raise it with the user before revising. If you find something to fix in this repository's rules, hand it over as work for this repository.
 
-## How to use
+## Structure
 
-There are two ways to obtain the scaffold.
+This repository inherits the epistemic workspace scaffold ([arngard/epistemic-workspace-scaffold](https://github.com/arngard/epistemic-workspace-scaffold)) as `upstream`. What each area holds is set by [_docs/_architecture/category-placement.md](_docs/_architecture/category-placement.md).
 
-- Staying connected to upstream: receive the scaffold history through a GitHub fork or a clone, and connect the original as the `upstream` remote. For a clone, rename the original remote with `git remote rename origin upstream` and add your own repository as `origin`. For a fork, add `git remote add upstream https://github.com/arngard/epistemic-workspace-scaffold.git`. Pull improvements from the parent scaffold with `git fetch upstream && git merge upstream/main`.
-- Without history: create a repository from the GitHub template, or copy the files into an existing project. You do not receive the scaffold history, so you cannot merge upstream improvements.
+| Area | Holds |
+|------|-------|
+| `_docs/_ontology/` | Definitions of writing genres and writing concepts |
+| `_docs/_knowledge/` | External facts, reviews of external writing guidelines, the user's stated writing preferences |
+| `_docs/_strategy/` | Rationale for the rules, rejected alternatives, retrospectives |
+| `_docs/_architecture/` | The formal rules for each genre |
+| `_implementation/` | Example-based detailed rules |
 
-If you received the scaffold history, the `upstream` connection is not optional; it is the starting state. Audits use it to tell upstream commits from your own. Record the chosen approach and its rationale as a decision document.
-
-After obtaining it, rename the workspace folder to match your project, follow the "Workspace initial setup" checklist in `_docs/_worklog/TASK_TREE.md`, and specialize the workspace identity section ("이 워크스페이스의 정체") of AGENTS.md for your project. To change other inherited assets, follow [AGENTS/instance-specialization.md](AGENTS/instance-specialization.md).
-
-## Further reading
-
-- [AGENTS/why-epistemic-workspace.md](AGENTS/why-epistemic-workspace.md) - Design philosophy and rationale (Korean)
-- [AGENTS/workspace-and-project-structure.md](AGENTS/workspace-and-project-structure.md) - Structural rationale
-- [AGENTS/how-to-separate-docs-folders.md](AGENTS/how-to-separate-docs-folders.md) - Criteria for separating `_docs/` subfolders
+The single entry point for operating guidelines is [AGENTS.md](AGENTS.md).
