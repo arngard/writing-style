@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-21
+date modified: 2026-10-24
 tags: [implementation]
 ---
 
@@ -21,4 +21,5 @@ tags: [implementation]
 ### 세부 규정 묶음
 
 - [word-choice/](word-choice/README.md): 어휘 선택. 외래어, 번역어, 원문 표기의 선택.
+- [reference-notation/](reference-notation/README.md): 참조 표기. 본문 링크 우선, 참조 표지 `ref:`, `sub:`, `see:`의 판정과 형태, 옛 표기의 교정.
 
