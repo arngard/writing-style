@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-10-21
+date modified: 2026-10-24
 tags: [ontology, 란다, 작품]
 ---
 
@@ -13,7 +13,7 @@ tags: [ontology, 란다, 작품]
 본 단어는 두 층위로 사용된다.
 
 1. 외부 명명 (현 시점 확정): 본 기록 전체, 작품 세계 전체의 이름. 본 레포, 자료 묶음, 옵시디언 vault 등 외부 도구에서 본 작품을 호명할 때의 단일 식별자.
-2. 내부 다각 정의 (현 시점 미추출): 본 기록 내부에서 "란다"는 다각적으로 정의되어 있다. 본 시점에는 사용자 자기 진술 외 디테일이 추출되지 않았으며, 사용자 옵시디언 자료 흡수 시 본 정의가 갱신될 예정이다. ref. 사용자 짚음 2026-05-19.
+2. 내부 다각 정의 (현 시점 미추출): 본 기록 내부에서 "란다"는 다각적으로 정의되어 있다. 본 시점에는 사용자 자기 진술 외 디테일이 추출되지 않았으며, 사용자 옵시디언 자료 흡수 시 본 정의가 갱신될 예정이다. ref: 사용자 짚음 2026-05-19.
 
 ## 표기
 
@@ -22,5 +22,5 @@ tags: [ontology, 란다, 작품]
 
 ## 참고
 
-- [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 본 기록에 대한 외부 사실
-- [_strategy/project-overview.md](../_strategy/project-overview.md) - 이 레포의 정체성. 란다 작품의 문체는 창작 갈래의 한 대상이다
+- see: [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 본 기록에 대한 외부 사실
+- see: [_strategy/project-overview.md](../_strategy/project-overview.md) - 이 레포의 정체성. 란다 작품의 문체는 창작 갈래의 한 대상이다
