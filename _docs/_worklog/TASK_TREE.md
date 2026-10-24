@@ -46,8 +46,6 @@ tags: [worklog]
 >     - 노드에 대한 설명
 > ```
 
-- [x] 참조 표지 규약에 색인 목록과 화살표 포인터의 판정을 보탠다
-
 - [ ] 참조 표지 규약을 이 레포의 약식 규칙과 기존 문서에 적용한다
   - 설명: 상속한 `AGENTS/writing-style.md`와 디스크립터 등은 아직 옛 표기 `cf.`, `ref.`를 규정하고 쓴다. 스캐폴드에 규약을 반영하는 라운드를 흡수한 뒤 이 레포 문서의 옛 표기를 [old-marker-migration.md](../../_implementation/reference-notation/old-marker-migration.md)에 따라 교정한다.
 
