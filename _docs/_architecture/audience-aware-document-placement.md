@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-10
-date modified: 2026-07-01
+date modified: 2026-10-24
 tags: [architecture, 글쓰기, 배치, 독자]
 ---
 
@@ -35,4 +35,4 @@ tags: [architecture, 글쓰기, 배치, 독자]
 
 ## 관련
 
-- [ingest-workflow.md](../../AGENTS/ingest-workflow.md) - 새 정보가 들어올 때 어느 카테고리, 어느 자리에 두는지 결정하는 절차.
+- see: [ingest-workflow.md](../../AGENTS/ingest-workflow.md) - 새 정보가 들어올 때 어느 카테고리, 어느 자리에 두는지 결정하는 절차.

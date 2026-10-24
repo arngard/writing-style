@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-10-21
+date modified: 2026-10-24
 tags: [strategy, 프로젝트]
 importance: 상
 urgency: 중
@@ -51,6 +51,6 @@ importance 상: 이 레포의 규약은 사용자의 다른 모든 글쓰기와 
 
 ## 참고
 
-- [_ontology/landa.md](../_ontology/landa.md) - "란다" 용어 정의
-- [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 란다 작품에 대한 외부 사실
-- [why-preserve-over-compress.md](why-preserve-over-compress.md) - 압축보다 보존을 우선하는 근거
+- ref: [_ontology/landa.md](../_ontology/landa.md) - "란다" 용어 정의
+- ref: [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 란다 작품에 대한 외부 사실
+- ref: [why-preserve-over-compress.md](why-preserve-over-compress.md) - 압축보다 보존을 우선하는 근거

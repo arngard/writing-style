@@ -23,7 +23,7 @@ The target of revision is the text in that repository; this repository is read o
 
 ## Structure
 
-This repository inherits the epistemic workspace scaffold ([arngard/epistemic-workspace-scaffold](https://github.com/arngard/epistemic-workspace-scaffold)) as `upstream`. What each area holds is set by [_docs/_architecture/category-placement.md](_docs/_architecture/category-placement.md).
+This repository inherits the [epistemic workspace scaffold](https://github.com/arngard/epistemic-workspace-scaffold) as `upstream`. What each area holds is set by [_docs/_architecture/category-placement.md](_docs/_architecture/category-placement.md).
 
 | Area | Holds |
 |------|-------|
