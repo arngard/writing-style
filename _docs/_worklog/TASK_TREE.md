@@ -46,8 +46,9 @@ tags: [worklog]
 >     - 노드에 대한 설명
 > ```
 
-- [ ] 참조 표지 규약을 이 레포의 약식 규칙과 기존 문서에 적용한다
+- [/] 참조 표지 규약을 이 레포의 약식 규칙과 기존 문서에 적용한다
   - 설명: 상속한 `AGENTS/writing-style.md`와 디스크립터 등은 아직 옛 표기 `cf.`, `ref.`를 규정하고 쓴다. 스캐폴드에 규약을 반영하는 라운드를 흡수한 뒤 이 레포 문서의 옛 표기를 [old-marker-migration.md](../../_implementation/reference-notation/old-marker-migration.md)에 따라 교정한다.
+  - 브랜치: chore/261024-upstream-sync-f71d43d
 
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 인간 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 인간에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. cf. [AGENTS.md](../../AGENTS.md) "문서 작성 스타일".
