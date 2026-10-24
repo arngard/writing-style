@@ -74,7 +74,9 @@ tags: [worklog]
 - [ ] 란다 갈래의 문체 추출 운영 절차를 설계할 때 단계 권한 배분 규범을 적용한다
   - 설명: [project-overview.md](../_strategy/project-overview.md)가 목표로 든 "추출 작업의 운영 절차"는 아직 미작성이다. 절차를 쓸 때 상류 [AGENTS/unit-task/stage-authority.md](../../AGENTS/unit-task/stage-authority.md)(2026-08-08 흡수)이 직접 걸린다 - 문체 특징이 스타일 가이드 규칙으로 승격되는 조건은 여러 문서에서 반복 관측되는가일 텐데, 문서 1건씩 읽는 추출 단계는 그 반복을 볼 수 없다. 승격 판정 권한은 누적 전체를 조망하는 자리(추출 후 정리 라운드)에 두고, 그 라운드는 추출 단계가 후보라고 표시한 것만 받지 않고 추출 산출 전체를 훑도록 설계한다 (AI 제안, 다른 자식 워크스페이스에서 같은 구조 결함이 실측된 데서 온 예방 등재).
 
-- [ ] 2026-10-24 의미 감사 발견 사항 처리
+- [/] 2026-10-24 의미 감사 발견 사항 처리
+  - 상태 상세: 사용자가 정한 4건(README.en.md, conventions.md 주의문, main 직접 커밋, 상류 흡수 착수 누락)을 처리한다. 앞의 두 건은 상류 초기 세팅 항목이 이 레포 트리에 들어오지 않은 데서 왔으므로 초기 세팅 항목 정합을 함께 한다.
+  - 브랜치: docs/261024-audit-findings-decided
   - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
     - 설명: [category-placement.md](../_architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `_knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다.
   - [ ] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
