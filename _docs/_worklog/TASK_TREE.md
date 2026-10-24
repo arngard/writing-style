@@ -46,9 +46,8 @@ tags: [worklog]
 >     - 노드에 대한 설명
 > ```
 
-- [/] 참조 표지 규약에 첫 적용에서 정한 판정을 보탠다
+- [x] 참조 표지 규약에 첫 적용에서 정한 판정을 보탠다
   - 설명: 동격 괄호, 작업 문서 링크의 sub:, 의미 기준 원칙, 줄글과 각주가 아닌 형태의 표지 생략, 세 표지 모두의 출처 서술 허용.
-  - 브랜치: docs/261024-reference-markers-supplement
 
 - [ ] 참조 표지 규약을 이 레포의 약식 규칙과 기존 문서에 적용한다
   - 설명: 상속한 `AGENTS/writing-style.md`와 디스크립터 등은 아직 옛 표기 `cf.`, `ref.`를 규정하고 쓴다. 스캐폴드에 규약을 반영하는 라운드를 흡수한 뒤 이 레포 문서의 옛 표기를 [old-marker-migration.md](../../_implementation/reference-notation/old-marker-migration.md)에 따라 교정한다.
