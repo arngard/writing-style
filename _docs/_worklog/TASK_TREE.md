@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 요약을 되풀이할 뿐인 설명은 두지 않는다는 기준을 규약에 둔다
+- [x] 요약을 되풀이할 뿐인 설명은 두지 않는다는 기준을 규약에 둔다
   - 설명: 사용자 진술(2026-10-25)을 진술 기록에 두고, plain-prose-rules.md "구성" 절의 서두 요약 항목 곁에 더한다.
-  - 브랜치: docs/261025-no-restating-explanation (워크트리: ../writing-style.worktrees/docs-261025-no-restating-explanation)
