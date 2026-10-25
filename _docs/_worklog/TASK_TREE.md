@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-24
+date modified: 2026-10-25
 tags: [worklog]
 ---
 
@@ -94,3 +94,7 @@ tags: [worklog]
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
+
+- [/] 스캐폴드 ceb1bd5 흡수 (단위 작업을 브랜치 전용 워크트리에서 하는 규범)
+  - 설명: 스캐폴드가 단위 작업을 그 브랜치 전용 워크트리에서 하고 주 워크트리는 `main`에 두는 규범을 두었다. 브랜치 속성에 워크트리 경로를 함께 적고, 브랜치 관리자 타입 머지에서는 워크트리를 지운 뒤 브랜치를 지운다. 기준점은 ceb1bd5이며 그 뒤의 스캐폴드 변경은 다음 라운드로 미룬다.
+  - 브랜치: chore/261025-upstream-sync-ceb1bd5 (워크트리: ../writing-style.worktrees/chore-261025-upstream-sync-ceb1bd5)
