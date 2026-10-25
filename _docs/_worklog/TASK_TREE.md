@@ -94,3 +94,7 @@ tags: [worklog]
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
+
+- [/] 참조 표지 규정에 지시어 조준, 이름표, 같은 문서 안 참조, 코드 펜스의 처리를 더한다
+  - 설명: 자식 레포에 표지 규정을 적용하며 사용자가 정한 네 가지(2026-10-25)를 정식 규약에 기록한다. 지시어로 직접 조준한 참조와 표지 뒤 이름표는 존중하고, 같은 문서 안 참조도 따로 두면 같은 표지와 같은 의미 규칙을 따르며, 규약을 담은 코드 펜스는 고치고 외부 자료와 인용 블록은 두는 것이다.
+  - 브랜치: docs/261025-reference-marker-scope
