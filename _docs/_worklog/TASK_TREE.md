@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 스캐폴드 371cbfd 흡수 (위치 지칭 근거리 예외를 바로 아래 문단까지 확장)
+- [x] 스캐폴드 371cbfd 흡수 (위치 지칭 근거리 예외를 바로 아래 문단까지 확장)
   - 설명: 스캐폴드가 같은 절 안에서 바로 아래에 붙은 정보(목록, 표, 이미지 포함)를 가리키는 지칭도 근거리 예외에 넣었다. 규정을 넓힌 변경이라 고유 문서에 새로 걸리는 곳은 없다.
-  - 브랜치: chore/261025-upstream-sync-371cbfd
