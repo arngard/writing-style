@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 스캐폴드 ed2f1ef 흡수 (한 흐름 안의 동어 반복 설명 정리)
+- [x] 스캐폴드 ed2f1ef 흡수 (한 흐름 안의 동어 반복 설명 정리)
   - 설명: 스캐폴드가 같은 내용을 두 번 말하는 설명을 규범의 효력을 바꾸지 않고 한 문장으로 줄였다. 기준점은 ed2f1ef다.
-  - 브랜치: chore/261025-upstream-sync-ed2f1ef (워크트리: ../writing-style.worktrees/chore-261025-upstream-sync-ed2f1ef)
