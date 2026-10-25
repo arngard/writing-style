@@ -95,5 +95,4 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 스캐폴드 550f319 흡수 (참조 표지 규정 보완, audit 인라인 코드 오판 수정)
-  - 브랜치: chore/261025-upstream-sync-550f319
+- [x] 스캐폴드 550f319 흡수 (참조 표지 규정 보완, audit 인라인 코드 오판 수정)
