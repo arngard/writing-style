@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 스캐폴드 1dab9a0 흡수 (남은 옛 표기, 기계 검사 범위, 안내 문구 정정)
+- [x] 스캐폴드 1dab9a0 흡수 (남은 옛 표기, 기계 검사 범위, 안내 문구 정정)
   - 설명: 스캐폴드가 인라인 코드와 주석 안에 남은 옛 표기 `cf.`를 `ref:`로 고치고, 기계 검사가 보지 않는 자리를 적고, 작성 규약 안내와 서브모듈 항목, 리프 노드 문단의 표현을 고쳤다. 기준점은 1dab9a0이다.
-  - 브랜치: chore/261025-upstream-sync-1dab9a0 (워크트리: ../writing-style.worktrees/chore-261025-upstream-sync-1dab9a0)
