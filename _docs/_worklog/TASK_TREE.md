@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 스캐폴드 a170e47 흡수 (서브모듈을 부모 워크트리 안에서 다루는 항목, 감사 후속 정정)
+- [x] 스캐폴드 a170e47 흡수 (서브모듈을 부모 워크트리 안에서 다루는 항목, 감사 후속 정정)
   - 설명: 스캐폴드가 워크트리에서 받은 서브모듈은 그 안에서 바로 작업한다는 항목을 두고, 이웃 문서 안내와 표지 형식, 감사자의 워크트리 대조, 참조 표지 일괄 교정 문서의 수정일을 정정했다. 기준점은 a170e47이다.
-  - 브랜치: chore/261025-upstream-sync-a170e47 (워크트리: ../writing-style.worktrees/chore-261025-upstream-sync-a170e47)
