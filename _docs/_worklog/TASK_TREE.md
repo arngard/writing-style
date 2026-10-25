@@ -94,6 +94,3 @@ tags: [worklog]
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
-
-- [x] 위치 지칭 근거리 예외를 바로 아래 정보까지 넓힌다
-  - 설명: 같은 절 안에서 바로 아래에 붙은 정보(문단, 목록, 표, 이미지 등)를 가리키는 지칭도 근거리 예외에 든다는 사용자 판단(2026-10-25)을 진술과 규약에 기록한다. 예외의 문단은 목록, 표, 이미지 같은 덩어리를 모두 포함한다.
