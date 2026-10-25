@@ -95,6 +95,5 @@ tags: [worklog]
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
-- [/] 위치 지칭 회피 규정에 바로 위 두 문단 이내의 예외를 더한다
+- [x] 위치 지칭 회피 규정에 바로 위 두 문단 이내의 예외를 더한다
   - 설명: 같은 절 안에서 바로 위 두 문단 이내에 나온 정보를 가리키는 지칭은 둬도 된다는 사용자 판단(2026-10-25)을 진술과 규약에 기록한다.
-  - 브랜치: docs/261025-nearby-reference-exception
