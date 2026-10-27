@@ -72,8 +72,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
     - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
 
-- [/] 스캐폴드 폴더 구조 개편과 규범 묶음 흡수
+- [x] 스캐폴드 폴더 구조 개편과 규범 묶음 흡수
   - 설명: 흡수 범위는 상류 ed2f1ef..338370d다. 스캐폴드가 골격 폴더를 새 최상위 구조(`worklog/`, `epistemic-structure/`, `reference/`, `implementation/`)로 옮기고, 상속 규범을 각 폴더의 `AGENTS/epistemic-rules/` 묶음으로 모으고, 폴더 색인과 감사 규칙을 더했다. 골격 이동 머지(f5efd16)를 먼저 흡수하고 338370d를 흡수한 뒤 이전 스크립트로 이 레포의 경로를 옮긴다.
-  - 브랜치: chore/261028-upstream-sync-338370d (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-338370d)
   - [x] 흡수한 규범과 이 레포 문서의 의미 정합 검토
     - 설명: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "상류 흡수의 의미 정합"에 따라 대조했다. 바로 고칠 것은 이 작업에서 고치고, 판단이 필요한 것은 위 2026-10-28 노드와 기존 노드에 등재했다.
