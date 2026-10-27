@@ -15,38 +15,38 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [x] 커밋 전 훅 연결
     - 설명: 클론마다 연결 명령을 한 번 실행해 커밋할 때 폴더 색인이 다시 만들어지게 한다. 연결하지 않으면 CI(continuous integration) 감사가 낡은 색인을 위반으로 잡는다. 명령은 [tools.md](../AGENTS/epistemic-rules/tools.md) "색인 생성 스크립트". 이 클론 다음에 만드는 클론도 각자 연결한다.
   - [ ] 상류 연결과 채택 방식 기록
-    - 설명: 원본은 이미 `upstream` 원격으로 연결돼 있다. 고른 방식과 이유를 [_docs/_strategy/](../_strategy/AGENTS.md)에 남긴다.
+    - 설명: 원본은 이미 `upstream` 원격으로 연결돼 있다. 고른 방식과 이유를 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md)에 남긴다.
   - [x] 워크스페이스 폴더 이름을 프로젝트에 맞게 변경
     - 설명: AI는 워크스페이스 부모 디렉토리를 직접 리네임할 수 없다 (현재 작업 디렉토리가 바뀌어 세션 상태가 깨짐). 인간에게 이름을 받은 뒤, 인간이 터미널에서 직접 리네임하고 에디터/세션을 재시작하도록 안내한다. 이미 원하는 이름으로 되어 있으면 이 작업을 `[x]`로 전환하고 다음으로 진행한다.
   - [-] 모든 `.md` 파일의 `date created` / `date modified`를 오늘 날짜로 일괄 업데이트
     - 설명: 상류와 연결한 워크스페이스라 날짜를 바꾸지 않는다(바꾸면 상류 머지마다 충돌한다).
   - [x] 워크스페이스 정체 특수화
-    - 설명: [AGENTS.md](../../AGENTS.md) "이 워크스페이스의 정체" 절을 도메인 정체성으로 특수화한다. 그 밖의 계승 자산은 [AGENTS/instance-specialization.md](../../AGENTS/instance-specialization.md)를 따른다.
+    - 설명: [AGENTS.md](../AGENTS.md) "이 워크스페이스의 정체" 절을 도메인 정체성으로 특수화한다. 그 밖의 계승 자산은 [AGENTS/epistemic-rules/instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md)를 따른다.
   - [x] README와 LICENSE 정리
     - 설명: 스캐폴드 소개문인 README.md, README.en.md를 이 워크스페이스의 소개로 교체하고(상류를 받으면 충돌 유의), LICENSE를 정한다.
     - 상태 상세: README 두 편은 이 레포의 소개로 교체했다. LICENSE는 상류의 MIT 라이선스를 그대로 둔다(사용자 결정).
   - [ ] 감사 주기 값 검토
     - 설명: [status-registry.md](AGENTS/epistemic-rules/status-registry.md) "주기 조건"의 값이 작업 빈도에 맞는지 검토한다. 바꿀 값이 있으면 [AGENTS.md](AGENTS.md)에 그 절의 형식으로 덮어쓰기 표를 만들어 둔다.
   - [x] 프로젝트 수준 상위 결정 기록
-    - 설명: 프로젝트 목표, 첫 출시 핵심 목표와 스펙, 향후 확장, 대상 고객과 사용자 등 큰 결정을 [_docs/_strategy/](../_strategy/AGENTS.md) 아래 `why-*.md` 문서들로 분리 작성한다. `project-overview.md`는 실제 내용으로 교체 완료.
+    - 설명: 프로젝트 목표, 첫 출시 핵심 목표와 스펙, 향후 확장, 대상 고객과 사용자 등 큰 결정을 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md) 아래 `why-*.md` 문서들로 분리 작성한다. `project-overview.md`는 실제 내용으로 교체 완료.
   - [x] 도메인 온톨로지 정의
-    - 설명: 의미가 갈릴 수 있는 핵심 용어를 식별하고 [_docs/_ontology/](../_ontology/AGENTS.md)에 정의한다. 튜토리얼용 `sample-term.md`는 upstream 동기화 시 제거됨.
+    - 설명: 의미가 갈릴 수 있는 핵심 용어를 식별하고 [epistemic-structure/ontology/](../epistemic-structure/ontology/AGENTS.md)에 정의한다. 튜토리얼용 `sample-term.md`는 upstream 동기화 시 제거됨.
   - [ ] 핵심 제약 목록 작성
-    - 설명: [_docs/_architecture/core-constraints.md](../_architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다. 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
+    - 설명: [epistemic-structure/architecture/core-constraints.md](../epistemic-structure/architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다. 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
   - [ ] 코딩 규약 확장
-    - 설명: [_docs/_architecture/conventions.md](../_architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
+    - 설명: [epistemic-structure/architecture/conventions.md](../epistemic-structure/architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
   - [x] 남은 튜토리얼 샘플을 실제 문서로 교체
-    - 설명: `sample-fact.md`, `sample-spec.md`, `sample-decision.md`는 upstream 동기화 시 제거됨. 각 범주(`_knowledge`, `_architecture`, `_strategy`)에 실제 문서를 작성한다.
+    - 설명: `sample-fact.md`, `sample-spec.md`, `sample-decision.md`는 upstream 동기화 시 제거됨. 각 범주(`knowledge`, `architecture`, `strategy`)에 실제 문서를 작성한다.
   - [x] 구현 프로젝트 등록
-    - 설명: 실제 소스 코드 프로젝트를 [_implementation/](../../_implementation/AGENTS.md)에 프로젝트별 폴더로 추가한다.
+    - 설명: 실제 소스 코드 프로젝트를 [implementation/](../implementation/AGENTS.md)에 프로젝트별 폴더로 추가한다.
 
 - [ ] 란다 갈래의 문체 추출 운영 절차를 설계할 때 단계 권한 배분 규범을 적용한다
-  - 설명: [project-overview.md](../_strategy/project-overview.md)가 목표로 든 "추출 작업의 운영 절차"는 아직 미작성이다. 절차를 쓸 때 상류 [AGENTS/unit-task/stage-authority.md](../../AGENTS/unit-task/stage-authority.md)(2026-08-08 흡수)이 직접 걸린다 - 문체 특징이 스타일 가이드 규칙으로 승격되는 조건은 여러 문서에서 반복 관측되는가일 텐데, 문서 1건씩 읽는 추출 단계는 그 반복을 볼 수 없다. 승격 판정 권한은 누적 전체를 조망하는 자리(추출 후 정리 라운드)에 두고, 그 라운드는 추출 단계가 후보라고 표시한 것만 받지 않고 추출 산출 전체를 훑도록 설계한다 (AI 제안, 다른 자식 워크스페이스에서 같은 구조 결함이 실측된 데서 온 예방 등재).
+  - 설명: [project-overview.md](../epistemic-structure/strategy/project-overview.md)가 목표로 든 "추출 작업의 운영 절차"는 아직 미작성이다. 절차를 쓸 때 상류 [AGENTS/epistemic-rules/unit-task/stage-authority.md](../AGENTS/epistemic-rules/unit-task/stage-authority.md)(2026-08-08 흡수)이 직접 걸린다 - 문체 특징이 스타일 가이드 규칙으로 승격되는 조건은 여러 문서에서 반복 관측되는가일 텐데, 문서 1건씩 읽는 추출 단계는 그 반복을 볼 수 없다. 승격 판정 권한은 누적 전체를 조망하는 자리(추출 후 정리 라운드)에 두고, 그 라운드는 추출 단계가 후보라고 표시한 것만 받지 않고 추출 산출 전체를 훑도록 설계한다 (AI 제안, 다른 자식 워크스페이스에서 같은 구조 결함이 실측된 데서 온 예방 등재).
 
 - [/] 2026-10-24 의미 감사 발견 사항 처리
   - 상태 상세: 사용자가 정한 4건은 처리했다. 남은 것은 회고 파일명 형식, 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
   - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
-    - 설명: [category-placement.md](../_architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `_knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다.
+    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다.
   - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
     - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
   - [x] conventions.md의 스캐폴드 상태 마커를 복원할지 코딩 규약 확장 노드를 닫을지 정한다
@@ -58,7 +58,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [x] main 직접 커밋 2건의 당시 허용 여부를 사용자와 대조한다
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
-    - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
+    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
 
 - [/] 스캐폴드 폴더 구조 개편과 규범 묶음 흡수
   - 설명: 흡수 범위는 상류 ed2f1ef..338370d다. 스캐폴드가 골격 폴더를 새 최상위 구조(`worklog/`, `epistemic-structure/`, `reference/`, `implementation/`)로 옮기고, 상속 규범을 각 폴더의 `AGENTS/epistemic-rules/` 묶음으로 모으고, 폴더 색인과 감사 규칙을 더했다. 골격 이동 머지(f5efd16)를 먼저 흡수하고 338370d를 흡수한 뒤 이전 스크립트로 이 레포의 경로를 옮긴다.

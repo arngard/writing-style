@@ -6,7 +6,7 @@ tags: [implementation, 참조, 표기, 세부규정]
 
 # 참조 표기 세부 규정
 
-평서문 기록 규약 [_docs/_architecture/plain-prose-rules.md](../../_docs/_architecture/plain-prose-rules.md) "참조는 본문 링크를 우선하고 따로 둘 때 기대는 방식을 표지한다"를 실제 문장에 적용하는 세부 규정 묶음. 근거와 기각안은 [_docs/_strategy/why-reference-markers-follow-reliance.md](../../_docs/_strategy/why-reference-markers-follow-reliance.md)에 있다.
+평서문 기록 규약 [epistemic-structure/architecture/plain-prose-rules.md](../../epistemic-structure/architecture/plain-prose-rules.md) "참조는 본문 링크를 우선하고 따로 둘 때 기대는 방식을 표지한다"를 실제 문장에 적용하는 세부 규정 묶음. 근거와 기각안은 [epistemic-structure/strategy/why-reference-markers-follow-reliance.md](../../epistemic-structure/strategy/why-reference-markers-follow-reliance.md)에 있다.
 
 | 문서 | 다루는 것 |
 |------|-----------|

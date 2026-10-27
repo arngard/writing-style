@@ -7,7 +7,7 @@ tags: [knowledge, 외부지침, 출력스타일, 검토]
 
 # 2026-10-12 외부 출력 스타일 Attention Span 검토 사실
 
-2026-10-12 세션에서 외부 출력 스타일 Attention Span을 사용자 지침과 대조해 검토할 때 확인한 사실. 이 자료로 내린 판단은 [_strategy/why-preserve-over-compress.md](../_strategy/why-preserve-over-compress.md)에 있다.
+2026-10-12 세션에서 외부 출력 스타일 Attention Span을 사용자 지침과 대조해 검토할 때 확인한 사실. 이 자료로 내린 판단은 [strategy/why-preserve-over-compress.md](../strategy/why-preserve-over-compress.md)에 있다.
 
 ## 대상
 

@@ -2,4 +2,5 @@
 
 # implementation 색인
 
-(항목 없음)
+- [reference-notation/](reference-notation/)
+- [word-choice/](word-choice/)

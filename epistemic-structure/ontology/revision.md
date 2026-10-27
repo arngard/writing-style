@@ -17,4 +17,4 @@ tags: [ontology, 윤문]
 ## 관련
 
 - 정식 규약과 약식 규칙: [formal-and-short-rules.md](formal-and-short-rules.md)
-- 평서문 기록 규약: [_architecture/plain-prose-rules.md](../_architecture/plain-prose-rules.md)
+- 평서문 기록 규약: [architecture/plain-prose-rules.md](../architecture/plain-prose-rules.md)

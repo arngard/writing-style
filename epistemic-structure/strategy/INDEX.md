@@ -2,5 +2,7 @@
 
 # epistemic-structure/strategy 색인
 
-- [project-overview.md](project-overview.md) - 프로젝트 수준의 상위 결정을 전략 문서 형식으로 보여 주는 튜토리얼 샘플. 실제로는 지우거나 목표, 첫 출시 범위, 대상 고객 등을 각각의 `why-*.md`로 나눠 쓴다
+- [project-overview.md](project-overview.md)
 - [sample-decision.md](sample-decision.md) - 설계 결정 문서의 위치와 형식을 보여 주는 튜토리얼 샘플. 실제 결정을 쓰면 지우거나 바꾼다
+- [why-preserve-over-compress.md](why-preserve-over-compress.md)
+- [why-reference-markers-follow-reliance.md](why-reference-markers-follow-reliance.md)

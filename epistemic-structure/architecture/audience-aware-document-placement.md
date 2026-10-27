@@ -35,4 +35,4 @@ tags: [architecture, 글쓰기, 배치, 독자]
 
 ## 관련
 
-- see: [ingest-workflow.md](../../AGENTS/ingest-workflow.md) - 새 정보가 들어올 때 어느 카테고리, 어느 자리에 두는지 결정하는 절차.
+- see: [ingest-workflow.md](../../AGENTS/epistemic-rules/ingest-workflow.md) - 새 정보가 들어올 때 어느 카테고리, 어느 자리에 두는지 결정하는 절차.

@@ -24,5 +24,5 @@ tags: [ontology, 갈래, 글쓰기]
 
 ## 관련
 
-- 갈래별 규약의 자리: [_architecture/category-placement.md](../_architecture/category-placement.md)
+- 갈래별 규약의 자리: [architecture/category-placement.md](../architecture/category-placement.md)
 - 정식 규약과 약식 규칙: [formal-and-short-rules.md](formal-and-short-rules.md)

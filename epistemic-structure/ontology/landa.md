@@ -22,5 +22,5 @@ tags: [ontology, 란다, 작품]
 
 ## 참고
 
-- see: [_knowledge/about-landa-record.md](../_knowledge/about-landa-record.md) - 본 기록에 대한 외부 사실
-- see: [_strategy/project-overview.md](../_strategy/project-overview.md) - 이 레포의 정체성. 란다 작품의 문체는 창작 갈래의 한 대상이다
+- see: [knowledge/about-landa-record.md](../knowledge/about-landa-record.md) - 본 기록에 대한 외부 사실
+- see: [strategy/project-overview.md](../strategy/project-overview.md) - 이 레포의 정체성. 란다 작품의 문체는 창작 갈래의 한 대상이다
