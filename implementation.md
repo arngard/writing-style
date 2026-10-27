@@ -1,10 +1,10 @@
 ---
 date created: 2026-10-26
-date modified: 2026-10-26
+date modified: 2026-10-28
 tags: [implementation]
 description: 이 워크스페이스가 만드는 구현 프로젝트
 ---
 
 # implementation
 
-이 워크스페이스가 만드는 구현 프로젝트를 담는다. 프로젝트마다 `implementation/` 아래에 폴더를 하나 두고 그 안에 실제 소스나 서브모듈을 둔다. 한 워크스페이스가 여러 프로젝트를 담을 수 있으며, 프로젝트 폴더를 만들면 이 문서에서 그 프로젝트를 소개하고 링크한다. 프로젝트 폴더를 두는 방식은 [구현 폴더 규범](implementation/AGENTS/epistemic-rules.md)을 따른다.
+이 레포의 구현 영역은 코드가 아니라 정식 규약을 실제 문장에 적용하는 세부 규정을 담는다. 하위 폴더 하나가 갈래나 주제(어법, 표기 등) 하나의 세부 규정 묶음이며, 규정마다 고치기 전과 후의 예시를 함께 둔다. 어휘 선택(외래어, 번역어, 원문 표기의 선택)은 [word-choice/](implementation/word-choice/README.md)에, 참조 표기(본문 링크 우선, 참조 표지 `ref:`, `sub:`, `see:`의 판정과 형태, 옛 표기의 교정)는 [reference-notation/](implementation/reference-notation/README.md)에 있다. 형식 감사는 하위 폴더 내부를 검사하지 않지만 세부 규정 문서도 front matter와 문서 작성 규약을 지킨다. 배치 기준은 [category-placement.md](epistemic-structure/architecture/category-placement.md), 프로젝트 폴더를 두는 방식은 [구현 폴더 규범](implementation/AGENTS/epistemic-rules.md)을 따른다.
