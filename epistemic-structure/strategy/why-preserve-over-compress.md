@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-25
+date modified: 2026-10-28
 tags: [strategy, 구성, 보존, 외부지침]
+description: 정식 규약이 응답의 압축보다 기록의 보존을 우선하는 근거와 기각안
 importance: 중
 urgency: 하
 ---

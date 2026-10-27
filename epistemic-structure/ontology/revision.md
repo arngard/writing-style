@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-21
+date modified: 2026-10-28
 tags: [ontology, 윤문]
+description: 윤문의 정의와 이 레포에서의 쓰임
 ---
 
 # 윤문

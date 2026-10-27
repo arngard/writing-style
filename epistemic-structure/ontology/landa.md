@@ -1,7 +1,8 @@
 ---
 date created: 2026-05-19
-date modified: 2026-10-24
+date modified: 2026-10-28
 tags: [ontology, 란다, 작품]
+description: 란다라는 용어의 정의와 표기
 ---
 
 # 란다

@@ -1,7 +1,8 @@
 ---
 date created: 2026-05-10
-date modified: 2026-10-24
+date modified: 2026-10-28
 tags: [architecture, 글쓰기, 배치, 독자]
+description: 문서를 둘 자리를 독자와 독자가 들어오는 시점으로 정하는 배치 원칙, 함정, 점검 신호
 ---
 
 # 구조화된 문서 체계에서 글의 배치는 독자 시점을 고려해 결정한다

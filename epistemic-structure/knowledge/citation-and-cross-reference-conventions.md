@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-24
-date modified: 2026-10-24
+date modified: 2026-10-28
 tags: [knowledge, 참조, 인용, 외부관례]
+description: 학술, 법률, 백과사전, 코드 문서 주석에서 다른 글을 가리키는 표기의 외부 관례
 ---
 
 # 인용과 상호 참조 표기의 외부 관례

@@ -2,6 +2,7 @@
 date created: 2026-04-18
 date modified: 2026-10-28
 tags: [소개]
+description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페이스의 소개, 윤문 때 읽는 순서, 영역 구성
 ---
 
 한국어 | [English](README.en.md)

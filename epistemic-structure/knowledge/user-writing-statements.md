@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-25
+date modified: 2026-10-28
 tags: [knowledge, 사용자, 글쓰기, 진술]
+description: 사용자가 글쓰기에 대해 밝힌 선호와 판단을 주체와 날짜와 함께 모은 진술
 ---
 
 # 사용자의 글쓰기 선호 진술

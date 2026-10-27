@@ -1,7 +1,8 @@
 ---
 date created: 2026-05-19
-date modified: 2026-10-24
+date modified: 2026-10-28
 tags: [knowledge, 란다, 작품]
+description: 란다 기록에 대한 외부 사실. 기본 사실과 사용자의 잠정 자기 분류
 ---
 
 # 란다 - 본 기록에 대한 외부 사실

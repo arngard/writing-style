@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-25
+date modified: 2026-10-28
 tags: [architecture, 평서문, 규약, 윤문]
+description: 평서문 기록의 정식 규약. 어휘, 문장, 서식, 참조, 구성, 요약, 사실과 의견 구분, 기존 글 수정
 ---
 
 # 평서문 기록은 정확하고 담백하게, 정보를 잃지 않게 쓴다

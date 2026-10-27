@@ -2,6 +2,7 @@
 date created: 2026-10-21
 date modified: 2026-10-28
 tags: [architecture, 배치, 범주, 구조]
+description: 글쓰기 지식을 네 범주와 구현 영역 중 어디에 두는지의 배치 명세
 ---
 
 # 글쓰기 지식은 성격에 따라 네 범주와 구현 영역에 나눠 둔다

@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-21
+date modified: 2026-10-28
 tags: [ontology, 갈래, 글쓰기]
+description: 이 레포가 규약을 나눠 세우는 글 갈래 넷의 정의와 경계
 ---
 
 # 글 갈래

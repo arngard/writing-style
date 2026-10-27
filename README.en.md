@@ -2,6 +2,7 @@
 date created: 2026-04-18
 date modified: 2026-10-28
 tags: [소개]
+description: Introduction to the workspace of formal rules for all of the user's writing, with the reading order for revision and the folder layout
 ---
 
 [한국어](README.md) | English
