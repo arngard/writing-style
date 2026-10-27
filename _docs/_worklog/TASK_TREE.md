@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-25
+date modified: 2026-10-28
 tags: [worklog]
 ---
 
@@ -94,3 +94,7 @@ tags: [worklog]
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../_architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../_knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
+
+- [/] 스캐폴드 폴더 구조 개편과 규범 묶음 흡수
+  - 설명: 흡수 범위는 상류 ed2f1ef..338370d다. 스캐폴드가 골격 폴더를 새 최상위 구조(`worklog/`, `epistemic-structure/`, `reference/`, `implementation/`)로 옮기고, 상속 규범을 각 폴더의 `AGENTS/epistemic-rules/` 묶음으로 모으고, 폴더 색인과 감사 규칙을 더했다. 골격 이동 머지(f5efd16)를 먼저 흡수하고 338370d를 흡수한 뒤 이전 스크립트로 이 레포의 경로를 옮긴다.
+  - 브랜치: chore/261028-upstream-sync-338370d (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-338370d)
