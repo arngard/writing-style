@@ -3,6 +3,5 @@
 # epistemic-structure/strategy 색인
 
 - [project-overview.md](project-overview.md) - 이 레포의 목적과 포함, 미포함 범위를 정한 프로젝트 수준 결정
-- [sample-decision.md](sample-decision.md) - 설계 결정 문서의 위치와 형식을 보여 주는 튜토리얼 샘플. 실제 결정을 쓰면 지우거나 바꾼다
 - [why-preserve-over-compress.md](why-preserve-over-compress.md) - 정식 규약이 응답의 압축보다 기록의 보존을 우선하는 근거와 기각안
 - [why-reference-markers-follow-reliance.md](why-reference-markers-follow-reliance.md) - 참조 표지를 이 문서가 대상에 기대는 방식으로 나누는 근거와 기각안

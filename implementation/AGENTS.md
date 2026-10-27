@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-26
+date modified: 2026-10-28
 tags: [implementation]
 ---
 
@@ -8,5 +8,5 @@ tags: [implementation]
 
 # 구현 프로젝트 디스크립터
 
-> 이 워크스페이스에 포함된 구현 프로젝트의 보관 영역. `implementation/` 하위에 프로젝트마다 한 폴더를 만들고 그 폴더에 실제 소스(또는 서브모듈 등)를 둔다. 한 워크스페이스가 여러 프로젝트를 담을 수 있다 (예: Android/iOS SDK 쌍, 서버/프런트 쌍).
-> "어떤 프로젝트가 존재하는가"의 SSOT(single source of truth)는 파일시스템이다 (ref: [AGENTS/epistemic-rules/folder-structure.md](../AGENTS/epistemic-rules/folder-structure.md) "폴더 구조와 디스크립터").
+> 정식 규약을 실제 문장에 적용하는 예시 기반 세부 규정 묶음의 보관 영역. 하위 폴더 하나가 갈래나 주제 하나의 묶음이다. 이 워크스페이스에서 담는 것은 부모 문서 [implementation.md](../implementation.md)가 안내한다.
+> "어떤 묶음이 존재하는가"의 SSOT(single source of truth)는 파일시스템이다 (ref: [AGENTS/epistemic-rules/folder-structure.md](../AGENTS/epistemic-rules/folder-structure.md) "폴더 구조와 디스크립터").

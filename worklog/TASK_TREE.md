@@ -46,7 +46,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
 - [/] 2026-10-24 의미 감사 발견 사항 처리
   - 상태 상세: 사용자가 정한 4건은 처리했다. 남은 것은 회고 파일명 형식, 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
   - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
-    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다.
+    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다. 회고 폴더를 처음 만들 때는 부모 문서 `strategy/retrospectives.md`와 `AGENTS.md`, `CLAUDE.md`를 같은 커밋에 두고, 날짜 순 폴더라 순차 분류로 선언할지 정한다.
   - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
     - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
   - [x] conventions.md의 스캐폴드 상태 마커를 복원할지 코딩 규약 확장 노드를 닫을지 정한다
@@ -58,8 +58,22 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [x] main 직접 커밋 2건의 당시 허용 여부를 사용자와 대조한다
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
-    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상 또는 인스턴스 유지), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, core-constraints 설계 원칙의 적합성, README 태그 중복.
+    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상, 또는 인스턴스 유지 시 워크스페이스 운영 규범이라 `AGENTS/` 옆 낱개 문서), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, 상류 설계 원칙([design-principles.md](../AGENTS/epistemic-rules/design-principles.md), 강타입 등)을 이 레포에서 덮어쓸지, README 태그 중복(2026-10-28 흡수로 태그 원칙이 바뀌어 해소된 것으로 보인다).
+
+- [ ] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
+  - [ ] 흡수 뒤 의미 감사를 받고 상태 레지스트리를 갱신한다
+    - 설명: 트리거가 충족돼 있고 이번 흡수가 큰 변경이다. 아래 태그 정리안도 이 감사에서 받는다.
+  - [ ] 이 레포 문서의 태그 어휘 정리안을 정한다
+    - 설명: 의미 감사의 병합안과 삭제안을 사용자가 승인한 것만 바꾼다 (ref: [tags.md](../AGENTS/epistemic-rules/tags.md) "어휘 정리"). 옛 첫 항목 규칙에서 온 범주 이름 태그를 남길지, `규약`과 상류 `규칙`의 표기 갈림 등이 후보다.
+  - [ ] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
+    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md)는 상류 "판별 규칙"에 보태는 배치이고, 이 레포 자신의 문서를 쓸 때 [plain-prose-rules.md](../epistemic-structure/architecture/plain-prose-rules.md)와 상류 약식 규칙이 어긋나면 어느 쪽을 따를지 정한 곳이 없다. 루트 [AGENTS.md](../AGENTS.md)의 두 읽는 시점 문장을 규범 절로 옮길지도 함께 정한다 (ref: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "특수화 방식").
+  - [ ] 스캐폴드 약식 규칙의 범위 서술을 상류 재배치에 맞춘다
+    - 설명: [formal-and-short-rules.md](../epistemic-structure/ontology/formal-and-short-rules.md)와 루트 AGENTS.md가 스캐폴드 약식 규칙을 `writing-style.md` 하나로 부른다. 상류는 늘 읽히는 핵심을 `communication.md`로 옮겼다. 온톨로지 정의라 관련 문서와의 정합도 함께 본다.
+  - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
+    - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
 
 - [/] 스캐폴드 폴더 구조 개편과 규범 묶음 흡수
   - 설명: 흡수 범위는 상류 ed2f1ef..338370d다. 스캐폴드가 골격 폴더를 새 최상위 구조(`worklog/`, `epistemic-structure/`, `reference/`, `implementation/`)로 옮기고, 상속 규범을 각 폴더의 `AGENTS/epistemic-rules/` 묶음으로 모으고, 폴더 색인과 감사 규칙을 더했다. 골격 이동 머지(f5efd16)를 먼저 흡수하고 338370d를 흡수한 뒤 이전 스크립트로 이 레포의 경로를 옮긴다.
   - 브랜치: chore/261028-upstream-sync-338370d (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-338370d)
+  - [x] 흡수한 규범과 이 레포 문서의 의미 정합 검토
+    - 설명: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "상류 흡수의 의미 정합"에 따라 대조했다. 바로 고칠 것은 이 작업에서 고치고, 판단이 필요한 것은 위 2026-10-28 노드와 기존 노드에 등재했다.

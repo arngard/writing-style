@@ -17,8 +17,8 @@ An agent revising text in another repository reads in this order.
 
 1. Determine the genre of the text from [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md).
 2. Find and apply the rules for that genre through the document list in [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md). Plain-prose records follow [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md).
-3. For details such as usage and notation, see the example-based detailed rules in [implementation/](implementation/AGENTS.md).
-4. When the reason for a rule is needed, see the rationale documents in [epistemic-structure/strategy/](epistemic-structure/strategy/AGENTS.md).
+3. For details such as usage and notation, see the example-based detailed rule sets introduced in [implementation.md](implementation.md).
+4. When the reason for a rule is needed, find the rationale documents through the document list in [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md).
 
 The target of revision is the text in that repository; this repository is read only. If this repository's rules and the short-form rules the target repository follows disagree, raise it with the user before revising. If you find something to fix in this repository's rules, hand it over as work for this repository.
 

@@ -2,7 +2,7 @@
 date created: 2026-10-26
 date modified: 2026-10-28
 tags: [implementation]
-description: 이 워크스페이스가 만드는 구현 프로젝트
+description: 정식 규약을 실제 문장에 적용하는 예시 기반 세부 규정 묶음
 ---
 
 # implementation

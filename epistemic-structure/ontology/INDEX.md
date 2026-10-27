@@ -5,5 +5,4 @@
 - [formal-and-short-rules.md](formal-and-short-rules.md) - 정식 규약과 약식 규칙의 정의, 약식 규칙의 자리, 둘의 관계
 - [landa.md](landa.md) - 란다라는 용어의 정의와 표기
 - [revision.md](revision.md) - 윤문의 정의와 이 레포에서의 쓰임
-- [sample-term.md](sample-term.md) - 용어 정의 문서의 위치와 형식을 보여 주는 튜토리얼 샘플. 실제 문서를 쓰면 지우거나 바꾼다
 - [writing-genres.md](writing-genres.md) - 이 레포가 규약을 나눠 세우는 글 갈래 넷의 정의와 경계
