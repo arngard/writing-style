@@ -1,0 +1,73 @@
+---
+date created: 2026-04-18
+date modified: 2026-10-28
+tags: [worklog]
+description: 작업의 계층 구조와 다음 작업 포인터
+---
+
+# 작업 트리
+
+> 작업의 계층 구조와 다음 작업 포인터. 노드 유형, 표기, 갱신 규칙, 삭제 규칙은 [task-tree.md](AGENTS/epistemic-rules/task-tree.md).
+
+- [/] 워크스페이스 초기 세팅
+  - 설명: 이 단계의 모든 "선정/작성" 작업은 인간 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 인간에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
+  - 상태 상세: 정체성을 모든 글쓰기의 정식 규약으로 세우고 이름을 writing-style로 바꿨다. 남은 항목은 상류 연결과 채택 방식 기록, 감사 주기 값 검토, 핵심 제약 목록, 규약 확장이다.
+  - [x] 커밋 전 훅 연결
+    - 설명: 클론마다 연결 명령을 한 번 실행해 커밋할 때 폴더 색인이 다시 만들어지게 한다. 연결하지 않으면 CI(continuous integration) 감사가 낡은 색인을 위반으로 잡는다. 명령은 [tools.md](../AGENTS/epistemic-rules/tools.md) "색인 생성 스크립트". 이 클론 다음에 만드는 클론도 각자 연결한다.
+  - [ ] 상류 연결과 채택 방식 기록
+    - 설명: 원본은 이미 `upstream` 원격으로 연결돼 있다. 고른 방식과 이유를 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md)에 남긴다.
+  - [x] 워크스페이스 폴더 이름을 프로젝트에 맞게 변경
+    - 설명: AI는 워크스페이스 부모 디렉토리를 직접 리네임할 수 없다 (현재 작업 디렉토리가 바뀌어 세션 상태가 깨짐). 인간에게 이름을 받은 뒤, 인간이 터미널에서 직접 리네임하고 에디터/세션을 재시작하도록 안내한다. 이미 원하는 이름으로 되어 있으면 이 작업을 `[x]`로 전환하고 다음으로 진행한다.
+  - [-] 모든 `.md` 파일의 `date created` / `date modified`를 오늘 날짜로 일괄 업데이트
+    - 설명: 상류와 연결한 워크스페이스라 날짜를 바꾸지 않는다(바꾸면 상류 머지마다 충돌한다).
+  - [x] 워크스페이스 정체 특수화
+    - 설명: [AGENTS.md](../AGENTS.md) "이 워크스페이스의 정체" 절을 도메인 정체성으로 특수화한다. 그 밖의 계승 자산은 [AGENTS/epistemic-rules/instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md)를 따른다.
+  - [x] README와 LICENSE 정리
+    - 설명: 스캐폴드 소개문인 README.md, README.en.md를 이 워크스페이스의 소개로 교체하고(상류를 받으면 충돌 유의), LICENSE를 정한다.
+    - 상태 상세: README 두 편은 이 레포의 소개로 교체했다. LICENSE는 상류의 MIT 라이선스를 그대로 둔다(사용자 결정).
+  - [ ] 감사 주기 값 검토
+    - 설명: [status-registry.md](AGENTS/epistemic-rules/status-registry.md) "주기 조건"의 값이 작업 빈도에 맞는지 검토한다. 바꿀 값이 있으면 [AGENTS.md](AGENTS.md)에 그 절의 형식으로 덮어쓰기 표를 만들어 둔다.
+  - [x] 프로젝트 수준 상위 결정 기록
+    - 설명: 프로젝트 목표, 첫 출시 핵심 목표와 스펙, 향후 확장, 대상 고객과 사용자 등 큰 결정을 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md) 아래 `why-*.md` 문서들로 분리 작성한다. `project-overview.md`는 실제 내용으로 교체 완료.
+  - [x] 도메인 온톨로지 정의
+    - 설명: 의미가 갈릴 수 있는 핵심 용어를 식별하고 [epistemic-structure/ontology/](../epistemic-structure/ontology/AGENTS.md)에 정의한다. 튜토리얼용 `sample-term.md`는 upstream 동기화 시 제거됨.
+  - [ ] 핵심 제약 목록 작성
+    - 설명: [epistemic-structure/architecture/core-constraints.md](../epistemic-structure/architecture/core-constraints.md)의 "제약 목록" 섹션을 작성한다. 각 제약은 상세 문서와 링크로 연결한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
+  - [ ] 코딩 규약 확장
+    - 설명: [epistemic-structure/architecture/conventions.md](../epistemic-structure/architecture/conventions.md)에 언어/빌드, 패키지 구조, 네이밍, 가시성, 의존성, 테스트 등 프로젝트 고유 규약을 추가한다. 작성 완료 후 문서 상단의 `[주의]` 주의문을 삭제한다.
+  - [x] 남은 튜토리얼 샘플을 실제 문서로 교체
+    - 설명: `sample-fact.md`, `sample-spec.md`, `sample-decision.md`는 upstream 동기화 시 제거됨. 각 범주(`knowledge`, `architecture`, `strategy`)에 실제 문서를 작성한다.
+  - [x] 구현 프로젝트 등록
+    - 설명: 실제 소스 코드 프로젝트를 [implementation/](../implementation/AGENTS.md)에 프로젝트별 폴더로 추가한다.
+
+- [ ] 란다 갈래의 문체 추출 운영 절차를 설계할 때 단계 권한 배분 규범을 적용한다
+  - 설명: [project-overview.md](../epistemic-structure/strategy/project-overview.md)가 목표로 든 "추출 작업의 운영 절차"는 아직 미작성이다. 절차를 쓸 때 상류 [AGENTS/epistemic-rules/unit-task/stage-authority.md](../AGENTS/epistemic-rules/unit-task/stage-authority.md)(2026-08-08 흡수)이 직접 걸린다 - 문체 특징이 스타일 가이드 규칙으로 승격되는 조건은 여러 문서에서 반복 관측되는가일 텐데, 문서 1건씩 읽는 추출 단계는 그 반복을 볼 수 없다. 승격 판정 권한은 누적 전체를 조망하는 자리(추출 후 정리 라운드)에 두고, 그 라운드는 추출 단계가 후보라고 표시한 것만 받지 않고 추출 산출 전체를 훑도록 설계한다 (AI 제안, 다른 자식 워크스페이스에서 같은 구조 결함이 실측된 데서 온 예방 등재).
+
+- [/] 2026-10-24 의미 감사 발견 사항 처리
+  - 상태 상세: 사용자가 정한 4건은 처리했다. 남은 것은 회고 파일명 형식, 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
+  - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
+    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다. 회고 폴더를 처음 만들 때는 부모 문서 `strategy/retrospectives.md`와 `AGENTS.md`, `CLAUDE.md`를 같은 커밋에 두고, 날짜 순 폴더라 순차 분류로 선언할지 정한다.
+  - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
+    - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
+  - [x] conventions.md의 스캐폴드 상태 마커를 복원할지 코딩 규약 확장 노드를 닫을지 정한다
+    - 설명: 상류 초기 세팅이 이 레포에 제대로 들어오지 않아 주의문이 빠져 있었다. 상류와 같은 주의문을 복원하고, 코딩 규약 확장 노드는 대기로 둔다.
+  - [x] 상류 흡수 단위의 착수 등재 누락과 의미 정합 지연을 스캐폴드 격상 후보로 평가한다
+    - 설명: 상류 흡수 머지 10건에 시작점 커밋이 없고, 27b030e 흡수의 의미 정합이 다음 단위로 밀렸다. 착수 등재와 시작점 커밋, 상류 흡수의 축약 금지, 같은 단위 안의 의미 정합은 기존 규약에 이미 있어 스캐폴드에 격상하지 않는다. 규약을 지키지 않은 데서 온 일이라 과거 이력은 고치지 않고, 이후 흡수부터 규약대로 한다(사용자 판단).
+  - [ ] 작업 트리의 경위 서술과 어긋난 설명을 정리한다
+    - 설명: 초기 세팅 루트의 완료 자식 설명과 상태 상세에 남은 경위 서술, 구현 프로젝트 등록 노드 설명과 실제 구현 영역의 불일치, 란다 문체 추출 노드의 다른 인스턴스 이력 서술.
+  - [x] main 직접 커밋 2건의 당시 허용 여부를 사용자와 대조한다
+    - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
+  - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
+    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상, 또는 인스턴스 유지 시 워크스페이스 운영 규범이라 `AGENTS/` 옆 낱개 문서), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, 상류 설계 원칙([design-principles.md](../AGENTS/epistemic-rules/design-principles.md), 강타입 등)을 이 레포에서 덮어쓸지, README 태그 중복(2026-10-28 흡수로 태그 원칙이 바뀌어 해소된 것으로 보인다).
+
+- [ ] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
+  - [ ] 흡수 뒤 의미 감사를 받고 상태 레지스트리를 갱신한다
+    - 설명: 트리거가 충족돼 있고 이번 흡수가 큰 변경이다. 아래 태그 정리안도 이 감사에서 받는다.
+  - [ ] 이 레포 문서의 태그 어휘 정리안을 정한다
+    - 설명: 의미 감사의 병합안과 삭제안을 사용자가 승인한 것만 바꾼다 (ref: [tags.md](../AGENTS/epistemic-rules/tags.md) "어휘 정리"). 옛 첫 항목 규칙에서 온 범주 이름 태그를 남길지, `규약`과 상류 `규칙`의 표기 갈림 등이 후보다.
+  - [ ] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
+    - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md)는 상류 "판별 규칙"에 보태는 배치이고, 이 레포 자신의 문서를 쓸 때 [plain-prose-rules.md](../epistemic-structure/architecture/plain-prose-rules.md)와 상류 약식 규칙이 어긋나면 어느 쪽을 따를지 정한 곳이 없다. 루트 [AGENTS.md](../AGENTS.md)의 두 읽는 시점 문장을 규범 절로 옮길지도 함께 정한다 (ref: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "특수화 방식").
+  - [ ] 스캐폴드 약식 규칙의 범위 서술을 상류 재배치에 맞춘다
+    - 설명: [formal-and-short-rules.md](../epistemic-structure/ontology/formal-and-short-rules.md)와 루트 AGENTS.md가 스캐폴드 약식 규칙을 `writing-style.md` 하나로 부른다. 상류는 늘 읽히는 핵심을 `communication.md`로 옮겼다. 온톨로지 정의라 관련 문서와의 정합도 함께 본다.
+  - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
+    - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
