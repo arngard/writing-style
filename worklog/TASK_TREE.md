@@ -73,7 +73,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
       - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. 합치지 않고, 이유를 자손 규범 [AGENTS/tag-vocabulary.md](../AGENTS/tag-vocabulary.md)에 두고 루트 [AGENTS.md](../AGENTS.md) "이 워크스페이스의 규범"에 등재했다.
     - [x] 범주 이름 태그를 둘지 정한다
       - 설명: 옛 첫 항목 규칙에서 온 `architecture` 8건, `knowledge` 7건, `ontology` 7건, `strategy` 6건, `implementation/` 하위의 `implementation` 5건. 현 태그 규약은 위치만을 이유로 달거나 빼지 않는다. 각 문서가 그 범주라는 의미 단위에 속하면 두고, 위치만으로 붙었으면 범주별로 경로를 한정해 뺀다(예: `--drop knowledge --path epistemic-structure/knowledge`). 같은 이름 폴더를 소개하는 부모 문서에서 뺄지는 따로 정한다. 감사자는 한쪽을 권하지 않았고, 후속 과제 분류는 걸렀을 때 의미 있는 묶음인지로 판정하라고 권했다(AI 제안).
-      - 상태 상세: 사용자 결정(2026-10-28): 모두 남긴다. 범주에 따른 문서 계통 구조와 태그는 서로 별개의 분류 체계라, 범주 폴더에 있다는 이유로 같은 이름 태그를 지우지 않는다. 상류 스캐폴드와 다른 자손도 범주 이름 태그를 쓴다.
+      - 상태 상세: 사용자 결정(2026-10-28): 모두 남긴다. 범주에 따른 문서 계통 구조와 태그는 서로 별개의 분류 체계라, 범주 폴더에 있다는 이유로 같은 이름 태그를 지우지 않는다. 상류 스캐폴드와 다른 자손도 범주 이름 태그를 쓴다. 근거를 [AGENTS/tag-vocabulary.md](../AGENTS/tag-vocabulary.md)에 적었다.
     - [x] 묶음을 만들지 않는 단일 사용 태그 다섯을 뺄지 정한다
       - 설명: `정식`, `약식`(formal-and-short-rules.md, 같은 문서의 `규약`이 묶음을 맡는다), `검토`(일반어), `출력스타일`(같은 문서의 `외부지침`이 묶음을 맡는다), `프로젝트`(일반어). 감사자는 삭제를 권한다(감사자 판단). 실행 전 `--drop 정식 --drop 약식 --drop 검토 --drop 출력스타일 --drop 프로젝트 --dry-run`으로 확인한다.
       - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. `retag.py`로 다섯 태그를 뺐다(문서 3건). 동결 문서 2026-10-12-attention-span-review.md의 태그 변경은 본문 의미를 바꾸지 않는 front matter 정합 유지 수정이다 (ref: [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "날짜 프리픽스의 의미와 종결 신호").
