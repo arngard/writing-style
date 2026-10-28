@@ -62,21 +62,24 @@ description: 작업의 계층 구조와 다음 작업 포인터
     - 상태 상세: 상류 설계 원칙(강타입 등)을 이 레포에서 덮어쓸지의 질문은 상류가 9778a7a에서 강타입을 코드와 데이터 모델 결정으로 한정하고 문서와 글쓰기 규약에는 적용하지 않는다고 밝혀 걷어 냈다([design-principles.md](../AGENTS/epistemic-rules/design-principles.md)). README 태그 중복은 태그 원칙이 바뀐 뒤 README 두 편의 태그가 `소개` 하나라 해소돼 걷어 냈다.
 
 - [/] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
-  - 상태 상세: 의미 감사, 약식 규칙의 자리, 상류 규범과의 관계 등재는 처리했다. 남은 것은 태그 어휘 정리안(사용자 결정 대기)과 정식 규약에 없는 상류 약식 규칙 조항(등재만 유지)이다.
+  - 상태 상세: 의미 감사, 약식 규칙의 자리, 상류 규범과의 관계 등재, 태그 어휘 정리안 넷 중 셋은 처리했다. 남은 것은 범주 이름 태그를 둘지(사용자 결정 대기)와 정식 규약에 없는 상류 약식 규칙 조항(등재만 유지)이다.
   - [x] 흡수 뒤 의미 감사를 받고 상태 레지스트리를 갱신한다
     - 설명: 독립 감사 에이전트가 338370d부터 c81f60c까지의 흡수 이후 상태(main c51422d)를 감사했다. 판정은 조건부 clean이며, 승인이 필요 없는 지적은 이 흡수 단위에서 반영하고 태그 정리안은 아래 노드에 받았다. 9778a7a 흡수 뒤에는 전체 재감사 없이 감사가 짚은 머지 뒤 점검만 한다.
   - [/] 이 레포 문서의 태그 어휘 정리안을 정한다
     - 설명: 의미 감사의 병합안과 삭제안을 사용자가 승인한 것만 바꾼다 (ref: [tags.md](../AGENTS/epistemic-rules/tags.md) "어휘 정리"). 옛 첫 항목 규칙에서 온 범주 이름 태그를 남길지, `규약`과 상류 `규칙`의 표기 갈림 등이 후보다.
-    - 상태 상세: 2026-10-28 의미 감사가 아래 네 안을 냈고 모두 사용자 결정 대기다. 명령은 모두 `python3 AGENTS/epistemic-rules/tools/retag.py`로 시작한다. `retag.py`는 `implementation/` 하위 문서를 보지 않으므로 바뀌는 태그가 그 문서에도 있으면 손으로 고친다.
-    - 브랜치: docs/261028-tag-cleanup (워크트리: ../writing-style.worktrees/docs-261028-tag-cleanup)
-    - [ ] `규약`과 상류 `규칙`을 합칠지 정한다
+    - 상태 상세: 2026-10-28 의미 감사가 아래 네 안을 냈다. 감사자 권고가 있는 셋은 적용했고, 권고가 없는 범주 이름 태그만 사용자 결정 대기다. 명령은 모두 `python3 AGENTS/epistemic-rules/tools/retag.py`로 시작한다. `retag.py`는 `implementation/` 하위 문서를 보지 않으므로 바뀌는 태그가 그 문서에도 있으면 손으로 고친다.
+    - [x] `규약`과 상류 `규칙`을 합칠지 정한다
       - 설명: `규약` 2건(plain-prose-rules.md, formal-and-short-rules.md), `규칙` 19건. 이 레포 온톨로지가 정식 규약과 약식 규칙을 다른 개념으로 정의하므로 합치면 그 구분이 태그에서 사라진다. 감사자는 둘 다 두고 `AGENTS/tag-vocabulary.md`를 새로 두어 합치지 않는 이유를 적는 안을 권한다(감사자 판단). 후속 과제 분류는 상류 고정 태그 `규칙`으로 합치는 안을 권했다(AI 제안). 합친다면 `--map 규약=규칙`.
+      - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. 합치지 않고, 이유를 자손 규범 [AGENTS/tag-vocabulary.md](../AGENTS/tag-vocabulary.md)에 두고 루트 [AGENTS.md](../AGENTS.md) "이 워크스페이스의 규범"에 등재했다.
     - [ ] 범주 이름 태그를 둘지 정한다
       - 설명: 옛 첫 항목 규칙에서 온 `architecture` 8건, `knowledge` 7건, `ontology` 7건, `strategy` 6건, `implementation/` 하위의 `implementation` 5건. 현 태그 규약은 위치만을 이유로 달거나 빼지 않는다. 각 문서가 그 범주라는 의미 단위에 속하면 두고, 위치만으로 붙었으면 범주별로 경로를 한정해 뺀다(예: `--drop knowledge --path epistemic-structure/knowledge`). 같은 이름 폴더를 소개하는 부모 문서에서 뺄지는 따로 정한다. 감사자는 한쪽을 권하지 않았고, 후속 과제 분류는 걸렀을 때 의미 있는 묶음인지로 판정하라고 권했다(AI 제안).
-    - [ ] 묶음을 만들지 않는 단일 사용 태그 다섯을 뺄지 정한다
+      - 상태 상세: 감사자 권고가 없어 2026-10-28 일괄 적용에서 빼고 적용하지 않았다. 사용자 결정 대기.
+    - [x] 묶음을 만들지 않는 단일 사용 태그 다섯을 뺄지 정한다
       - 설명: `정식`, `약식`(formal-and-short-rules.md, 같은 문서의 `규약`이 묶음을 맡는다), `검토`(일반어), `출력스타일`(같은 문서의 `외부지침`이 묶음을 맡는다), `프로젝트`(일반어). 감사자는 삭제를 권한다(감사자 판단). 실행 전 `--drop 정식 --drop 약식 --drop 검토 --drop 출력스타일 --drop 프로젝트 --dry-run`으로 확인한다.
-    - [ ] `링크`를 `참조`로 합칠지 정한다
+      - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. `retag.py`로 다섯 태그를 뺐다(문서 3건). 동결 문서 2026-10-12-attention-span-review.md의 태그 변경은 본문 의미를 바꾸지 않는 front matter 정합 유지 수정이다 (ref: [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "날짜 프리픽스의 의미와 종결 신호").
+    - [x] `링크`를 `참조`로 합칠지 정한다
       - 설명: `링크` 1건(why-reference-markers-follow-reliance.md, 이미 `참조`도 단다). 이 레포의 참조 규약은 링크(형식)와 참조(기대는 관계)를 구분해 엄밀한 동의어가 아니다. 감사자는 병합안을 내면서 확실하지 않음으로 표시했다. 합치면 `--map 링크=참조`에 더해 implementation/reference-notation/reference-markers.md를 손으로 고친다.
+      - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. why-reference-markers-follow-reliance.md는 `retag.py`로, implementation/reference-notation/reference-markers.md는 손으로 고쳤다. 두 문서 모두 `참조`가 이미 있어 `링크`만 빠졌다.
   - [x] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
     - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md)는 상류 "판별 규칙"에 보태는 배치이고, 이 레포 자신의 문서를 쓸 때 [plain-prose-rules.md](../epistemic-structure/architecture/plain-prose-rules.md)와 상류 약식 규칙이 어긋나면 어느 쪽을 따를지 정한 곳이 없다. 루트 [AGENTS.md](../AGENTS.md)의 두 읽는 시점 문장을 규범 절로 옮길지도 함께 정한다 (ref: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "특수화 방식").
     - 상태 상세: 후속 과제 분류의 권고안대로 등재했다. category-placement.md는 상류 "판별 규칙"에 대한 보탬으로 [epistemic-structure/AGENTS.md](../epistemic-structure/AGENTS.md)에, plain-prose-rules.md는 이 레포 자신의 평서문 기록에서 상류 약식 규칙의 겹치는 조항을 대체하는 것으로 루트 AGENTS.md에 두었다. 정식 규약에 없는 상류 조항은 상류를 따른다. 두 읽는 시점 문장은 규범 절로 옮겼다.
