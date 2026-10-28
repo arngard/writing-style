@@ -60,7 +60,8 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
     - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상, 또는 인스턴스 유지 시 워크스페이스 운영 규범이라 `AGENTS/` 옆 낱개 문서), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, 상류 설계 원칙([design-principles.md](../AGENTS/epistemic-rules/design-principles.md), 강타입 등)을 이 레포에서 덮어쓸지, README 태그 중복(2026-10-28 흡수로 태그 원칙이 바뀌어 해소된 것으로 보인다).
 
-- [ ] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
+- [/] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
+  - 브랜치: chore/261028-upstream-sync-9778a7a (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-9778a7a)
   - [ ] 흡수 뒤 의미 감사를 받고 상태 레지스트리를 갱신한다
     - 설명: 트리거가 충족돼 있고 이번 흡수가 큰 변경이다. 아래 태그 정리안도 이 감사에서 받는다.
   - [ ] 이 레포 문서의 태그 어휘 정리안을 정한다
@@ -71,3 +72,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
     - 설명: [formal-and-short-rules.md](../epistemic-structure/ontology/formal-and-short-rules.md)와 루트 AGENTS.md가 스캐폴드 약식 규칙을 `writing-style.md` 하나로 부른다. 상류는 늘 읽히는 핵심을 `communication.md`로 옮겼다. 온톨로지 정의라 관련 문서와의 정합도 함께 본다.
   - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
     - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
+
+- [/] 스캐폴드 9778a7a 흡수 (문언 정정, 감사 도구, 워크플로 판 고정)
+  - 설명: 상류 변경이 위 2026-10-28 노드의 항목(설계 원칙의 강타입 범위, 약식 규칙의 상황별 안내 목록 조항, 주기 표의 행 단위 덮어쓰기)과 맞물려 같은 브랜치에서 함께 처리한다. 흡수 전에 의미 감사 결과를 먼저 기록한다.
+  - 브랜치: chore/261028-upstream-sync-9778a7a (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-9778a7a)
