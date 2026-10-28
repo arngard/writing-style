@@ -26,6 +26,7 @@ writing-style 고유 규범:
 
 - 글쓰기 지식의 배치: 새 글쓰기 지식, 근거, 규정을 어느 범주와 `implementation`에 둘지는 [epistemic-structure/architecture/category-placement.md](epistemic-structure/architecture/category-placement.md)를 따른다. 상류 범주 판별에 대한 보탬이며 등재는 [epistemic-structure/AGENTS.md](epistemic-structure/AGENTS.md)에 있다.
 - 평서문 기록: 평서문 기록을 쓰거나 윤문할 때는 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)를 읽는다.
+- 태그 어휘: 의미 감사의 태그 병합안이나 삭제안을 검토하거나 여러 문서에 걸쳐 태그를 바꿀 때는 [AGENTS/tag-vocabulary.md](AGENTS/tag-vocabulary.md)를 읽는다. 상류 [tags.md](AGENTS/epistemic-rules/tags.md) "어휘 정리"가 정한 자리다.
 
 덮어쓰기와 보태기 목록:
 

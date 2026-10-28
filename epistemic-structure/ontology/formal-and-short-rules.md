@@ -1,7 +1,7 @@
 ---
 date created: 2026-10-21
 date modified: 2026-10-28
-tags: [ontology, 규약, 정식, 약식]
+tags: [ontology, 규약]
 description: 정식 규약과 약식 규칙의 정의, 약식 규칙의 자리, 둘의 관계
 ---
 

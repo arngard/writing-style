@@ -1,7 +1,7 @@
 ---
 date created: 2026-05-19
 date modified: 2026-10-28
-tags: [strategy, 프로젝트]
+tags: [strategy]
 description: 이 레포의 목적과 포함, 미포함 범위를 정한 프로젝트 수준 결정
 importance: 상
 urgency: 중
