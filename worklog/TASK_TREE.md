@@ -26,7 +26,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
     - 설명: 스캐폴드 소개문인 README.md, README.en.md를 이 워크스페이스의 소개로 교체하고(상류를 받으면 충돌 유의), LICENSE를 정한다.
     - 상태 상세: README 두 편은 이 레포의 소개로 교체했다. LICENSE는 상류의 MIT 라이선스를 그대로 둔다(사용자 결정).
   - [ ] 감사 주기 값 검토
-    - 설명: [status-registry.md](AGENTS/epistemic-rules/status-registry.md) "주기 조건"의 값이 작업 빈도에 맞는지 검토한다. 바꿀 값이 있으면 [AGENTS.md](AGENTS.md)에 그 절의 형식으로 덮어쓰기 표를 만들어 둔다.
+    - 설명: [status-registry.md](AGENTS/epistemic-rules/status-registry.md) "주기 조건"의 값이 작업 빈도에 맞는지 검토한다. 바꿀 값이 있으면 [AGENTS.md](AGENTS.md)에 그 절의 형식으로 바꿀 행만 적은 표를 둔다. 표에 없는 행은 상류 표를 따른다.
   - [x] 프로젝트 수준 상위 결정 기록
     - 설명: 프로젝트 목표, 첫 출시 핵심 목표와 스펙, 향후 확장, 대상 고객과 사용자 등 큰 결정을 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md) 아래 `why-*.md` 문서들로 분리 작성한다. `project-overview.md`는 실제 내용으로 교체 완료.
   - [x] 도메인 온톨로지 정의
@@ -58,7 +58,8 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [x] main 직접 커밋 2건의 당시 허용 여부를 사용자와 대조한다
     - 설명: ddd9f8f(2026-07-18), 2f56a2b(2026-07-21). 둘 다 TASK_TREE 완결 노드 삭제 커밋이다. 허용된 것이 아니라 규약을 지키지 않은 커밋이었고, 결과에 문제가 없어 이력은 고치지 않는다. 이후 트리 정리도 작업 브랜치 안에서 한다(사용자 판단).
   - [ ] 감사가 확실하지 않음으로 남긴 판단을 사용자와 정한다
-    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상, 또는 인스턴스 유지 시 워크스페이스 운영 규범이라 `AGENTS/` 옆 낱개 문서), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용, 상류 설계 원칙([design-principles.md](../AGENTS/epistemic-rules/design-principles.md), 강타입 등)을 이 레포에서 덮어쓸지, README 태그 중복(2026-10-28 흡수로 태그 원칙이 바뀌어 해소된 것으로 보인다).
+    - 설명: [audience-aware-document-placement.md](../epistemic-structure/architecture/audience-aware-document-placement.md)의 주 위치(상류 격상, 또는 인스턴스 유지 시 워크스페이스 운영 규범이라 `AGENTS/` 옆 낱개 문서), [about-landa-record.md](../epistemic-structure/knowledge/about-landa-record.md) 방침 문장의 위치, devcode-management 호명과 경로 인용.
+    - 상태 상세: 상류 설계 원칙(강타입 등)을 이 레포에서 덮어쓸지의 질문은 상류가 9778a7a에서 강타입을 코드와 데이터 모델 결정으로 한정하고 문서와 글쓰기 규약에는 적용하지 않는다고 밝혀 걷어 냈다([design-principles.md](../AGENTS/epistemic-rules/design-principles.md)). README 태그 중복은 태그 원칙이 바뀐 뒤 README 두 편의 태그가 `소개` 하나라 해소돼 걷어 냈다.
 
 - [/] 2026-10-28 흡수 의미 정합 검토 발견 사항 처리
   - 브랜치: chore/261028-upstream-sync-9778a7a (워크트리: ../writing-style.worktrees/chore-261028-upstream-sync-9778a7a)
@@ -82,7 +83,8 @@ description: 작업의 계층 구조와 다음 작업 포인터
     - 설명: [formal-and-short-rules.md](../epistemic-structure/ontology/formal-and-short-rules.md)와 루트 AGENTS.md가 스캐폴드 약식 규칙을 `writing-style.md` 하나로 부른다. 상류는 늘 읽히는 핵심을 `communication.md`로 옮겼다. 온톨로지 정의라 관련 문서와의 정합도 함께 본다.
     - 상태 상세: 약식 규칙의 자리를 `communication.md`의 세 절과 `writing-style.md`, 그 하위 문서로 고쳤고, 루트 AGENTS.md는 파일 이름 대신 그 자리를 가리킨다. 이 정의를 인용하는 문서는 이름으로만 불러 고칠 것이 없었다.
   - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
-    - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
+    - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 9778a7a 흡수로 상류 [reference-markers.md](../AGENTS/epistemic-rules/writing-style/reference-markers.md)가 표지 생략 대상인 색인 성격의 목록에 규범 요지가 상황별로 읽을 문서를 안내하는 목록(`상황 -> [문서](경로)`)을 더하고, 그 목록의 상황과 대상을 잇는 화살표는 표지로 바꾸지 않는다고 더했다. 정식 규약 [reference-markers.md](../implementation/reference-notation/reference-markers.md)에는 두 조항이 없고, 색인 성격의 목록 예시 문언도 갈린다(정식은 화자 노드가 의견을 늘어놓은 목록, 약식은 인물이나 주제 문서가 관련 문서를 늘어놓은 목록). [plain-prose-rules.md](../epistemic-structure/architecture/plain-prose-rules.md)의 색인 목록 열거도 같이 본다. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
+    - 상태 상세: 등재만 유지한다(사용자 결정, 2026-10-28). 정식 규약에 들이지 않은 상류 조항은 이 레포 자신의 문서에서 상류대로 따른다(루트 AGENTS.md "이 워크스페이스의 규범").
 
 - [/] 스캐폴드 9778a7a 흡수 (문언 정정, 감사 도구, 워크플로 판 고정)
   - 설명: 상류 변경이 위 2026-10-28 노드의 항목(설계 원칙의 강타입 범위, 약식 규칙의 상황별 안내 목록 조항, 주기 표의 행 단위 덮어쓰기)과 맞물려 같은 브랜치에서 함께 처리한다. 흡수 전에 의미 감사 결과를 먼저 기록한다.
