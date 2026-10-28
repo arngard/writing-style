@@ -75,8 +75,9 @@ description: 작업의 계층 구조와 다음 작업 포인터
       - 설명: `정식`, `약식`(formal-and-short-rules.md, 같은 문서의 `규약`이 묶음을 맡는다), `검토`(일반어), `출력스타일`(같은 문서의 `외부지침`이 묶음을 맡는다), `프로젝트`(일반어). 감사자는 삭제를 권한다(감사자 판단). 실행 전 `--drop 정식 --drop 약식 --drop 검토 --drop 출력스타일 --drop 프로젝트 --dry-run`으로 확인한다.
     - [ ] `링크`를 `참조`로 합칠지 정한다
       - 설명: `링크` 1건(why-reference-markers-follow-reliance.md, 이미 `참조`도 단다). 이 레포의 참조 규약은 링크(형식)와 참조(기대는 관계)를 구분해 엄밀한 동의어가 아니다. 감사자는 병합안을 내면서 확실하지 않음으로 표시했다. 합치면 `--map 링크=참조`에 더해 implementation/reference-notation/reference-markers.md를 손으로 고친다.
-  - [ ] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
+  - [x] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
     - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md)는 상류 "판별 규칙"에 보태는 배치이고, 이 레포 자신의 문서를 쓸 때 [plain-prose-rules.md](../epistemic-structure/architecture/plain-prose-rules.md)와 상류 약식 규칙이 어긋나면 어느 쪽을 따를지 정한 곳이 없다. 루트 [AGENTS.md](../AGENTS.md)의 두 읽는 시점 문장을 규범 절로 옮길지도 함께 정한다 (ref: [instance-specialization.md](../AGENTS/epistemic-rules/instance-specialization.md) "특수화 방식").
+    - 상태 상세: 후속 과제 분류의 권고안대로 등재했다. category-placement.md는 상류 "판별 규칙"에 대한 보탬으로 [epistemic-structure/AGENTS.md](../epistemic-structure/AGENTS.md)에, plain-prose-rules.md는 이 레포 자신의 평서문 기록에서 상류 약식 규칙의 겹치는 조항을 대체하는 것으로 루트 AGENTS.md에 두었다. 정식 규약에 없는 상류 조항은 상류를 따른다. 두 읽는 시점 문장은 규범 절로 옮겼다.
   - [x] 스캐폴드 약식 규칙의 범위 서술을 상류 재배치에 맞춘다
     - 설명: [formal-and-short-rules.md](../epistemic-structure/ontology/formal-and-short-rules.md)와 루트 AGENTS.md가 스캐폴드 약식 규칙을 `writing-style.md` 하나로 부른다. 상류는 늘 읽히는 핵심을 `communication.md`로 옮겼다. 온톨로지 정의라 관련 문서와의 정합도 함께 본다.
     - 상태 상세: 약식 규칙의 자리를 `communication.md`의 세 절과 `writing-style.md`, 그 하위 문서로 고쳤고, 루트 AGENTS.md는 파일 이름 대신 그 자리를 가리킨다. 이 정의를 인용하는 문서는 이름으로만 불러 고칠 것이 없었다.

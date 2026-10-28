@@ -14,10 +14,19 @@ tags: [규칙, 문서관리]
 
 ## 이 워크스페이스의 정체
 
-이 레포(writing-style)는 사용자(아릉)의 모든 글쓰기에 대한 정식 규약을 연구, 회고, 규정하는 전문화 워크스페이스다. 대상은 평서문 기록(문서, 보고), 회고, 소설 같은 창작, 코드 주석과 커밋 메시지까지 사용자가 쓰는 모든 글이다. 다른 자리의 글쓰기 규칙(사용자 공통 지침, 스캐폴드 문서 작성 규약. 각 자리는 [formal-and-short-rules.md](epistemic-structure/ontology/formal-and-short-rules.md) "약식 규칙의 자리")은 약식 규칙이고, 이 레포가 그 근거와 전체 규정을 담는 정식 규약이다. 다른 레포에서 윤문할 때 윤문 에이전트가 이 레포를 기준으로 읽으며, 외부 독자의 진입점은 [README.md](README.md)다. 목적과 범위의 근거는 [epistemic-structure/strategy/project-overview.md](epistemic-structure/strategy/project-overview.md)다. 새 글쓰기 지식, 근거, 규정을 어느 범주와 `implementation`에 둘지는 [epistemic-structure/architecture/category-placement.md](epistemic-structure/architecture/category-placement.md)를 따르고, 평서문 기록을 쓰거나 윤문할 때는 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)를 읽는다.
+이 레포(writing-style)는 사용자(아릉)의 모든 글쓰기에 대한 정식 규약을 연구, 회고, 규정하는 전문화 워크스페이스다. 대상은 평서문 기록(문서, 보고), 회고, 소설 같은 창작, 코드 주석과 커밋 메시지까지 사용자가 쓰는 모든 글이다. 다른 자리의 글쓰기 규칙(사용자 공통 지침, 스캐폴드 문서 작성 규약. 각 자리는 [formal-and-short-rules.md](epistemic-structure/ontology/formal-and-short-rules.md) "약식 규칙의 자리")은 약식 규칙이고, 이 레포가 그 근거와 전체 규정을 담는 정식 규약이다. 다른 레포에서 윤문할 때 윤문 에이전트가 이 레포를 기준으로 읽으며, 외부 독자의 진입점은 [README.md](README.md)다. 목적과 범위의 근거는 [epistemic-structure/strategy/project-overview.md](epistemic-structure/strategy/project-overview.md)다.
 
 스캐폴드 template을 upstream으로 상속한다. 위에서 가져온 상류 규범(요지 [AGENTS/epistemic-rules.md](AGENTS/epistemic-rules.md)와 그 묶음)을 따르고, 상속 자산의 변경과 특수화는 [AGENTS/epistemic-rules/instance-specialization.md](AGENTS/epistemic-rules/instance-specialization.md)를 따른다 - 계승된 자산을 제자리에서 고치기 전에 상류 반영과 도메인 특수화를 분기해 사용자에게 짚는다.
 
 ## 이 워크스페이스의 규범
 
 이 워크스페이스 고유의 규범과 상류 규범의 덮어쓰기 목록을 여기에 둔다. 형식은 [AGENTS/epistemic-rules/instance-specialization.md](AGENTS/epistemic-rules/instance-specialization.md)를 따른다.
+
+writing-style 고유 규범:
+
+- 글쓰기 지식의 배치: 새 글쓰기 지식, 근거, 규정을 어느 범주와 `implementation`에 둘지는 [epistemic-structure/architecture/category-placement.md](epistemic-structure/architecture/category-placement.md)를 따른다. 상류 범주 판별에 대한 보탬이며 등재는 [epistemic-structure/AGENTS.md](epistemic-structure/AGENTS.md)에 있다.
+- 평서문 기록: 평서문 기록을 쓰거나 윤문할 때는 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)를 읽는다.
+
+덮어쓰기와 보태기 목록:
+
+- 이 레포 문서의 평서문 기록 규약: 상류 [communication.md](AGENTS/epistemic-rules/communication.md) "문서 작성 스타일", "응답 언어", "대화 보고"와 [writing-style.md](AGENTS/epistemic-rules/writing-style.md), 그 하위 문서에서 겹치는 조항을 대체한다. 이 레포 자신의 평서문 기록(문서, 보고, 커밋 메시지)을 쓰거나 고칠 때 두 규약이 어긋나면 [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)를 따른다. 정식 규약에 없는 상류 조항은 그대로 따른다.
