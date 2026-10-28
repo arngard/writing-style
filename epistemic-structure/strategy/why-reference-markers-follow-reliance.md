@@ -1,7 +1,7 @@
 ---
 date created: 2026-10-24
 date modified: 2026-10-28
-tags: [strategy, 참조, 표기, 링크]
+tags: [strategy, 참조, 표기]
 description: 참조 표지를 이 문서가 대상에 기대는 방식으로 나누는 근거와 기각안
 importance: 중
 urgency: 중

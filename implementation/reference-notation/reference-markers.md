@@ -1,7 +1,7 @@
 ---
 date created: 2026-10-24
 date modified: 2026-10-28
-tags: [implementation, 참조, 표기, 링크]
+tags: [implementation, 참조, 표기]
 ---
 
 # 참조 표지의 판정과 형태
