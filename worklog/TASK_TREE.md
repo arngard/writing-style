@@ -44,10 +44,10 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - 설명: [project-overview.md](../epistemic-structure/strategy/project-overview.md)가 목표로 든 "추출 작업의 운영 절차"는 아직 미작성이다. 절차를 쓸 때 상류 [AGENTS/epistemic-rules/unit-task/stage-authority.md](../AGENTS/epistemic-rules/unit-task/stage-authority.md)(2026-08-08 흡수)이 직접 걸린다 - 문체 특징이 스타일 가이드 규칙으로 승격되는 조건은 여러 문서에서 반복 관측되는가일 텐데, 문서 1건씩 읽는 추출 단계는 그 반복을 볼 수 없다. 승격 판정 권한은 누적 전체를 조망하는 자리(추출 후 정리 라운드)에 두고, 그 라운드는 추출 단계가 후보라고 표시한 것만 받지 않고 추출 산출 전체를 훑도록 설계한다 (AI 제안, 다른 자식 워크스페이스에서 같은 구조 결함이 실측된 데서 온 예방 등재).
 
 - [/] 2026-10-24 의미 감사 발견 사항 처리
-  - 상태 상세: 사용자가 정한 4건은 처리했다. 남은 것은 회고 파일명 형식, 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
-  - [/] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
-    - 브랜치: docs/261030-retrospective-filename-format
+  - 상태 상세: 사용자가 정한 4건과 회고 파일명 형식은 처리했다. 남은 것은 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
+  - [x] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
     - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다. 회고 폴더를 처음 만들 때는 부모 문서 `strategy/retrospectives.md`와 `AGENTS.md`, `CLAUDE.md`를 같은 커밋에 두고, 날짜 순 폴더라 순차 분류로 선언할지 정한다.
+    - 상태 상세: 2026-10-30 정리(`@arngard` 지시). [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 형식을 `yyyy-MM-dd <제목>.md`로 바꾸고, [2026-10-12 attention-span-review.md](../epistemic-structure/knowledge/2026-10-12%20attention-span-review.md)로 리네임한 뒤 [why-preserve-over-compress.md](../epistemic-structure/strategy/why-preserve-over-compress.md)와 색인의 링크를 갱신했다.
   - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
     - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
   - [x] conventions.md의 스캐폴드 상태 마커를 복원할지 코딩 규약 확장 노드를 닫을지 정한다
@@ -77,7 +77,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
       - 상태 상세: 사용자 결정(2026-10-28): 모두 남긴다. 범주에 따른 문서 계통 구조와 태그는 서로 별개의 분류 체계라, 범주 폴더에 있다는 이유로 같은 이름 태그를 지우지 않는다. 상류 스캐폴드와 다른 자손도 범주 이름 태그를 쓴다. 근거를 [AGENTS/tag-vocabulary.md](../AGENTS/tag-vocabulary.md)에 적었다.
     - [x] 묶음을 만들지 않는 단일 사용 태그 다섯을 뺄지 정한다
       - 설명: `정식`, `약식`(formal-and-short-rules.md, 같은 문서의 `규약`이 묶음을 맡는다), `검토`(일반어), `출력스타일`(같은 문서의 `외부지침`이 묶음을 맡는다), `프로젝트`(일반어). 감사자는 삭제를 권한다(감사자 판단). 실행 전 `--drop 정식 --drop 약식 --drop 검토 --drop 출력스타일 --drop 프로젝트 --dry-run`으로 확인한다.
-      - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. `retag.py`로 다섯 태그를 뺐다(문서 3건). 동결 문서 2026-10-12-attention-span-review.md의 태그 변경은 본문 의미를 바꾸지 않는 front matter 정합 유지 수정이다 (ref: [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "날짜 프리픽스의 의미와 종결 신호").
+      - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. `retag.py`로 다섯 태그를 뺐다(문서 3건). 동결 문서 `2026-10-12 attention-span-review.md`의 태그 변경은 본문 의미를 바꾸지 않는 front matter 정합 유지 수정이다 (ref: [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "날짜 프리픽스의 의미와 종결 신호").
     - [x] `링크`를 `참조`로 합칠지 정한다
       - 설명: `링크` 1건(why-reference-markers-follow-reliance.md, 이미 `참조`도 단다). 이 레포의 참조 규약은 링크(형식)와 참조(기대는 관계)를 구분해 엄밀한 동의어가 아니다. 감사자는 병합안을 내면서 확실하지 않음으로 표시했다. 합치면 `--map 링크=참조`에 더해 implementation/reference-notation/reference-markers.md를 손으로 고친다.
       - 상태 상세: 사용자 결정(2026-10-28): 감사자 권고대로 적용. why-reference-markers-follow-reliance.md는 `retag.py`로, implementation/reference-notation/reference-markers.md는 손으로 고쳤다. 두 문서 모두 `참조`가 이미 있어 `링크`만 빠졌다.
