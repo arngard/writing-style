@@ -45,7 +45,8 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 - [/] 2026-10-24 의미 감사 발견 사항 처리
   - 상태 상세: 사용자가 정한 4건은 처리했다. 남은 것은 회고 파일명 형식, 작업 트리의 경위 서술 정리, 감사가 확실하지 않음으로 남긴 판단이다.
-  - [ ] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
+  - [/] 회고 파일명 형식을 상위 시간성 규약에 맞춘다
+    - 브랜치: docs/261030-retrospective-filename-format
     - 설명: [category-placement.md](../epistemic-structure/architecture/category-placement.md) 회고 절의 `yyyy-MM-dd-<슬러그>.md`를 `yyyy-MM-dd <제목>.md`로 고치고, 같은 원인의 `knowledge/2026-10-12-attention-span-review.md`를 리네임하며 링크를 연쇄 갱신한다. 그 문서는 종결 상태라 본문은 바꾸지 않는다. 회고 폴더를 처음 만들 때는 부모 문서 `strategy/retrospectives.md`와 `AGENTS.md`, `CLAUDE.md`를 같은 커밋에 두고, 날짜 순 폴더라 순차 분류로 선언할지 정한다.
   - [x] README.en.md를 이 레포 정체성으로 다시 쓸지 삭제할지 정한다
     - 설명: 내용이 상류 스캐폴드 소개 원문과 같았다. 사용자 결정에 따라 README.md를 영어로 옮겨 다시 썼다.
