@@ -30,7 +30,7 @@ description: 글쓰기 지식을 네 범주와 구현 영역 중 어디에 두�
 
 ## 회고는 날짜 프리픽스 히스토리 문서로 전략 범주에 둔다
 
-회고는 써 본 글에 대한 판단과 교훈이라 전략 범주다. `epistemic-structure/strategy/retrospectives/` 아래 `yyyy-MM-dd <제목>.md` 형식의 히스토리 문서로 둔다. 회고에서 일반화된 규칙은 `architecture`의 해당 갈래 규약으로 올린다. 폴더는 첫 회고와 함께 만든다.
+회고는 써 본 글에 대한 판단과 교훈이라 전략 범주다. `epistemic-structure/strategy/retrospectives/` 아래 `yyyy-MM-dd <제목>.md` 형식의 히스토리 문서로 둔다. 회고에서 일반화된 규칙은 `architecture`의 해당 갈래 규약으로 올린다. 폴더는 첫 회고와 함께 만든다. 그때 부모 문서 `strategy/retrospectives.md`와 폴더의 `AGENTS.md`, `CLAUDE.md`를 같은 커밋에 두고, 날짜 순 폴더라 순차 분류로 선언할지 정한다.
 
 ## 구현 영역은 코드가 아니라 예시 기반 세부 규정을 담는다
 
