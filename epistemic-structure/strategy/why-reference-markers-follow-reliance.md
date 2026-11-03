@@ -51,4 +51,4 @@ urgency: 중
 ## 참고
 
 - see: [plain-prose-rules.md](../architecture/plain-prose-rules.md) "참조는 본문 링크를 우선하고 따로 둘 때 기대는 방식을 표지한다"
-- ref: [user-writing-statements.md](../knowledge/user-writing-statements.md) "참조 표기", [citation-and-cross-reference-conventions.md](../knowledge/citation-and-cross-reference-conventions.md)
+- ref: [citation-and-cross-reference-conventions.md](../knowledge/citation-and-cross-reference-conventions.md)

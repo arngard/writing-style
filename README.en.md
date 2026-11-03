@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-28
+date modified: 2026-11-03
 tags: [소개]
 description: Introduction to the workspace of formal rules for all of the user's writing, with the reading order for revision and the folder layout
 ---
@@ -29,7 +29,7 @@ This repository inherits the [epistemic workspace scaffold](https://github.com/a
 | Area | Holds |
 |------|-------|
 | `epistemic-structure/ontology/` | Definitions of writing genres and writing concepts |
-| `epistemic-structure/knowledge/` | External facts, reviews of external writing guidelines, the user's stated writing preferences |
+| `epistemic-structure/knowledge/` | External facts, reviews of external writing guidelines |
 | `epistemic-structure/strategy/` | Rationale for the rules, rejected alternatives, retrospectives |
 | `epistemic-structure/architecture/` | The formal rules for each genre |
 | `implementation/` | Example-based detailed rules |

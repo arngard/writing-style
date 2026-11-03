@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-10-28
+date modified: 2026-11-03
 tags: [소개]
 description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페이스의 소개, 윤문 때 읽는 순서, 영역 구성
 ---
@@ -29,7 +29,7 @@ description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페�
 | 영역 | 담는 것 |
 |------|---------|
 | `epistemic-structure/ontology/` | 글 갈래와 글쓰기 개념의 정의 |
-| `epistemic-structure/knowledge/` | 외부 사실, 외부 지침의 검토, 사용자의 글쓰기 선호 진술 |
+| `epistemic-structure/knowledge/` | 외부 사실, 외부 지침의 검토 |
 | `epistemic-structure/strategy/` | 규약의 근거, 기각한 대안, 회고 |
 | `epistemic-structure/architecture/` | 갈래별 정식 규약 본체 |
 | `implementation/` | 예시 기반 세부 규정 |
