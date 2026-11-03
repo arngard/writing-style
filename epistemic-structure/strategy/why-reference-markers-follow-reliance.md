@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-24
-date modified: 2026-10-28
+date modified: 2026-11-03
 tags: [strategy, 참조, 표기]
 description: 참조 표지를 이 문서가 대상에 기대는 방식으로 나누는 근거와 기각안
 importance: 중
@@ -25,7 +25,7 @@ urgency: 중
 - 판정은 정보의 의미로 한다. 어느 문서가 먼저 생겼는지, 참조가 어느 절에 놓였는지 같은 기계적 사정은 의미를 담지 않아 판정 근거가 되지 못한다.
 - 표지는 세 글자 소문자에 콜론을 붙인다. 모양이 같아 기호처럼 읽히고, ASCII라 어느 환경에서나 쓴다. `ref`는 정립된 약어이고 `sub`, `see`는 낱말이라 줄임말을 새로 만들지 않는다.
 - 표지 유무는 본문, 각주, 목록, 코드 주석 어디서나 같은 규칙으로 정한다. 문장 속 링크는 표지를 생략하고 따로 붙인 링크는 표지를 단다. 한 규칙이라 기계 검사가 한 가지로 돈다.
-- 자리는 금지하지 않고 선호로 정한다. 각주는 특정 문장을 엄격하게 인용할 때 쓴다. 표지는 줄글에서 참조의 성격을 밝히는 장치라, 표나 그래픽처럼 줄글과 각주가 아닌 형태에서는 생략할 수 있다.
+- 자리는 금지하지 않고 선호로 정한다. 앞부분을 읽으면 참조가 어느 문장이나 여러 문장, 또는 암시하는 지식에 대한 것인지 문맥으로 드러나므로, 문장 끝 괄호, 문단 뒤, 의미가 응집된 절 안의 독립된 줄이 모두 자연스럽다. 각주는 특정 문장을 엄격하게 인용할 때 쓴다. 표지는 줄글에서 참조의 성격을 밝히는 장치라, 표나 그래픽처럼 줄글과 각주가 아닌 형태에서는 생략할 수 있다.
 - 링크하기 불가능하거나 아주 힘든 대상은 세 표지 모두 뒤에 설명으로 적어 독자가 찾아보게 한다. 대상을 링크할 수 있는지는 기계적 사정이라, 표지의 범주를 그것으로 제한하지 않는다.
 - `cf.`, `ref.`(점 형태)는 폐지하고 기존 문서를 모두 교정한다. 옛 표기가 섞여 있으면 한 규칙으로 검사할 수 없다.
 
@@ -51,4 +51,4 @@ urgency: 중
 ## 참고
 
 - see: [plain-prose-rules.md](../architecture/plain-prose-rules.md) "참조는 본문 링크를 우선하고 따로 둘 때 기대는 방식을 표지한다"
-- ref: [user-writing-statements.md](../knowledge/user-writing-statements.md) "참조 표기", [citation-and-cross-reference-conventions.md](../knowledge/citation-and-cross-reference-conventions.md)
+- ref: [citation-and-cross-reference-conventions.md](../knowledge/citation-and-cross-reference-conventions.md)

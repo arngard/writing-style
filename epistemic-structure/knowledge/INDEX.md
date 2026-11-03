@@ -4,4 +4,3 @@
 
 - [2026-10-12 attention-span-review.md](2026-10-12%20attention-span-review.md) - 외부 출력 스타일 Attention Span을 사용자 지침과 대조해 검토하며 확인한 사실
 - [citation-and-cross-reference-conventions.md](citation-and-cross-reference-conventions.md) - 학술, 법률, 백과사전, 코드 문서 주석에서 다른 글을 가리키는 표기의 외부 관례
-- [user-writing-statements.md](user-writing-statements.md) - 사용자가 글쓰기에 대해 밝힌 선호와 판단을 주체와 날짜와 함께 모은 진술
