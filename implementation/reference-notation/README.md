@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-24
-date modified: 2026-10-24
+date modified: 2026-11-03
 tags: [implementation, 참조, 표기, 세부규정]
 ---
 
@@ -10,5 +10,6 @@ tags: [implementation, 참조, 표기, 세부규정]
 
 | 문서 | 다루는 것 |
 |------|-----------|
-| [reference-markers.md](reference-markers.md) | 본문 링크 우선, 표지 세 가지의 판정, 표지의 형태와 자리, 각주와 코드 주석 |
+| [reference-markers.md](reference-markers.md) | 본문 링크 우선, 표지 세 가지의 판정, 표지의 형태 |
+| [placement-and-omission.md](placement-and-omission.md) | 참조를 놓는 자리, 지시어 조준과 순서 지칭, 엄격한 인용의 각주, 코드 주석, 표지를 생략할 수 있는 곳 |
 | [old-marker-migration.md](old-marker-migration.md) | 옛 표기 `cf.`, `ref.`를 새 규정으로 고치는 절차와 형태별 처리 |
