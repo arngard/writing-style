@@ -6,7 +6,7 @@ tags: [implementation, 참조, 표기, 교정]
 
 # 옛 표기 cf., ref.를 고치는 방법
 
-옛 표기 `cf.`, `ref.`를 [reference-markers.md](reference-markers.md)의 규정으로 고치는 절차와 형태별 처리. 표지를 기계적으로 바꿔 달지 않고 참조마다 판정한다.
+옛 표기 `cf.`, `ref.`를 [reference-markers.md](reference-markers.md)와 [placement-and-omission.md](placement-and-omission.md)의 규정으로 고치는 절차와 형태별 처리. 표지를 기계적으로 바꿔 달지 않고 참조마다 판정한다.
 
 ## 참조 하나는 세 단계로 고친다
 

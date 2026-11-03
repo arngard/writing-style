@@ -16,7 +16,7 @@ description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페�
 다른 레포의 글을 윤문하는 에이전트는 아래 순서로 읽는다.
 
 1. [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md)에서 고칠 글의 갈래를 정한다.
-2. [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md)의 문서 목록에서 그 갈래의 규약을 찾아 적용한다. 평서문 기록은 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)다.
+2. [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md)의 문서 목록에서 그 갈래의 규약을 찾아 적용한다. 평서문 기록은 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)이며, 그 하위 문서도 함께 읽는다.
 3. 어법, 표기 같은 세부는 [implementation.md](implementation.md)가 안내하는 예시 기반 세부 규정 묶음을 본다.
 4. 규정의 이유가 필요하면 [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md)의 문서 목록에서 근거 문서를 찾아 본다.
 
