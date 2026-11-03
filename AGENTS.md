@@ -31,4 +31,4 @@ writing-style 고유 규범:
 
 덮어쓰기와 보태기 목록:
 
-- 이 레포 문서의 평서문 기록 규약: 상류 [communication.md](AGENTS/epistemic-rules/communication.md) "문서 작성 스타일", "응답 언어", "대화 보고"와 [writing-style.md](AGENTS/epistemic-rules/writing-style.md), 그 하위 문서에서 겹치는 조항을 대체한다. 이 레포 자신의 평서문 기록(문서, 보고, 커밋 메시지)을 쓰거나 고칠 때 두 규약이 어긋나면 [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)를 따른다. 정식 규약에 없는 상류 조항은 그대로 따른다.
+- 이 레포 문서의 평서문 기록 규약: 상류 [communication.md](AGENTS/epistemic-rules/communication.md) "문서 작성 스타일", "응답 언어", "대화 보고"와 [writing-style.md](AGENTS/epistemic-rules/writing-style.md), 그 하위 문서에서 겹치는 조항을 대체한다. 이 레포 자신의 평서문 기록(문서, 보고, 커밋 메시지)을 쓰거나 고칠 때 두 규약이 어긋나면 [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)와 그 하위 문서를 따른다. 정식 규약에 없는 상류 조항은 그대로 따른다.

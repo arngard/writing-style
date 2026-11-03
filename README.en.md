@@ -16,7 +16,7 @@ A workspace that researches, reviews, and specifies the formal rules for all of 
 An agent revising text in another repository reads in this order.
 
 1. Determine the genre of the text from [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md).
-2. Find and apply the rules for that genre through the document list in [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md). Plain-prose records follow [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md).
+2. Find and apply the rules for that genre through the document list in [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md). Plain-prose records follow [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md); read its subdocuments along with it.
 3. For details such as usage and notation, see the example-based detailed rule sets introduced in [implementation.md](implementation.md).
 4. When the reason for a rule is needed, find the rationale documents through the document list in [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md).
 
