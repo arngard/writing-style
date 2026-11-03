@@ -6,7 +6,7 @@ tags: [implementation, 어휘, 세부규정]
 
 # 어휘 선택 세부 규정
 
-평서문 기록 규약 [epistemic-structure/architecture/plain-prose-rules.md](../../epistemic-structure/architecture/plain-prose-rules.md) "어휘는 정확성을 우선한다"를 실제 문장에 적용하는 세부 규정 묶음. 규정마다 고치기 전과 후의 예시를 둔다.
+평서문 기록 규약의 어휘 조항 [epistemic-structure/architecture/plain-prose-rules/vocabulary.md](../../epistemic-structure/architecture/plain-prose-rules/vocabulary.md)를 실제 문장에 적용하는 세부 규정 묶음. 규정마다 고치기 전과 후의 예시를 둔다.
 
 | 문서 | 다루는 것 |
 |------|-----------|
