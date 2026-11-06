@@ -24,5 +24,5 @@ description: 이 레포가 규약을 나눠 세우는 글 갈래 넷의 정의�
 
 ## 관련
 
-- 갈래별 규약의 자리: [architecture/category-placement.md](../architecture/category-placement.md)
-- 정식 규약과 약식 규칙: [formal-and-short-rules.md](formal-and-short-rules.md)
+- see: [architecture/category-placement.md](../architecture/category-placement.md) - 갈래별 규약의 자리
+- see: [formal-and-short-rules.md](formal-and-short-rules.md) - 정식 규약과 약식 규칙
