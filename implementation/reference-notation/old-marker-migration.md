@@ -2,6 +2,7 @@
 date created: 2026-10-24
 date modified: 2026-11-06
 tags: [implementation, 참조, 표기, 교정]
+description: 옛 표기 cf., ref.를 새 규정으로 고치는 절차와 형태별 처리
 ---
 
 # 옛 표기 cf., ref.를 고치는 방법

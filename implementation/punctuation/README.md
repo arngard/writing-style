@@ -1,7 +1,8 @@
 ---
 date created: 2026-11-03
-date modified: 2026-11-03
+date modified: 2026-11-06
 tags: [implementation, 부호, 표기, 세부규정]
+description: 문장 부호의 ASCII 표기(부호를 바꾸는 표기, 부호 자체를 가리키는 표기, 원형을 쓰는 영역) 세부 규정 묶음의 목록
 ---
 
 # 문장 부호 세부 규정

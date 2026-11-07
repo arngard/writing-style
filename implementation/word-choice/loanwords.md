@@ -2,6 +2,7 @@
 date created: 2026-10-21
 date modified: 2026-11-06
 tags: [implementation, 어휘, 외래어, 번역어]
+description: 외래어, 번역어, 원문 표기 가운데 무엇을 쓸지와 음차 표기의 세부 규정
 ---
 
 # 외래어, 번역어, 원문 표기의 선택
