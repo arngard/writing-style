@@ -28,7 +28,7 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
      INDEX.md 누락은 경고, 낡은 내용과 남는 쪽과 색인을 두지 않는 폴더의 색인
      파일과 INDEX.yaml 형식 오류는 위반
      (생성기와 같은 _index_core.render_all 결과와 비교. 줄바꿈은 LF로 맞춘다.
-      reference/ 하위 폴더와 중첩 저장소 안은 보지 않음)
+      reference/ 하위 폴더와 중첩 레포 안은 보지 않음)
  12. TASK_TREE.md 완료 노드의 브랜치 속성 잔존 - 경고
  13. STATUS.md 레지스트리 표 스키마, 시각 형식 - 경고
  14. front matter tags의 형식과 표기 - 경고
@@ -54,7 +54,7 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
  19. 로컬 .md 링크 뒤 인용 섹션명의 대상 헤딩 실존 - 경고
      (dangling 섹션 참조 검출. 헤딩 번호 접두는 정규화. 대상 부재는 항목 9 소관)
  20. 비ASCII 문장 부호 (em dash, 화살표, 가운뎃점, 말줄임표, 둥근 따옴표) - 경고
-     (백틱/코드펜스 예시와 고정폭 box-drawing 트리, 생성 색인 쪽 파일은 제외.
+     (인라인 코드/코드펜스 안의 코드와 고정폭 box-drawing 트리, 생성 색인 쪽 파일은 제외.
       ref: AGENTS/epistemic-rules/writing-style/ascii-punctuation.md)
  21. front matter description의 스캐폴드 상태 마커와 본문 마커 대조 - 경고
      (description에 "스캐폴드 상태"가 있는데 본문에 없으면 검출. 인스턴스가

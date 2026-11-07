@@ -1,6 +1,6 @@
 ---
 date created: 2026-07-02
-date modified: 2026-10-25
+date modified: 2026-11-07
 tags: [agents, 코딩, epistemic-rules]
 ---
 
@@ -18,25 +18,21 @@ tags: [agents, 코딩, epistemic-rules]
 
 단, 테스트는 타입이 닿지 못하는 행동, 회귀, 경계 조건을 고정하는 보완적 검증이다. [design-principles.md](../../../AGENTS/epistemic-rules/design-principles.md) 설계 원칙의 강타입(correctness by construction)에 따라, 타입이 잡아야 할 오류를 테스트에 위임하지 않는다.
 
-## 코드의 단순함
+## 구조 재편
 
-[working-principles.md](../../../AGENTS/epistemic-rules/working-principles.md) 단순함 우선의 코드 형태.
+모듈 구성을 바꾸는 재편처럼 되돌리기 번거로운 구조 변경은 새 구조를 원본 곁의 다른 폴더에 만들어 옮긴다. 같은 입력으로 원본과 작게 대조하며 단계적으로 옮기고, 마지막에 진입점을 바꾼 뒤 원본을 지운다.
 
-- 20줄로 될 것을 200줄로 쓰지 않는다. 200줄을 쓰고 있는데 50줄로 될 것 같으면 다시 쓴다.
-- 미래에도 단일 사용처에서만 쓰일 코드라면, 추상화를 만들지 않는다.
-- 요청되지 않은 유연성, 설정 가능성을 넣지 않는다.
-- 일어날 수 없는 시나리오에 대한 예외 처리를 넣지 않는다.
+- 전환 전에 원본으로 기준 산출을 만들어 두고, 전환 뒤와 원본 삭제 뒤에 그것과 비교한다. 작업 동안 입력 자료를 갱신하지 않는다.
+- 원본과 비교하는 대조 테스트는 옮긴 뒤 지우고, 원본 없이 성립하는 테스트(정의와 가속 구현의 일치 등)는 남긴다.
 
-## 코드의 외과적 변경
+## 미룬 수정 메모
 
-[working-principles.md](../../../AGENTS/epistemic-rules/working-principles.md) 외과적 변경의 코드 형태.
+나중에 고칠 코드의 메모는 작업 트리보다 그 코드 곁(주석, 모듈 설명)에 두어, 고칠 사람이 코드를 볼 때 바로 보이게 한다. 메모를 넣으면 부작용이 생기는 파일(주석까지 해시나 지문의 입력이 되는 파일 등)이면 가장 가까운 무해한 자리에 둔다.
 
-- 기존 코드를 편집할 때 인접 코드, 주석, 포맷을 덤으로 손대지 않는다.
-- 내가 다르게 짰을 코드라도 기존 스타일에 맞춘다.
-- 내 변경으로 쓰이지 않게 된 import, 변수, 함수만 정리한다. 원래 있던 데드코드는 요청이 없으면 지우지 말고 언급한다.
+## 주석과 스크립트 머리의 이력
 
-## 참고
+코드 주석과 스크립트 머리(모듈 설명, docstring)도 문서처럼 현재 동작과 그 이유를 쓴다 (ref: [document-temporality.md](../../../AGENTS/epistemic-rules/document-temporality.md) "시간성 혼합 금지"). 이름, 값, 동작이 바뀐 사실을 보존하려고만 남기는 이력(옛 이름, 바뀌기 전 값)은 적지 않고 커밋에 맡긴다. 특이한 선택이 이유를 모른 채 원복될 위험이 예상될 때만 그 근거 요지를 남기고 경위는 쓰지 않는다(그 절의 근거 보존 예외).
 
-- see: [working-principles.md](../../../AGENTS/epistemic-rules/working-principles.md) - 일반 작업 수행 원칙.
-- see: [design-principles.md](../../../AGENTS/epistemic-rules/design-principles.md) - 설계 원칙(강타입). 원본 보호 원칙은 [original-protection-principle.md](../../../AGENTS/epistemic-rules/original-protection-principle.md).
-- see: [unit-task-workflow.md](../../../AGENTS/epistemic-rules/unit-task-workflow.md) - 단위 작업 운영 흐름.
+## 메시지
+
+에러 메시지는 첫 문장을 영어로, 상세를 한국어로 쓴다.
