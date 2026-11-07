@@ -11,13 +11,14 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 - [/] 스캐폴드 2700319를 흡수한다
   - 브랜치: `chore/261107-upstream-sync-2700319` (워크트리: `../writing-style.worktrees/chore-261107-upstream-sync-2700319`)
-  - 설명: 상류 e911742 뒤의 84커밋(첫 부모 머지 15개)을 upstream 머지로 흡수한다. 충돌 해소, 색인 재생성, 형식 감사, 스캐폴드 시험, 흡수 뒤 인용 문서 재독과 의미 정합 검토를 한다. 절차는 devcode-management 아키텍처 범주의 `sync-children-with-scaffold.md`다.
+  - 설명: 상류 e911742 뒤의 84커밋(첫 부모 머지 15개)을 upstream 머지로 흡수한다. 충돌 해소, 색인 재생성, 형식 감사, 스캐폴드 시험, 흡수 뒤 인용 문서 재독과 의미 정합 검토를 한다.
 
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 인간 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 인간에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
   - [x] 커밋 전 훅 연결
   - [ ] 상류 연결과 채택 방식 기록
     - 설명: 원본은 이미 `upstream` 원격으로 연결돼 있다. 고른 방식과 이유를 [epistemic-structure/strategy/](../epistemic-structure/strategy/AGENTS.md)에 남긴다.
+    - 설명: 상류와 연결한 워크스페이스라 `.md` 파일의 날짜를 일괄로 바꾸지 않는다(바꾸면 상류 머지마다 충돌한다). 채택 방식별 처리는 [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "출고 문서의 날짜".
   - [x] 워크스페이스 폴더 이름을 프로젝트에 맞게 변경
   - [-] 모든 `.md` 파일의 `date created` / `date modified`를 오늘 날짜로 일괄 업데이트
     - 설명: 상류와 연결한 워크스페이스라 날짜를 바꾸지 않는다(바꾸면 상류 머지마다 충돌한다). 채택 방식별 처리는 [document-temporality.md](../AGENTS/epistemic-rules/document-temporality.md) "출고 문서의 날짜".
@@ -51,7 +52,7 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [x] 정식 규약 문서와 상류 규범의 관계를 "이 워크스페이스의 규범"에 등재할지 정한다
   - [x] 스캐폴드 약식 규칙의 범위 서술을 상류 재배치에 맞춘다
   - [ ] 정식 규약에 없는 상류 약식 규칙 조항을 들일지 정한다
-    - 설명: 흡수 전부터의 차이다. 줄임말 회피(레포가 걸리는지 포함), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지, 에러 메시지 첫 문장 영문. 9778a7a 흡수로 상류 [reference-markers.md](../AGENTS/epistemic-rules/writing-style/reference-markers.md)가 표지 생략 대상인 색인 성격의 목록에 규범 요지가 상황별로 읽을 문서를 안내하는 목록(`상황 -> [문서](경로)`)을 더하고, 그 목록의 상황과 대상을 잇는 화살표는 표지로 바꾸지 않는다고 더했다. 정식 규약 [placement-and-omission.md](../implementation/reference-notation/placement-and-omission.md)에는 두 조항이 없고, 색인 성격의 목록 예시 문언도 갈린다(정식은 화자 노드가 의견을 늘어놓은 목록, 약식은 인물이나 주제 문서가 관련 문서를 늘어놓은 목록). 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
+    - 설명: 흡수 전부터의 차이다. 줄임말 회피(상류는 "레포(레포지토리)"를 허용한다), 말줄임표와 둥근 따옴표의 ASCII 치환, 코드 블록 절제, 절 참조 형식, 결격 대응, 비속어 금지. 9778a7a 흡수로 상류 [reference-markers.md](../AGENTS/epistemic-rules/writing-style/reference-markers.md)가 표지 생략 대상인 색인 성격의 목록에 규범 요지가 상황별로 읽을 문서를 안내하는 목록(`상황 -> [문서](경로)`)을 더하고, 그 목록의 상황과 대상을 잇는 화살표는 표지로 바꾸지 않는다고 더했다. 정식 규약 [placement-and-omission.md](../implementation/reference-notation/placement-and-omission.md)에는 두 조항이 없고, 색인 성격의 목록 예시 문언도 갈린다(정식은 화자 노드가 의견을 늘어놓은 목록, 약식은 인물이나 주제 문서가 관련 문서를 늘어놓은 목록). 2700319 흡수로 상류가 더한 조항 가운데 정식 규약에 없는 것은 통용되는 개념의 정의를 새로 적지 않는 조항([writing-style.md](../AGENTS/epistemic-rules/writing-style.md) "통용되는 개념의 정의"), 도구 호출 설명과 진행 알림처럼 사용자 화면에 보이는 글도 한국어로 쓰는 조항([communication.md](../AGENTS/epistemic-rules/communication.md) "응답 언어"), 질문에 대상 정보, 배경, 선택지, 판단 기준을 함께 두는 조항([conversation-reporting.md](../AGENTS/epistemic-rules/writing-style/conversation-reporting.md)), [attribution-scope.md](../AGENTS/epistemic-rules/writing-style/attribution-scope.md)의 의견의 시점, 결정 주체의 커밋 기록, 결정의 표기 범위다. 결정의 표기는 정식 규약이 규칙 문서에만 걸고 상류는 현재적 문서의 규칙, 명세, 결정 문장 전반에 건다. 동기화 방향의 난점이 풀리기 전에는 등재만 한다.
     - 상태 상세: 등재만 유지한다(사용자 결정, 2026-10-28). 정식 규약에 들이지 않은 상류 조항은 이 레포 자신의 문서에서 상류대로 따른다(루트 AGENTS.md "이 워크스페이스의 규범").
 
 - [x] 글쓰기 규약에 맞춰 이 레포가 소유한 문서를 윤문한다
