@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-11-03
+date modified: 2026-11-06
 tags: [소개]
 description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페이스의 소개, 윤문 때 읽는 순서, 영역 구성
 ---
@@ -18,7 +18,7 @@ description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페�
 1. [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md)에서 고칠 글의 갈래를 정한다.
 2. [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md)의 문서 목록에서 그 갈래의 규약을 찾아 적용한다. 평서문 기록은 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)이며, 그 하위 문서도 함께 읽는다.
 3. 어법, 표기 같은 세부는 [implementation.md](implementation.md)가 안내하는 예시 기반 세부 규정 묶음을 본다.
-4. 규정의 이유가 필요하면 [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md)의 문서 목록에서 근거 문서를 찾아 본다.
+4. 규정의 이유가 필요하면 [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md)의 문서 목록에서 근거 문서를 찾아본다.
 
 윤문의 대상은 그 레포의 글이며, 이 레포는 읽기만 한다. 이 레포의 규정과 대상 레포가 따르는 약식 규칙이 어긋나면 고치기 전에 사용자에게 짚는다. 이 레포의 규정에서 고칠 점을 발견하면 이 레포의 작업으로 넘긴다.
 

@@ -1,7 +1,8 @@
 ---
 date created: 2026-10-24
-date modified: 2026-11-03
+date modified: 2026-11-06
 tags: [implementation, 참조, 표기, 세부규정]
+description: 참조 표기(본문 링크 우선, 참조 표지의 판정과 형태, 참조의 자리와 표지 생략, 옛 표기의 교정) 세부 규정 묶음의 목록
 ---
 
 # 참조 표기 세부 규정

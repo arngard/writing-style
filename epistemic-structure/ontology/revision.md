@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-28
+date modified: 2026-11-06
 tags: [ontology, 윤문]
 description: 윤문의 정의와 이 레포에서의 쓰임
 ---
@@ -17,5 +17,5 @@ description: 윤문의 정의와 이 레포에서의 쓰임
 
 ## 관련
 
-- 정식 규약과 약식 규칙: [formal-and-short-rules.md](formal-and-short-rules.md)
-- 평서문 기록 규약: [architecture/plain-prose-rules.md](../architecture/plain-prose-rules.md)
+- see: [formal-and-short-rules.md](formal-and-short-rules.md) - 정식 규약과 약식 규칙
+- see: [architecture/plain-prose-rules.md](../architecture/plain-prose-rules.md) - 평서문 기록 규약
