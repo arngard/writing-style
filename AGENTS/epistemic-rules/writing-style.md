@@ -1,14 +1,13 @@
 ---
 date created: 2026-07-05
-date modified: 2026-10-27
+date modified: 2026-11-07
 tags: [agents, 규칙, 문서관리, epistemic-rules]
+description: 문장과 서술 수준의 작성 규약 세부(표준 표현, 개념어, 개념 정의, 출처 표기 범위, 요약의 정보 보존, 절 참조, 자체 완결성, 도구 전용 설정 파일 예외)
 ---
 
 # 일반 문서 작성 스타일
 
-문장, 서술 수준의 작성 규약. 진입자가 첫 화면에서 봐야 할 핵심(담백한 평서문, 서식 절제, 마크다운 링크와 참조 표지, 약어와 줄임말, front matter)은 [communication.md](communication.md) "문서 작성 스타일"에서, 평어체와 응답 언어는 같은 문서 "응답 언어"에서, 추측 금지와 사실/의견 분리는 [epistemic-rules.md](../epistemic-rules.md) "비협상 게이트"에서 보고, 본 문서는 그 외 규약의 본문이다.
-
-문서의 배치와 분할은 [document-units.md](document-units.md)와 [folder-structure.md](folder-structure.md), 문서 시간성은 [document-temporality.md](document-temporality.md) 참조.
+문장, 서술 수준의 작성 규약의 세부다. 늘 적재되는 핵심은 [communication.md](communication.md)와 [epistemic-rules.md](../epistemic-rules.md) "비협상 게이트"에 있다.
 
 ## 코드 블록 절제
 
@@ -27,18 +26,18 @@ tags: [agents, 규칙, 문서관리, epistemic-rules]
 정확한 개념어를 쓰라는 요구와 군더더기 없는 평서문을 쓰라는 요구는 층위가 다르다. 앞은 개념에 맞는 단어를 고르는 일(단어 선택)이고, 뒤는 그 단어를 부풀리거나 치장하지 않고 엮는 일(문장 구성)이다. 층위가 다르므로 대개 같은 방향을 가리키고 서로 충돌하지 않는다.
 
 - 겉멋 든 전문 용어나 불필요한 외래어를 정확함으로 착각해 끌어들이지 않는다. 이미 뜻이 정확한 표준어가 있으면 기술적으로 들린다는 이유로 바꾸지 않는다.
-- 진짜 전문 용어(그 개념의 표준 명칭)는 정확성을 우선해 그대로 쓰고, 첫 등장 시 풀어쓴다(약어 병기는 [communication.md](communication.md) "문서 작성 스타일" 참조).
-- 정확함으로 착각한 치장 어휘는 정확성과 담백함을 동시에 위반한다. 둘이 충돌하는 것처럼 보이는 경우는 대개 치장을 정확함으로 오인한 것이다.
+- 진짜 전문 용어(그 개념의 표준 명칭)는 정확성을 우선해 그대로 쓰고, 첫 등장 시 풀어쓴다. 약어 병기는 [communication.md](communication.md) "문서 작성 스타일"을 따른다.
+
+## 통용되는 개념의 정의
+
+통용되는 개념은 정의를 새로 적지 않고 그 말을 그대로 쓴다. 통용 여부는 그 문서의 독자가 설명 없이 같은 뜻으로 읽는가로 판단하며, 액면 그대로 뜻이 통하는 말도 여기에 든다. 뜻이 갈려 읽는 사람이 행동을 정할 수 없을 때만 정의한다.
+
+- 통용되는 뜻과 다르게 쓰거나 좁혀 쓰면 달라지는 부분만 적는다. 도메인 용어의 정의는 [온톨로지 규범](../../epistemic-structure/ontology/AGENTS/epistemic-rules.md)을 따른다.
+- 독자에게 통용되지 않는 표준 전문 용어는 같은 문서 "정확한 개념어와 담백한 문체"에 따라 첫 등장 시 풀어쓴다.
 
 ## 출처와 주체 표기의 범위
 
-사실과 의견을 구분하고 의견에 주체를 명시하는 원칙은 [epistemic-rules.md](../epistemic-rules.md) "비협상 게이트" 참조. 본 절은 그 표기를 어디까지 하는가를 정한다.
-
-- 표기가 필요한 것: 의견, 주장, 분석, 판단의 주체. 검증이 필요하거나 논쟁적인 사실, 특정 외부 출처에서 온 사실의 출처. 같은 사실이 진술 주체의 소속, 직책, 이해관계에 따라 다르게 진술될 수 있으면 출처와 그 출처의 입장을 함께 명시한다.
-- 표기가 필요 없는 것: 프로젝트 참여자 누구나 같게 받아들이는 공유 전제. 이런 사실에까지 출처를 다는 것은 잡음이며, 정작 출처가 중요한 진술을 가린다.
-- 판단 기준: 이것이 누군가의 의견이나 주장이라서 다른 사람은 달리 볼 수 있는가.
-- 추론의 표시: 확인한 사실이 아니라 추론한 것은 "~로 추론된다", "~일 가능성이 있다"처럼 추론임을 문장에 드러낸다. 확인한 사실과 같은 단정형으로 쓰지 않는다.
-- 결격 대응: 주체나 출처가 누락된 의견, 정보를 발견하면 추측으로 채우지 않고 작성자에게 보완을 요청한다.
+의견, 검증이 필요하거나 논쟁적인 사실, 외부 출처에서 온 사실에 주체와 출처를 달고, 추론은 추론임을 문장에 드러낸다. 현재적 문서에 적는 워크스페이스 자신의 결정에는 결정자와 날짜를 달지 않는다. 표기할 것과 하지 않을 것, 결정과 의견 시점의 표기, 결정 주체의 커밋 기록, 추론의 표시, 결격 대응은 [attribution-scope.md](writing-style/attribution-scope.md).
 
 ## 요약과 축약의 정보 보존
 
@@ -58,13 +57,14 @@ tags: [agents, 규칙, 문서관리, epistemic-rules]
 
 ## 도구 전용 설정 파일 예외
 
-도구가 형식을 정하는 파일은 그 도구의 형식을 따르고 front matter 의무에서 빠진다. 대상 파일은 [communication.md](communication.md) "문서 작성 스타일"이 정한다.
+도구가 형식을 정하는 파일(어디에 있든 이름이 `CLAUDE.md`, `SKILL.md`, `copilot-instructions.md`인 파일과 도구 폴더 `.claude/`, `.github/`, `.kiro/` 아래 파일)은 그 도구의 형식을 따라 front matter 의무에서 빠지지만, 본문에는 다른 문서 규범이 그대로 걸리고 지침을 담은 파일이면 [norm-authoring.md](norm-authoring.md) "근거와 기록"도 걸린다. 생성 색인과 `.git/`, `node_modules/`, `.tmp/`, `__pycache__/` 아래, git이 무시하는 경로는 문서 영역이 아니라 대상 밖이다. `description`은 없어도 감사가 경고하지 않는다 (see: [folder-index.md](folder-index.md)).
 
 ## 하위 문서
 
 분량이 크고 자체 완결적인 세부 규약은 `writing-style/` 아래 하위 문서로 둔다.
 
-- [markdown-link-display-text.md](writing-style/markdown-link-display-text.md): 마크다운 링크 표시텍스트의 정당한 형태 (링크 대상 자체를 가리킴, audit 기계 검사). 문서 간 링크를 작성할 때 읽는다.
-- [ascii-punctuation.md](writing-style/ascii-punctuation.md): 문장 부호 ASCII 우선 표기와 치환, 보존 예외. 문서를 작성하거나 부호를 입력할 때 읽는다.
+- [attribution-scope.md](writing-style/attribution-scope.md): 출처와 주체 표기의 범위, 결정과 의견 시점의 표기, 추론의 표시. 의견, 결정, 출처, 추론을 문장이나 커밋 메시지에 적을 때 읽는다.
+- [markdown-link-display-text.md](writing-style/markdown-link-display-text.md): 마크다운 링크 표시텍스트의 정당한 형태 (링크 대상 자체를 가리킴, 감사 스크립트의 기계 검사). 감사가 표시텍스트 위반을 낼 때 읽는다.
+- [ascii-punctuation.md](writing-style/ascii-punctuation.md): 문장 부호 ASCII 우선 표기와 치환, 보존 예외. 감사가 문장 부호를 지적할 때, 부호 자체를 가리키는 글을 쓸 때 읽는다.
 - [reference-markers.md](writing-style/reference-markers.md): 참조 표지 `ref:`, `sub:`, `see:`의 판정, 형태, 자리 (본문 링크 우선). 문서 간 참조를 따로 둘 때 읽는다.
 - [conversation-reporting.md](writing-style/conversation-reporting.md): 대화 보고의 구성 (결론 선행, 질문은 마지막, 산출물만, 내부 라벨 금지). 사용자에게 보고하거나 답변할 때 읽는다.

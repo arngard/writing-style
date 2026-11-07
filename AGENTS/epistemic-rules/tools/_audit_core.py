@@ -17,9 +17,9 @@ from pathlib import Path
 REFERENCE_DIR = "reference"
 IMPLEMENTATION_DIR = "implementation"
 WORKLOG_DIR = "worklog"
-# 도구 전용 파일은 front matter 면제 (ref: communication.md "문서 작성 스타일"). SKILL.md는 자체 규격(name, description).
-# 아래 두 목록이나 git 무시 경로의 처리(git_ignored_paths)를 바꾸면 communication.md
-# "문서 작성 스타일"의 도구 전용 파일과 대상 밖 목록도 함께 고친다.
+# 도구 전용 파일은 front matter 면제 (ref: writing-style.md "도구 전용 설정 파일 예외"). SKILL.md는 자체 규격(name, description).
+# 아래 두 목록이나 git 무시 경로의 처리(git_ignored_paths)를 바꾸면 writing-style.md
+# "도구 전용 설정 파일 예외"의 도구 전용 파일과 대상 밖 목록도 함께 고친다.
 EXEMPT_FILENAMES = {"CLAUDE.md", "copilot-instructions.md", "SKILL.md"}
 EXEMPT_DIRS = {".git", ".claude", ".github", ".kiro", "node_modules", ".tmp", "__pycache__"}
 
@@ -75,9 +75,9 @@ SIZE_LIMIT_NODE = 3000        # 지식/전략 노드 등 일반 현재적 문서
 SIZE_LIMIT_TEMPORAL = 10000   # 히스토리 문서(날짜 프리픽스)는 누적이 본질
 # 진입층(루트 AGENTS.md)과 폴더 디스크립터(AGENTS.md)는 구조적으로 길어진다 -
 # 진입층은 요지 가져오기/정체성/고유 규범과 덮어쓰기 목록을 한 파일에 담고,
-# 디스크립터는 폴더의 규칙과 하위 구성을 한 파일에 담는다. 상황별 트리거
-# 목록은 루트 요지 AGENTS/epistemic-rules.md "이럴 때 읽는다"에 있고, 요지는
-# 일반 임계를 따른다 (ref: document-units.md "분량 보조 지표").
+# 디스크립터는 폴더의 규칙과 하위 구성을 한 파일에 담는다. 루트 요지
+# AGENTS/epistemic-rules.md는 일반 임계를 따르고, 상황별 트리거 목록은 요지가
+# 가리키는 AGENTS/epistemic-rules/when-to-read.md에 둔다 (ref: document-units.md "분량 보조 지표").
 SIZE_LIMIT_DESCRIPTOR = 5000  # 진입층/폴더 디스크립터(AGENTS.md) 완화 임계
 FOLDER_MD_LIMIT = 25          # 폴더 직속 md 파일 수 - 초과 시 분화 권고
 TEMPORAL_MIX_REPEAT = 5       # 현재적 문서 내 날짜 패턴 반복 임계
@@ -126,8 +126,9 @@ STATUS_TIMESTAMP_RE = re.compile(r"^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}( KST)?$"
 STATUS_HEADER_CELLS = ["이름", "마지막 수행"]
 STATUS_PLACEHOLDER = {"(아직 없음)", "-"}
 # 비ASCII 문장 부호 검출 대상과 ASCII 대체 힌트 (ref: writing-style/ascii-punctuation.md).
-# 코드 펜스, 인라인 코드는 검사 전 제거하므로 규칙 자체의 백틱 예시, 코드,
-# 고정폭 box-drawing 트리는 검출에서 빠진다.
+# 코드 펜스, 인라인 코드는 검사 전 제거하므로 코드와 고정폭 box-drawing 트리는
+# 검출에서 빠진다. 백틱으로 감싼 부호 원형도 빠지므로, 부호를 가리키는 표기를
+# 이름과 코드포인트로 쓰는 일은 규칙이 맡는다.
 NON_ASCII_PUNCT = {
     "—": "em dash - 부연은 ' - ', 정의는 ': ', 분리는 '. '",
     "→": "화살표 - 흐름/상태 변화는 '->'",
@@ -149,7 +150,8 @@ class Finding:
     """감사 발견 1건. 서식 문자열 대신 구조화된 데이터로 다룬다.
 
     severity는 VIOLATION 또는 WARNING. category는 검사 종류 태그
-    (front-matter, link, size 등). path는 워크스페이스 루트 상대 경로 표기.
+    (front-matter, link, size 등). path는 워크스페이스 루트 상대 경로 표기로,
+    운영체제와 무관하게 슬래시로 고정한다.
     출력 서식은 format()이 한 곳에서 결정한다.
     """
 
@@ -157,6 +159,10 @@ class Finding:
     category: str
     path: str
     message: str
+
+    def __post_init__(self) -> None:
+        if os.sep != "/":
+            object.__setattr__(self, "path", self.path.replace(os.sep, "/"))
 
     def format(self) -> str:
         body = f"[{self.category}] {self.path}: {self.message}"

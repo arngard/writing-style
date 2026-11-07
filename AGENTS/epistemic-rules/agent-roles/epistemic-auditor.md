@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-10
-date modified: 2026-10-28
+date modified: 2026-11-07
 tags: [agents, 역할, 감사, epistemic-rules]
 ---
 
@@ -30,27 +30,28 @@ tags: [agents, 역할, 감사, epistemic-rules]
    - 스크립트가 실체 0건 폴더 경고를 낸 폴더가 삭제할 잔재인지, 사양만 있고 실체 0건인 동결(보류 명시 또는 첫 실체 필요)인지, 첫 실체를 기다리는 정상 신설인지
    - 현재적 문서의 근거 보존 예외로 남긴 근거 요지가 경위 서사로 비대해지지 않았는가 (ref: [document-temporality.md](../document-temporality.md) "시간성 혼합 금지")
 3. git 맥락 검출 (스크립트 미담당)
-   - TASK_TREE 노드의 마크 커밋 없는 삭제와 완료 루트의 과다 잔존, 브랜치 속성의 실존, `reference/` 원본의 수정, 삭제, 이동, `date closed` 히스토리 문서의 본문 변경, 상류 머지 밖의 상류 묶음 목록 변경
+   - TASK_TREE 노드의 마크 커밋 없는 삭제와 완료 노드의 과다 잔존, 브랜치 속성의 실존, `reference/` 원본의 수정, 삭제, 이동, `date closed` 히스토리 문서의 본문 변경, 상류 머지 밖의 상류 묶음 목록 변경
    - 항목별 기준과 명령은 [git-context.md](epistemic-auditor/git-context.md)
 4. 카테고리 배치 적절성 (의미 판단)
    - 각 `epistemic-structure/X/` 안의 문서가 그 카테고리의 정의에 부합하는가
-   - 항목 4와 6은 의미 판단이라 항목 1, 2, 3, 5보다 신뢰도가 낮다. 모호한 사례는 "확실하지 않음"으로 처리
-5. 메타-컨텐츠 영역 혼동 (직전 7~10개 단위 작업의 행동 패턴)
-   - 메타 영역(스캐폴드 자체 개발, 외부 컨테이너 관리, 운영 정책, 다른 인스턴스의 작업 이력)의 사실을 인스턴스 컨텐츠 영역에 기재했거나 메타 정책을 모른 채 컨텐츠 작업을 진행한 사례를 찾는다. 단위 작업은 커밋이 아니라 의미 단위로 본다 (ref: [unit-task.md](../unit-task.md)).
-   - 입력은 본 레포의 최근 머지 커밋 목록과 그 본문, TASK_TREE의 활성, 후속 항목이다. 세션 기록과 상속된 상류 이력은 입력하지 않는다.
-   - 세부 패턴: 격리 위반(메타 영역의 사실을 컨텐츠 영역에 기재), 자율 격상(메타 결정을 AI가 자율로 기재), 자율 머지(단위 작업 시작점 커밋 없이 머지된 흔적), 반복 정정(메타 변동에 따른 같은 컨텐츠의 단기 반복 수정), 분석적 쪼개기(미시 분류로 쪼갰다가 통합으로 정정), 단위 경계 오인(한 의미 단위의 자의 분할이나 무관한 단위의 병합).
+   - 항목 4, 6, 7은 의미 판단이라 항목 1, 2, 3, 5보다 신뢰도가 낮다. 모호한 사례는 "확실하지 않음"으로 처리
+5. 메타-콘텐츠 영역 혼동 (직전 7~10개 단위 작업의 행동 패턴)
+   - 메타 영역(스캐폴드 자체 개발, 외부 컨테이너 관리, 운영 정책, 다른 인스턴스의 작업 이력)의 사실을 인스턴스 콘텐츠 영역에 기재했거나 메타 정책을 모른 채 콘텐츠 작업을 진행한 사례를 찾는다. 단위 작업은 커밋이 아니라 의미 단위로 본다 (ref: [unit-task.md](../unit-task.md)).
+   - 입력은 본 레포(레포지토리)의 최근 머지 커밋 목록과 그 본문, TASK_TREE의 활성, 후속 항목이다. 세션 기록과 상속된 상류 이력은 입력하지 않는다.
+   - 세부 패턴: 격리 위반(메타 영역의 사실을 콘텐츠 영역에 기재), 자율 격상(메타 결정을 AI가 자율로 기재), 자율 머지(단위 작업 시작점 커밋 없이 머지된 흔적), 반복 정정(메타 변동에 따른 같은 콘텐츠의 단기 반복 수정), 분석적 쪼개기(미시 분류로 쪼갰다가 통합으로 정정), 단위 경계 오인(한 의미 단위의 자의 분할이나 무관한 단위의 병합).
 6. 태그 어휘 (의미 판단)
    - 뜻이 같은 태그 묶음(한영 쌍, 동의어, 단수와 복수)의 병합안
    - 걸러도 의미 있는 묶음이 생기지 않는 태그의 삭제안
+   - 방법과 보고 형식은 [procedure.md](epistemic-auditor/procedure.md)
+7. 규범 문장 (의미 판단)
+   - 직전 클린 커밋 이후 바뀐 규범이 [norm-authoring.md](../norm-authoring.md) "규범을 정할 때"와 "근거와 기록"(시험, 사례, 측정의 기록이나 경위가 남았는가), [writing-style.md](../writing-style.md) "통용되는 개념의 정의"에 맞는가
    - 방법과 보고 형식은 [procedure.md](epistemic-auditor/procedure.md)
 
 수행 순서와 보고 형식은 [epistemic-auditor/procedure.md](epistemic-auditor/procedure.md)를 따른다. 감사자로서 감사를 수행할 때 읽는다.
 
 ## 호출 시점
 
-- 새 세션 시작 시 트리거 조건을 충족하면 착수 전 호출 (see: [session-boundaries.md](../session-boundaries.md) "세션 시작"). 임계 조건의 SSOT는 `worklog/AGENTS/epistemic-rules/status-registry.md`의 "주기 조건" 절이다. 자손이 `worklog/AGENTS.md`에 표를 두면 그 표의 행이 같은 이름 행보다 먼저이고, 그 표에 없는 행은 상류 표를 따른다.
-  - 판정: `check_semantic_audit.py`로 한다 (see: [tools.md](../tools.md) "의미 감사 트리거 판정 스크립트"). 기준은 본 레포 자신의 클린 커밋 이후 새 커밋이 있고 마지막 수행이 임계 시간을 초과했는가이며, 그 커밋이 없으면 그 자체로 충족이다(최초 1회). 클린 커밋은 trailer를 줄 전체로 갖고(본문 속 언급 제외) 상류 머지로 흘러들지 않은 것만 인정한다.
-  - 기준점 갱신: 호출 후 STATUS의 해당 행을 새 시각으로 갱신하고, 그 갱신과 발견 사항 정리(수정 또는 TASK_TREE 등재)를 담은 커밋에 trailer `Semantic-Audit: clean`을 남긴다. 작업 브랜치 경유로 main에 머지되면 머지 커밋에도 같은 trailer를 남긴다(기준점이 머지 이후를 가리키도록).
+- 새 세션 시작 시 트리거 조건을 충족하면 착수 전 호출 (see: [session-boundaries.md](../session-boundaries.md) "세션 시작"). 임계 조건의 SSOT(single source of truth; 단일 진실 공급원)는 `worklog/AGENTS/epistemic-rules/status-registry.md`의 "주기 조건" 절이다. 자손이 `worklog/AGENTS.md`에 표를 두면 그 표의 행이 같은 이름 행보다 먼저이고, 그 표에 없는 행은 상류 표를 따른다. 판정은 `check_semantic_audit.py`로 하고, 호출 뒤 trailer `Semantic-Audit: clean`을 단 커밋(머지 커밋 포함)으로 기준점을 남긴다. 판정 기준과 기준점 갱신은 [trigger-baseline.md](epistemic-auditor/trigger-baseline.md).
 - 긴 세션 종료 전, 큰 변경 후
 - 사용자가 정합성 의심 시
 - 주기적 점검 (별도 세션으로 사용자가 수동 호출)
