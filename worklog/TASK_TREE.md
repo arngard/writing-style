@@ -9,6 +9,10 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 > 작업의 계층 구조와 다음 작업 포인터. 노드 유형, 표기, 갱신 규칙, 삭제 규칙은 [task-tree.md](AGENTS/epistemic-rules/task-tree.md).
 
+- [/] 스캐폴드 2700319를 흡수한다
+  - 브랜치: `chore/261107-upstream-sync-2700319`
+  - 설명: 상류 e911742 뒤의 84커밋(첫 부모 머지 15개)을 upstream 머지로 흡수한다. 충돌 해소, 색인 재생성, 형식 감사, 스캐폴드 시험, 흡수 뒤 인용 문서 재독과 의미 정합 검토를 한다. 절차는 devcode-management 아키텍처 범주의 `sync-children-with-scaffold.md`다.
+
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 인간 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 인간에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
   - [x] 커밋 전 훅 연결
