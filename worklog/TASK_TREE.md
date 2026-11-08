@@ -9,6 +9,9 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 > 작업의 계층 구조와 다음 작업 포인터. 노드 유형, 표기, 갱신 규칙, 삭제 규칙은 [task-tree.md](AGENTS/epistemic-rules/task-tree.md)에 있다.
 
+- [/] 통용 개념어를 두고 조어를 만들지 않는 규정과 "국면"의 쓰임 규정을 더한다
+  - 브랜치: docs/261108-common-term-and-phase (워크트리: ../writing-style.worktrees/docs-261108-common-term-and-phase)
+
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 사용자 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 사용자에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
   - [ ] 상류 연결과 채택 방식 기록
