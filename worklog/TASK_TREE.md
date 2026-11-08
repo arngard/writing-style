@@ -9,7 +9,8 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 > 작업의 계층 구조와 다음 작업 포인터. 노드 유형, 표기, 갱신 규칙, 삭제 규칙은 [task-tree.md](AGENTS/epistemic-rules/task-tree.md)에 있다.
 
-- [/] 통용 개념어를 두고 조어를 만들지 않는 규정과 "국면"의 쓰임 규정을 더한다
+- [x] 통용 개념어를 두고 조어를 만들지 않는 규정과 "국면"의 쓰임 규정을 더한다
+  - 상태 상세: implementation/word-choice/common-usage.md에 두 절을 더하고 상위 어휘 조항과 안내 목록을 맞췄다.
   - 브랜치: docs/261108-common-term-and-phase (워크트리: ../writing-style.worktrees/docs-261108-common-term-and-phase)
 
 - [/] 워크스페이스 초기 세팅
