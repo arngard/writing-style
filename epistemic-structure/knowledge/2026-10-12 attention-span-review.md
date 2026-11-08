@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-21
-date modified: 2026-10-28
+date modified: 2026-10-21
 date closed: 2026-10-21
 tags: [knowledge, 외부지침]
 description: 외부 출력 스타일 Attention Span을 사용자 지침과 대조해 검토하며 확인한 사실
