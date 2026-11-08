@@ -16,7 +16,7 @@ tags: [규칙, 문서관리]
 
 이 레포(writing-style)는 사용자(아릉)의 모든 글쓰기에 대한 정식 규약을 연구, 회고, 규정하는 전문화 워크스페이스다. 대상은 평서문 기록(문서, 보고), 회고, 소설 같은 창작, 코드 주석과 커밋 메시지까지 사용자가 쓰는 모든 글이다. 다른 자리의 글쓰기 규칙(사용자 공통 지침, 스캐폴드 문서 작성 규약)은 약식 규칙이고, 이 레포가 그 근거와 전체 규정을 담는 정식 규약이다. 각 약식 규칙의 자리는 [formal-and-short-rules.md](epistemic-structure/ontology/formal-and-short-rules.md) "약식 규칙의 자리"가 정리한다. 다른 레포에서 윤문할 때 윤문 에이전트가 이 레포를 기준으로 읽으며, 외부 독자의 진입점은 [README.md](README.md)다. 목적과 범위의 근거는 [epistemic-structure/strategy/project-overview.md](epistemic-structure/strategy/project-overview.md)다.
 
-스캐폴드 템플릿을 `upstream`으로 상속한다. 위에서 가져온 상류 규범(요지 [AGENTS/epistemic-rules.md](AGENTS/epistemic-rules.md)와 그 묶음)을 따르고, 상속 자산의 변경과 특수화는 [AGENTS/epistemic-rules/instance-specialization.md](AGENTS/epistemic-rules/instance-specialization.md)를 따른다. 상속된 자산을 제자리에서 고치기 전에 그 변경이 두 갈래(상류 반영, 도메인 특수화) 가운데 어느 쪽인지 나눠 제시하고 사용자의 확인을 받는다.
+스캐폴드 템플릿을 `upstream`으로 상속한다. 위에서 가져온 상류 규범(요지 [AGENTS/epistemic-rules.md](AGENTS/epistemic-rules.md)와 그 묶음)을 따르고, 상속 자산의 변경과 특수화는 [AGENTS/epistemic-rules/instance-specialization.md](AGENTS/epistemic-rules/instance-specialization.md)를 따른다. 상속된 자산을 제자리에서 고치기 전에는 그 문서의 "변경의 분기"를 거친다.
 
 ## 이 워크스페이스의 규범
 
