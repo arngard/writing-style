@@ -13,6 +13,9 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - 설명: `@arngard` 2026-11-21 지시. 정보 전달이 목적인 문서에 한한다. 진행 중인 문서는 지금의 상태로, 히스토리 문서는 기록 시점의 상태로 쓰고, 이유와 서사는 그 상태를 설명하는 데 필요할 때만 남긴다.
   - 브랜치: docs/261121-document-temporality (워크트리: ../writing-style.worktrees/docs-261121-document-temporality)
 
+- [ ] 스캐폴드 시간성 규범을 문서 시간성 조항에 맞춰 개정하도록 상류에 올린다
+  - 설명: `@arngard` 2026-11-21 승인. 대상은 epistemic-workspace-scaffold-management의 `document-temporality.md` "날짜 프리픽스의 의미와 종결 신호"(종결 문서에 의미 내용을 바꾸지 않는 편집만 허용)와 상속 `writing-style.md`의 현재적 문서 대응 조항이다. 종결된 히스토리 문서도 그 시점의 상태를 설명하지 않는 서사는 지울 수 있게 한다. 개정이 들어오면 약식 규칙 자리 표에 시간성 규범을 올린다.
+
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 사용자 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 사용자에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
   - [ ] 상류 연결과 채택 방식 기록
