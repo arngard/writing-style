@@ -9,6 +9,10 @@ description: 작업의 계층 구조와 다음 작업 포인터
 
 > 작업의 계층 구조와 다음 작업 포인터. 노드 유형, 표기, 갱신 규칙, 삭제 규칙은 [task-tree.md](AGENTS/epistemic-rules/task-tree.md)에 있다.
 
+- [/] 문서는 기록 시점의 현재 상태를 쓴다는 문서 규약을 세운다
+  - 설명: `@arngard` 2026-11-21 지시. 정보 전달이 목적인 문서에 한한다. 진행 중인 문서는 지금의 상태로, 히스토리 문서는 기록 시점의 상태로 쓰고, 이유와 서사는 그 상태를 설명하는 데 필요할 때만 남긴다.
+  - 브랜치: docs/261121-document-temporality (워크트리: ../writing-style.worktrees/docs-261121-document-temporality)
+
 - [/] 워크스페이스 초기 세팅
   - 설명: 이 단계의 모든 "선정/작성" 작업은 사용자 입력 없이 채울 수 없다. AI는 각 작업 전에 필요한 정보를 사용자에게 인터뷰하여 확보한다. 추측으로 채우지 않는다. ref: [epistemic-rules.md](../AGENTS/epistemic-rules.md) "비협상 게이트".
   - [ ] 상류 연결과 채택 방식 기록
