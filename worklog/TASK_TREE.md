@@ -38,5 +38,4 @@ description: 작업의 계층 구조와 다음 작업 포인터
   - [ ] 범위 표시를 물결표 대신 대시로 쓰는 규칙을 이 개편을 거쳐 적용한다
     - 설명: `@arngard` 2026-11-17 지시. 범위 표시를 물결표(`~`)나 "에서 ... 까지" 서술에서 대시(ASCII 하이픈 `-`)로 바꾼다. 물결표는 GitHub 마크다운과 채팅 화면이 물결표 사이를 취소선으로 그려 글이 깨질 수 있다. 스캐폴드 쪽 대상은 `ascii-punctuation.md`의 em dash 항목의 범위 표시 문장과 보존 예외의 `U+2500 ~ U+257F` 표기다. 정할 것: 끝점에 하이픈이 든 날짜 범위(`2026-11-17`부터 `2026-11-20`)의 표기(띄운 하이픈 ` - `은 부연 표지와 겹친다), 감사 검출을 넣을지. 2026-11-22 범위 물결표 실측(코드 영역 밖 숫자-물결표-숫자): 스캐폴드 3곳, epistemic-workspace-scaffold-management 7곳, devcode-management 25곳, writing-style 3곳, mobile-app-scaffold 2곳, investment-cartograph 10,509곳(2,159개 파일). 사용자 공통 지침 원본 devcode-management `implementation/global-claude-md/formal.md` 60행("4~5개")에도 있어 고치면 머신 재설치로 이어진다. `@arngard` 2026-11-22: 범위 표시와 물결표는 이 레포를 개선한 뒤 자연스럽게 처리된다.
 
-- [/] 스캐폴드 1035a49 흡수
-  - 브랜치: chore/261122-upstream-sync-1035a49 (워크트리: ../writing-style.worktrees/chore-261122-upstream-sync-1035a49)
+- [x] 스캐폴드 1035a49 흡수
