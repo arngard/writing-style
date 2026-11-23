@@ -3,7 +3,7 @@
 # epistemic-structure/architecture/plain-prose-rules 색인
 
 - [bullets-and-prose.md](bullets-and-prose.md) - 평서문 기록 규약의 개조식 규칙 문서. 개조식과 줄글을 내용의 구조와 담는 틀로 가르는 기준과 판정법
-- [composition.md](composition.md) - 평서문 기록 규약의 구성 조항. 결론 앞 요약과 본문 보존, 겹침과 정보 없는 문장, 소개 문장의 단순화, 명세의 범위, 위험의 자리, 산출물과 질문의 위치
+- [composition.md](composition.md) - 평서문 기록 규약의 구성 규칙 문서. 결론 앞 요약과 본문 보존, 겹침과 정보 없는 문장, 소개 문장의 단순화, 명세의 범위, 위험의 자리, 산출물과 질문의 위치, 요약과 전재의 정보 보존, 사실과 의견 구분
 - [document-temporality.md](document-temporality.md) - 평서문 기록 규약의 문서 단위 조항. 진행 중인 문서는 지금의 상태로, 히스토리 문서는 기록 시점의 상태로 쓰고, 이유와 서사는 그 상태를 설명하는 데 필요할 때만 남긴다
 - [format.md](format.md) - 평서문 기록 규약의 서식과 기호 규칙 문서. 서식 강조의 절제, 이모지와 장식 기호 배제, 문장 부호의 ASCII 표기, 부호 자체를 가리키는 표기와 원형을 쓰는 영역, 표의 크기
 - [reference.md](reference.md) - 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우선, 표지 세 가지(ref:, sub:, see:)의 판정과 형태, 참조의 자리, 지시어 조준과 부분 지칭, 코드 주석, 표지 생략, 옛 표기 cf., ref.의 교정
