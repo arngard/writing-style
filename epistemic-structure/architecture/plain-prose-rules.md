@@ -23,7 +23,7 @@ description: 평서문 기록의 정식 규약. 어휘, 문장, 서식, 개조�
 
 ## 개조식과 줄글은 내용의 구조와 담는 틀로 가른다
 
-시각적 틀 안의 내용과 서로 독립된 항목의 나열은 개조식으로, 전후가 이어지는 설명은 줄글로 쓴다. 조항과 판정법은 [bullets-and-prose.md](plain-prose-rules/bullets-and-prose.md)에 있다.
+규칙은 [bullets-and-prose.md](plain-prose-rules/bullets-and-prose.md)에 있다.
 
 ## 참조는 본문 링크를 우선하고 따로 둘 때 기대는 방식을 표지한다
 
