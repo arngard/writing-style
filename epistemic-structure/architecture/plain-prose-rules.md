@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-21
-date modified: 2026-11-21
+date modified: 2026-11-23
 tags: [architecture, 평서문, 규약, 윤문]
 description: 평서문 기록의 정식 규약. 어휘, 문장, 서식, 개조식과 줄글, 참조, 구성, 요약, 사실과 의견 구분, 문서 시간성, 기존 글 수정, 자연스러움 검토
 ---
@@ -11,7 +11,7 @@ description: 평서문 기록의 정식 규약. 어휘, 문장, 서식, 개조�
 
 ## 어휘는 정확성을 우선한다
 
-개념에 맞는 정확한 용어를 쓰고, 겉멋 든 전문어나 불필요한 외래어로 치장하지 않는다. 용어 설명, 용어의 통일과 우리말 우선, 통용 어휘, 상대의 어휘보다 정확한 단어 쓰기, 표현 후보 제시, 약어 병기의 조항은 [vocabulary.md](plain-prose-rules/vocabulary.md)에 있다.
+규칙은 [vocabulary.md](plain-prose-rules/vocabulary.md)에 있다.
 
 ## 문장은 담백한 평서문으로 쓴다
 
