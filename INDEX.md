@@ -3,7 +3,7 @@
 # 색인
 
 - [LICENSE](LICENSE) - MIT 라이선스 전문
-- [README.en.md](README.en.md) - Introduction to the formal-rules workspace for all of the user's writing. Revision definition and workflow, rule files by genre, when to read each rule document, folder layout
+- [README.en.md](README.en.md) - Introduction to the formal-rules workspace for all of the user's writing. Polishing definition and workflow, rule files by genre, when to read each rule document, folder layout
 - [README.md](README.md) - 사용자의 모든 글쓰기에 대한 정식 규약 워크스페이스의 소개, 윤문의 정의와 윤문 절차, 갈래별 규약 파일, 규칙 문서를 읽는 때, 영역 구성
 - [epistemic-structure.md](epistemic-structure.md), [epistemic-structure/INDEX.md](epistemic-structure/INDEX.md) - 코드로 표현할 수 없는 지식을 담는 네 범주(ontology, knowledge, strategy, architecture)
 - [implementation.md](implementation.md), [implementation/INDEX.md](implementation/INDEX.md) - 정식 규약을 글에 적용하는 수단. 윤문 하위 프로젝트(규칙의 설명, 기계 규칙, 도구, 워크플로, 윤문 스킬 원본)

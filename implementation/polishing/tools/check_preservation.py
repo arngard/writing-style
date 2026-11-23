@@ -25,7 +25,7 @@ from collections import Counter, OrderedDict
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import _revision_core as core  # noqa: E402
+import _polishing_core as core  # noqa: E402
 
 _NUMBER_RE = re.compile(r"\d+(?:[.,]\d+)*")
 _FM_LINE_RE = re.compile(r"^([A-Za-z_][\w -]*?)\s*:\s?(.*)$")

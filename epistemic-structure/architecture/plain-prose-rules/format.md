@@ -57,7 +57,7 @@ description: 평서문 기록 규약의 서식과 기호 규칙 문서. 서식 �
 
 ### 설명
 
-- [format.md](../../../implementation/revision/explanations/format.md) "부호 자체를 가리킬 때는 이름과 코드포인트로 쓴다"
+- [format.md](../../../implementation/polishing/explanations/format.md) "부호 자체를 가리킬 때는 이름과 코드포인트로 쓴다"
 
 ## 표의 크기는 내용이 정한다 `table-size`
 

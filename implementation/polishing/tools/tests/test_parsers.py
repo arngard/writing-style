@@ -123,7 +123,7 @@ class Python39SyntaxTest(unittest.TestCase):
     """이 머신에 3.9가 없어도 3.9 문법 범위를 넘지 않는지 본다."""
 
     def test_feature_version(self):
-        files = sorted(TOOLS.rglob("*.py")) + [REPO_ROOT / "AGENTS/audit-checks/revision_rules.py"]
+        files = sorted(TOOLS.rglob("*.py")) + [REPO_ROOT / "AGENTS/audit-checks/polishing_rules.py"]
         for f in files:
             if "__pycache__" in f.parts:
                 continue

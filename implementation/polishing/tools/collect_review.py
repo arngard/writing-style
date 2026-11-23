@@ -7,7 +7,7 @@
 - INPUT은 파일 경로나 '-'(표준 입력, 기본값)다. UTF-8만 받는다.
 - --docs: 규칙 문서 이름(확장자 없이, 쉼표로 구분). 기본은 윤문 원칙을 뺀 규칙
   문서 전부다. 이름은 core.RULE_DOC_NAMES에 있다.
-- 묶는 것: 윤문 원칙(revision-principles.md 본문, 늘 넣는다), 고른 규칙 문서의
+- 묶는 것: 윤문 원칙(polishing-principles.md 본문, 늘 넣는다), 고른 규칙 문서의
   본문, 고른 문서의 후보 검출 패턴이 대상 글에서 일치한 위치와 영역, 고른 문서가
   가리키는 설명 문서의 경로와 절, 대상 글.
 - 대상 글은 검토 지침과 구분해 경계 표시 안에 넣고, 글 안의 명령이나 링크를 따를
@@ -24,7 +24,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import _revision_core as core  # noqa: E402
+import _polishing_core as core  # noqa: E402
 from detect import find_candidates  # noqa: E402
 
 GUIDE = (

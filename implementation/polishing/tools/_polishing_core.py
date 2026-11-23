@@ -1,7 +1,7 @@
 """윤문 도구 공용 모듈.
 
 네 도구(detect.py, fix.py, collect_review.py, check_preservation.py)와 감사 확장
-(AGENTS/audit-checks/revision_rules.py)이 함께 쓰는 부분을 담는다.
+(AGENTS/audit-checks/polishing_rules.py)이 함께 쓰는 부분을 담는다.
 
 - 영역 판별(segment): 글을 구문 영역으로 나누고 위치를 돌려준다. 영역 이름은
   REGION_KINDS다. 판별하지 못한 구문(닫히지 않은 펜스, 닫히지 않은 front matter,
@@ -42,20 +42,20 @@ REGION_KINDS = (
     LINK_TARGET, REF_DEFINITION, URL, HTML, PROSE,
 )
 
-# 이 파일은 <루트>/implementation/revision/tools/ 에 있다.
+# 이 파일은 <루트>/implementation/polishing/tools/ 에 있다.
 TOOLS_DIR = Path(__file__).resolve().parent
 DEFAULT_ROOT = TOOLS_DIR.parents[2]
 RULES_DIR_REL = "epistemic-structure/architecture/plain-prose-rules"
-EXPLANATIONS_DIR_REL = "implementation/revision/explanations"
-MECHANICAL_DIR_REL = "implementation/revision/mechanical"
-REVISION_DIR_REL = "implementation/revision"
+EXPLANATIONS_DIR_REL = "implementation/polishing/explanations"
+MECHANICAL_DIR_REL = "implementation/polishing/mechanical"
+POLISHING_DIR_REL = "implementation/polishing"
 # 규칙 문서(검토 묶음)의 이름과 의미 수정에서 적용하는 순서.
 RULE_DOC_NAMES = (
     "vocabulary", "sentence", "format", "bullets-and-prose",
-    "reference", "composition", "document-temporality", "revision-principles",
+    "reference", "composition", "document-temporality", "polishing-principles",
 )
 # 모든 검토자가 함께 읽는 윤문 원칙 문서.
-PRINCIPLES_DOC = "revision-principles"
+PRINCIPLES_DOC = "polishing-principles"
 # 규칙 문서 폴더에서 규칙 문서가 아닌 파일.
 NON_RULE_FILES = {"AGENTS.md", "CLAUDE.md"}
 INDEX_PAGE_RE = re.compile(r"^INDEX(?:[2-9]|[1-9]\d+)?\.md$")

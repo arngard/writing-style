@@ -39,6 +39,6 @@ description: 규칙, 후보 검출 패턴, 설명, 기계 규칙을 더하거나
 
 고친 뒤 다음을 실행한다.
 
-1. 시험: `python -B -m unittest discover -s implementation/revision/tools/tests -v`
-2. 형식 감사: `python -B AGENTS/epistemic-rules/tools/audit.py .`. 감사 확장 [revision_rules.py](../../../AGENTS/audit-checks/revision_rules.py)가 규칙 이름의 중복과 누락, 설명 링크와 설명 절 `규칙:` 줄의 양방향 일치, 기계 규칙 링크와 JSON `rule` 값의 양방향 일치, 정규식 컴파일, 이 폴더 문서의 링크 대상을 본다.
+1. 시험: `python -B -m unittest discover -s implementation/polishing/tools/tests -v`
+2. 형식 감사: `python -B AGENTS/epistemic-rules/tools/audit.py .`. 감사 확장 [polishing_rules.py](../../../AGENTS/audit-checks/polishing_rules.py)가 규칙 이름의 중복과 누락, 설명 링크와 설명 절 `규칙:` 줄의 양방향 일치, 기계 규칙 링크와 JSON `rule` 값의 양방향 일치, 정규식 컴파일, 이 폴더 문서의 링크 대상을 본다.
 3. 이 레포 문서에 `detect.py`를 돌려 새 패턴이 낸 후보를 훑어본다.

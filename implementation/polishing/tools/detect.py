@@ -4,7 +4,7 @@
 사용: python detect.py [INPUT ...] [--format text|json] [--path-hint PATH] [--root DIR]
 
 - INPUT은 파일 경로나 '-'(표준 입력)다. 없으면 표준 입력을 읽는다. UTF-8만 받는다.
-- 위반(violation): 기계 규칙(<루트>/implementation/revision/mechanical/*.json)이
+- 위반(violation): 기계 규칙(<루트>/implementation/polishing/mechanical/*.json)이
   산문 영역에서 고칠 곳. fix.py가 바꿀 곳과 같다.
 - 후보(candidate): 규칙 문서(<루트>/epistemic-structure/architecture/plain-prose-rules/)
   의 이름 붙은 규칙 절 `### 후보 검출 패턴` 코드 블록의 정규식(한 줄에 하나)이
@@ -22,7 +22,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import _revision_core as core  # noqa: E402
+import _polishing_core as core  # noqa: E402
 
 
 def find_candidates(text, patterns, root):

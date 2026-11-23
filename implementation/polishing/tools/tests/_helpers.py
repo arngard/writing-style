@@ -11,7 +11,7 @@ TOOLS = Path(__file__).resolve().parents[1]
 REPO_ROOT = TOOLS.parents[2]
 sys.path.insert(0, str(TOOLS))
 
-import _revision_core as core  # noqa: E402
+import _polishing_core as core  # noqa: E402
 
 MARKER_FORM = REPO_ROOT / core.MECHANICAL_DIR_REL / "marker-form.json"
 
@@ -62,7 +62,7 @@ description: 시험용 규칙 문서
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "예시 낱말"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "예시 낱말"
 
 ## 들여쓴 패턴 규칙 `indented-pattern`
 
@@ -92,7 +92,7 @@ description: 시험용 규칙 문서
 
 ### 기계 규칙
 
-- [marker-form.json](../../../implementation/revision/mechanical/marker-form.json)
+- [marker-form.json](../../../implementation/polishing/mechanical/marker-form.json)
 """
 
 RULE_DOC_PRINCIPLES = """---
@@ -155,7 +155,7 @@ class Fixture:
 
     def standard(self):
         """원칙, 어휘, 참조 규칙 문서와 설명 문서, 기계 규칙을 둔다."""
-        self.rules("revision-principles", RULE_DOC_PRINCIPLES)
+        self.rules("polishing-principles", RULE_DOC_PRINCIPLES)
         self.rules("vocabulary", RULE_DOC_VOCAB)
         self.rules("reference", RULE_DOC_REFERENCE)
         self.write(f"{core.EXPLANATIONS_DIR_REL}/vocabulary.md", EXPLANATION_VOCAB)

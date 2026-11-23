@@ -7,7 +7,7 @@ description: 글을 고치지 않고 기계 규칙 위반과 후보 위치의 �
 
 # 검출 절차
 
-글을 고치지 않고 규약에 어긋난 자리의 리포트만 받는 절차다. 글을 고치려면 [revise.md](revise.md)를 따른다. 아래 `<도구>`는 이 레포의 `implementation/revision/tools/` 절대 경로다.
+글을 고치지 않고 규약에 어긋난 자리의 리포트만 받는 절차다. 글을 고치려면 [polish.md](polish.md)를 따른다. 아래 `<도구>`는 이 레포의 `implementation/polishing/tools/` 절대 경로다.
 
 ## 순서
 

@@ -10,7 +10,7 @@
 - --write: 원본 파일을 고친다. 같은 폴더의 임시 파일에 쓴 뒤 교체한다. 읽은 뒤
   원본이 바뀌었으면 쓰지 않는다. 심볼릭 링크는 고치지 않고 오류로 끝낸다.
   바뀔 곳 목록을 표준 출력으로 낸다.
-- 기계 규칙은 <루트>/implementation/revision/mechanical/*.json이고 산문 영역에만
+- 기계 규칙은 <루트>/implementation/polishing/mechanical/*.json이고 산문 영역에만
   적용한다. 규칙 문서는 읽지 않는다.
 - 대상이 레포 루트 바로 아래 reference/<자료> 안의 원본이면(--path-hint나 파일
   경로로 판정) 고치지 않는다.
@@ -26,7 +26,7 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import _revision_core as core  # noqa: E402
+import _polishing_core as core  # noqa: E402
 
 
 def _change_dicts(changes):

@@ -17,7 +17,7 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 
 ### 설명
 
-- [reference.md](../../../implementation/revision/explanations/reference.md) "본문에 녹일 수 있는 링크는 본문에 녹인다"
+- [reference.md](../../../implementation/polishing/explanations/reference.md) "본문에 녹일 수 있는 링크는 본문에 녹인다"
 
 ## 따로 둔 참조는 이 문서가 대상에 기대는 방식으로 표지한다 `marker-choice`
 
@@ -37,7 +37,7 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 
 ### 설명
 
-- [reference.md](../../../implementation/revision/explanations/reference.md) "따로 둔 참조는 이 문서가 대상에 기대는 방식으로 표지한다"
+- [reference.md](../../../implementation/polishing/explanations/reference.md) "따로 둔 참조는 이 문서가 대상에 기대는 방식으로 표지한다"
 
 ## 표지 뒤에는 대상을 적는다 `marker-form`
 
@@ -60,11 +60,11 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 
 ### 기계 규칙
 
-- [marker-form.json](../../../implementation/revision/mechanical/marker-form.json)
+- [marker-form.json](../../../implementation/polishing/mechanical/marker-form.json)
 
 ### 설명
 
-- [reference.md](../../../implementation/revision/explanations/reference.md) "표지 뒤에는 대상을 적는다"
+- [reference.md](../../../implementation/polishing/explanations/reference.md) "표지 뒤에는 대상을 적는다"
 
 ## 자리는 문맥으로 고르고, 엄격한 인용에는 각주를 쓴다 `reference-placement`
 
@@ -73,7 +73,7 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 
 ### 설명
 
-- [reference.md](../../../implementation/revision/explanations/reference.md) "자리는 문맥으로 고르고, 엄격한 인용에는 각주를 쓴다"
+- [reference.md](../../../implementation/polishing/explanations/reference.md) "자리는 문맥으로 고르고, 엄격한 인용에는 각주를 쓴다"
 
 ## 지시어로 대상을 직접 조준한 참조는 표지로 바꾸지 않는다 `demonstrative-aiming`
 
@@ -97,7 +97,7 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 
 ### 설명
 
-- [reference.md](../../../implementation/revision/explanations/reference.md) "자리는 문맥으로 고르고, 엄격한 인용에는 각주를 쓴다"
+- [reference.md](../../../implementation/polishing/explanations/reference.md) "자리는 문맥으로 고르고, 엄격한 인용에는 각주를 쓴다"
 
 ## 코드 주석의 표지 `code-comment-markers`
 

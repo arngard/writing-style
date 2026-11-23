@@ -13,9 +13,9 @@ description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페�
 
 ## 이 레포를 기준으로 윤문할 때
 
-윤문은 이미 쓴 글의 뜻을 유지하면서 표현, 문장, 구성을 다듬는 일이다. 내용의 사실관계를 새로 조사하거나 주장을 바꾸는 일은 윤문이 아니라 개정이다. 정의는 [epistemic-structure/ontology/revision.md](epistemic-structure/ontology/revision.md)에 있다.
+윤문은 이미 쓴 글의 뜻을 유지하면서 표현, 문장, 구성을 다듬는 일이다. 내용의 사실관계를 새로 조사하거나 주장을 바꾸는 일은 윤문이 아니라 개정이다. 정의는 [epistemic-structure/ontology/polishing.md](epistemic-structure/ontology/polishing.md)에 있다.
 
-다른 레포의 글을 윤문하는 에이전트는 윤문 절차 [implementation/revision/workflows/revise.md](implementation/revision/workflows/revise.md)를 따른다. 글을 고치지 않고 규약에 어긋난 자리의 리포트만 받을 때는 검출 절차 [implementation/revision/workflows/detect.md](implementation/revision/workflows/detect.md)를 따른다.
+다른 레포의 글을 윤문하는 에이전트는 윤문 절차 [implementation/polishing/workflows/polish.md](implementation/polishing/workflows/polish.md)를 따른다. 글을 고치지 않고 규약에 어긋난 자리의 리포트만 받을 때는 검출 절차 [implementation/polishing/workflows/detect.md](implementation/polishing/workflows/detect.md)를 따른다.
 
 고칠 글의 갈래를 먼저 정한다. 갈래 정의는 [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md)에 있다. 갈래마다 따르는 규약 파일은 다음과 같다.
 
@@ -32,7 +32,7 @@ description: 사용자의 모든 글쓰기에 대한 정식 규약 워크스페�
 
 | 규칙 문서 | 읽는 때 |
 |-----------|---------|
-| [revision-principles.md](epistemic-structure/architecture/plain-prose-rules/revision-principles.md) | 윤문할 때마다. 다른 규칙 문서를 맡은 검토자도 함께 읽는다 |
+| [polishing-principles.md](epistemic-structure/architecture/plain-prose-rules/polishing-principles.md) | 윤문할 때마다. 다른 규칙 문서를 맡은 검토자도 함께 읽는다 |
 | [vocabulary.md](epistemic-structure/architecture/plain-prose-rules/vocabulary.md) | 용어, 외래어, 낱말, 약어를 고를 때 |
 | [sentence.md](epistemic-structure/architecture/plain-prose-rules/sentence.md) | 문체, 문장 하나의 구성, 날짜와 시간 표기를 볼 때 |
 | [format.md](epistemic-structure/architecture/plain-prose-rules/format.md) | 서식 강조, 기호, 문장 부호를 볼 때 |

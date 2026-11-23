@@ -1,6 +1,6 @@
 """감사 확장: 윤문 규칙 구성 검사.
 
-계약은 AGENTS/epistemic-rules/audit-extensions.md다. `python -B revision_rules.py <루트>`로
+계약은 AGENTS/epistemic-rules/audit-extensions.md다. `python -B polishing_rules.py <루트>`로
 실행하고, 발견 하나를 한 줄의 JSON 객체(severity, path, message)로 표준 출력에 낸다.
 읽기만 한다.
 
@@ -15,7 +15,7 @@
 4. 설명: 규칙의 `### 설명` 링크 대상 문서가 없거나, 지정한 절이 없거나, 그 절의
    `규칙:` 줄이 규칙 이름과 다르면 위반이다. 설명 문서 절의 `규칙:` 값의 규칙이 없으면
    미결 발견이고, 규칙은 있는데 그 규칙의 설명 링크가 이 절을 가리키지 않으면 위반이다.
-5. 링크: implementation/revision/ 안 Markdown 문서의 산문 영역 링크(코드와 인용 안은
+5. 링크: implementation/polishing/ 안 Markdown 문서의 산문 영역 링크(코드와 인용 안은
    제외) 대상이 없으면 위반이다. 다만 대상이 규칙 문서 폴더나 설명 문서 폴더 안이면
    미결 발견이다.
 
@@ -24,7 +24,7 @@
 붙은 절이 있는 상태다. 규칙 문서를 옮기는 동안(옛 형태 문서와 아직 없는 문서가 섞인
 동안) 감사가 위반으로 막지 않게 하려는 것이다.
 
-공용 파서는 이 파일이 든 레포의 implementation/revision/tools/_revision_core.py에서
+공용 파서는 이 파일이 든 레포의 implementation/polishing/tools/_polishing_core.py에서
 가져온다. 그 모듈이 없으면 아무것도 내지 않는다.
 """
 
@@ -33,7 +33,7 @@ import sys
 from pathlib import Path
 
 _HERE = Path(__file__).resolve()
-_TOOLS = _HERE.parents[2] / "implementation" / "revision" / "tools"
+_TOOLS = _HERE.parents[2] / "implementation" / "polishing" / "tools"
 
 
 def _emit(severity, path, message):
@@ -64,7 +64,7 @@ def check(root, core):
     rules_dir = root / core.RULES_DIR_REL
     expl_dir = root / core.EXPLANATIONS_DIR_REL
     mech_dir = root / core.MECHANICAL_DIR_REL
-    revision_dir = root / core.REVISION_DIR_REL
+    polishing_dir = root / core.POLISHING_DIR_REL
 
     docs = []
     for p in core.rule_doc_paths(root):
@@ -183,11 +183,11 @@ def check(root, core):
                         add("violation", prel, f"{e.line}행 절 \"{e.title}\"을 규칙 `{rule_name}`의"
                             " 설명 링크가 가리키지 않는다")
 
-    # 5. implementation/revision/ 안 문서의 링크
-    if revision_dir.is_dir():
-        for p in sorted(revision_dir.rglob("*.md")):
+    # 5. implementation/polishing/ 안 문서의 링크
+    if polishing_dir.is_dir():
+        for p in sorted(polishing_dir.rglob("*.md")):
             if not p.is_file() or any(part.startswith(".") or part == "__pycache__"
-                                      for part in p.relative_to(revision_dir).parts):
+                                      for part in p.relative_to(polishing_dir).parts):
                 continue
             prel = _rel(root, p)
             try:
@@ -211,13 +211,13 @@ def check(root, core):
 
 def main(argv):
     if len(argv) != 2:
-        print("usage: revision_rules.py <root>. 루트 경로 하나를 받는다", file=sys.stderr)
+        print("usage: polishing_rules.py <root>. 루트 경로 하나를 받는다", file=sys.stderr)
         return 2
     root = Path(argv[1]).resolve()
-    if not (_TOOLS / "_revision_core.py").is_file():
+    if not (_TOOLS / "_polishing_core.py").is_file():
         return 0
     sys.path.insert(0, str(_TOOLS))
-    import _revision_core as core
+    import _polishing_core as core
     for sev, path, msg in check(root, core):
         _emit(sev, path, msg)
     return 0

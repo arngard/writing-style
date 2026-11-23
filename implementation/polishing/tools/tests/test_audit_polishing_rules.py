@@ -1,4 +1,4 @@
-"""감사 확장 AGENTS/audit-checks/revision_rules.py 시험. 임시 폴더 픽스처를 루트로 준다."""
+"""감사 확장 AGENTS/audit-checks/polishing_rules.py 시험. 임시 폴더 픽스처를 루트로 준다."""
 
 import json
 import subprocess
@@ -8,7 +8,7 @@ import unittest
 from _helpers import (RULE_DOC_PRINCIPLES, RULE_DOC_REFERENCE, RULE_DOC_VOCAB, REPO_ROOT,
                       Fixture, core)
 
-EXTENSION = REPO_ROOT / "AGENTS" / "audit-checks" / "revision_rules.py"
+EXTENSION = REPO_ROOT / "AGENTS" / "audit-checks" / "polishing_rules.py"
 
 
 def run_ext(root):
@@ -28,7 +28,7 @@ def complete(fx):
     """규칙 문서 여덟 건을 모두 이름 붙은 형태로 둔다."""
     fx.standard()
     for i, name in enumerate(core.RULE_DOC_NAMES):
-        if name in ("vocabulary", "reference", "revision-principles"):
+        if name in ("vocabulary", "reference", "polishing-principles"):
             continue
         fx.rules(name, f"# {name}\n\n## 조항 `rule-{i}`\n\n본문.\n")
 
@@ -44,7 +44,7 @@ class AuditExtensionTest(unittest.TestCase):
     def test_old_form_docs_are_tolerated(self):
         self.fx.rules("vocabulary", "# 어휘\n\n## 옛 절\n\n본문\n")
         self.fx.copy_marker_form()
-        self.fx.write("implementation/revision/README.md",
+        self.fx.write("implementation/polishing/README.md",
                       "[규칙](../../epistemic-structure/architecture/plain-prose-rules/reference.md)\n")
         found = run_ext(self.fx.root)
         self.assertTrue(found)
@@ -107,16 +107,16 @@ class AuditExtensionTest(unittest.TestCase):
         msgs = [m for s, _p, m in run_ext(self.fx.root) if s == "violation"]
         self.assertTrue(any("\"예시 낱말\"이" in m and "없다" in m for m in msgs), msgs)
 
-    def test_revision_doc_links(self):
+    def test_polishing_doc_links(self):
         complete(self.fx)
-        self.fx.write("implementation/revision/workflows/a.md",
+        self.fx.write("implementation/polishing/workflows/a.md",
                       "[있음](../README.md) [없음](nothing.md) [밖](https://e.x) [앵커](#x)\n\n"
                       "`[코드](skip.md)`\n\n```\n[펜스](skip2.md)\n```\n")
-        self.fx.write("implementation/revision/README.md", "# 안내\n\n- [id]: list-missing.md\n")
+        self.fx.write("implementation/polishing/README.md", "# 안내\n\n- [id]: list-missing.md\n")
         found = run_ext(self.fx.root)
         self.assertEqual(sorted((s, p) for s, p, _m in found),
-                         [("violation", "implementation/revision/README.md"),
-                          ("violation", "implementation/revision/workflows/a.md")])
+                         [("violation", "implementation/polishing/README.md"),
+                          ("violation", "implementation/polishing/workflows/a.md")])
         messages = " ".join(m for _s, _p, m in found)
         self.assertIn("nothing.md", messages)
         self.assertIn("list-missing.md", messages)
@@ -124,7 +124,7 @@ class AuditExtensionTest(unittest.TestCase):
     def test_output_is_ascii_json(self):
         self.fx.rules("vocabulary", RULE_DOC_VOCAB)
         self.fx.rules("reference", RULE_DOC_REFERENCE)
-        self.fx.rules("revision-principles", RULE_DOC_PRINCIPLES)
+        self.fx.rules("polishing-principles", RULE_DOC_PRINCIPLES)
         proc = subprocess.run([sys.executable, "-B", str(EXTENSION), str(self.fx.root)],
                               stdout=subprocess.PIPE, timeout=120)
         proc.stdout.decode("ascii")

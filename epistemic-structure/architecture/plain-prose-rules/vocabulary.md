@@ -31,13 +31,13 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "고유한 뜻을 가진 외래어는 번역하지 않고 통용되는 음차를 쓴다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "고유한 뜻을 가진 외래어는 번역하지 않고 통용되는 음차를 쓴다"
 
 ## 번역어가 기존 용어와 겹치면 쓰지 않는다 `no-clashing-translation`
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "번역어가 기존 용어와 겹치면 쓰지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "번역어가 기존 용어와 겹치면 쓰지 않는다"
 
 ## 한 문서 안과 그 분야에서 이미 쓰는 용어를 우선한다 `established-terms-first`
 
@@ -48,13 +48,13 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "우리말이 같은 뜻을 정확히 담으면 우리말을 쓴다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "우리말이 같은 뜻을 정확히 담으면 우리말을 쓴다"
 
 ## 명령어, 식별자, 제품 고유명사는 원문 표기 그대로 쓴다 `original-notation`
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "명령어, 식별자, 제품 고유명사는 원문 표기 그대로 쓴다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "명령어, 식별자, 제품 고유명사는 원문 표기 그대로 쓴다"
 
 ## 음차 표기는 의미가 손상되지 않는 한 외래어 표기법을 따른다 `loanword-orthography`
 
@@ -62,7 +62,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "음차 표기는 의미가 손상되지 않는 한 외래어 표기법을 따른다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "음차 표기는 의미가 손상되지 않는 한 외래어 표기법을 따른다"
 
 ## 맥락에 맞는 정확한 동사와 실제로 통용되는 어휘를 쓴다 `common-usage-words`
 
@@ -78,7 +78,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "예스럽거나 문어투가 강한 드문 낱말을 고르지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "예스럽거나 문어투가 강한 드문 낱말을 고르지 않는다"
 
 ## 용어를 한 단어로 잘라 직역하지 않는다 `no-truncated-term`
 
@@ -86,7 +86,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "용어를 한 단어로 잘라 직역하지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "용어를 한 단어로 잘라 직역하지 않는다"
 
 ## 통용되는 개념어가 있으면 따로 이름을 짓지 않는다 `no-coined-names`
 
@@ -94,7 +94,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "통용되는 개념어가 있으면 따로 이름을 짓지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "통용되는 개념어가 있으면 따로 이름을 짓지 않는다"
 
 ## 상대의 어휘를 그대로 따르기보다 정확한 단어를 쓴다 `own-precise-words`
 
@@ -108,7 +108,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "상대가 쓴 비표준 표현을 차용하지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "상대가 쓴 비표준 표현을 차용하지 않는다"
 
 ## "짚다"는 사람을 여격으로 받지 않는다 `jipda`
 
@@ -129,7 +129,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) ""짚다"는 사람을 여격으로 받지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) ""짚다"는 사람을 여격으로 받지 않는다"
 
 ## "국면"은 전후의 변화가 함축될 때만 쓴다 `gukmyeon`
 
@@ -143,7 +143,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) ""국면"은 전후의 변화가 함축될 때만 쓴다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) ""국면"은 전후의 변화가 함축될 때만 쓴다"
 
 ## '따로, 다른'의 뜻으로 "별"을 홀로 쓰지 않는다 `byeol`
 
@@ -164,7 +164,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 ### 설명
 
-- [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "'따로, 다른'의 뜻으로 "별"을 홀로 쓰지 않는다"
+- [vocabulary.md](../../../implementation/polishing/explanations/vocabulary.md) "'따로, 다른'의 뜻으로 "별"을 홀로 쓰지 않는다"
 
 ## 어감 차이가 미묘한 한국어 표현을 고르게 할 때는 여러 후보를 제시한다 `expression-candidates`
 

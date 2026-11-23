@@ -35,7 +35,7 @@ class CollectReviewTest(unittest.TestCase):
         self.assertIn("예시 낱말 \"가나다\"를 쓰지 않는다", text)  # 고른 규칙 문서
         self.assertNotIn("표지 형태", text)  # 고르지 않은 규칙 문서
         self.assertIn("[sample-word]", text)
-        self.assertIn("implementation/revision/explanations/vocabulary.md \"예시 낱말\"", text)
+        self.assertIn("implementation/polishing/explanations/vocabulary.md \"예시 낱말\"", text)
         begin = text.index("<<<TARGET-TEXT-BEGIN ")
         end = text.index("<<<TARGET-TEXT-END ")
         self.assertLess(text.index("다듬을 데이터"), begin)
@@ -52,7 +52,7 @@ class CollectReviewTest(unittest.TestCase):
                                 stdin="가나다\n".encode("utf-8"))
         self.assertEqual(code, 0)
         data = json.loads(out.decode("utf-8"))
-        self.assertEqual(data["principles"]["doc"], core.RULES_DIR_REL + "/revision-principles.md")
+        self.assertEqual(data["principles"]["doc"], core.RULES_DIR_REL + "/polishing-principles.md")
         self.assertEqual([d["name"] for d in data["docs"]], ["vocabulary", "reference"])
         self.assertEqual(data["target"]["text"], "가나다\n")
 

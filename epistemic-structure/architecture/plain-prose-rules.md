@@ -47,8 +47,8 @@ description: 평서문 기록의 정식 규약. 절마다 원리 요지와 규�
 
 ## 기존 글을 고칠 때는 원문의 근거를 지킨다
 
-규칙은 [revision-principles.md](plain-prose-rules/revision-principles.md)에 있다.
+규칙은 [polishing-principles.md](plain-prose-rules/polishing-principles.md)에 있다.
 
 ## 글의 자연스러움은 그 글을 쓴 맥락을 모르는 다른 검토자가 본다
 
-규칙은 [revision-principles.md](plain-prose-rules/revision-principles.md)에 있다.
+규칙은 [polishing-principles.md](plain-prose-rules/polishing-principles.md)에 있다.

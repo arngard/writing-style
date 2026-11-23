@@ -2,7 +2,7 @@
 date created: 2026-04-18
 date modified: 2026-11-23
 tags: [소개]
-description: Introduction to the formal-rules workspace for all of the user's writing. Revision definition and workflow, rule files by genre, when to read each rule document, folder layout
+description: Introduction to the formal-rules workspace for all of the user's writing. Polishing definition and workflow, rule files by genre, when to read each rule document, folder layout
 ---
 
 [한국어](README.md) | English
@@ -11,11 +11,11 @@ description: Introduction to the formal-rules workspace for all of the user's wr
 
 A workspace that researches, reviews, and specifies the formal rules for all of the user's (Arngard's) writing. It covers every genre: plain-prose records (documents, reports), retrospectives, creative writing such as fiction, code comments, and commit messages. Writing rules kept elsewhere, such as the user's common guidelines and the scaffold's document-writing rules, are short-form rules applied to each task; this repository holds the formal rules, with their rationale and complete specification.
 
-## When revising text against this repository
+## When polishing text against this repository
 
-Revision (윤문) means refining the expression, sentences, and structure of existing text while keeping its meaning. Newly researching the facts of the content or changing its claims is not revision but amendment (개정). The definition is in [epistemic-structure/ontology/revision.md](epistemic-structure/ontology/revision.md).
+Polishing (윤문) means refining the expression, sentences, and structure of existing text while keeping its meaning. Newly researching the facts of the content or changing its claims is not polishing but amendment (개정). The definition is in [epistemic-structure/ontology/polishing.md](epistemic-structure/ontology/polishing.md).
 
-An agent revising text in another repository follows the revision workflow [implementation/revision/workflows/revise.md](implementation/revision/workflows/revise.md). To get only a report of places that break the rules, without changing the text, follow the detection workflow [implementation/revision/workflows/detect.md](implementation/revision/workflows/detect.md).
+An agent polishing text in another repository follows the polishing workflow [implementation/polishing/workflows/polish.md](implementation/polishing/workflows/polish.md). To get only a report of places that break the rules, without changing the text, follow the detection workflow [implementation/polishing/workflows/detect.md](implementation/polishing/workflows/detect.md).
 
 First determine the genre of the text. Genres are defined in [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md). The rule files for each genre are as follows.
 
@@ -26,13 +26,13 @@ First determine the genre of the text. Genres are defined in [epistemic-structur
 | Creative writing | None |
 | Comments | None |
 
-How to handle a genre without rule files is in the first step of the revision workflow.
+How to handle a genre without rule files is in the first step of the polishing workflow.
 
-When revising plain-prose records, read the following rule documents at the times listed. Examples for each rule are in the explanation documents that the rule's `### 설명` (explanation) section links to.
+When polishing plain-prose records, read the following rule documents at the times listed. Examples for each rule are in the explanation documents that the rule's `### 설명` (explanation) section links to.
 
 | Rule document | When to read |
 |---------------|--------------|
-| [revision-principles.md](epistemic-structure/architecture/plain-prose-rules/revision-principles.md) | Every revision. Reviewers assigned to other rule documents read it too |
+| [polishing-principles.md](epistemic-structure/architecture/plain-prose-rules/polishing-principles.md) | Every polishing pass. Reviewers assigned to other rule documents read it too |
 | [vocabulary.md](epistemic-structure/architecture/plain-prose-rules/vocabulary.md) | When choosing terms, loanwords, words, and abbreviations |
 | [sentence.md](epistemic-structure/architecture/plain-prose-rules/sentence.md) | When checking register, the construction of a single sentence, and date and time notation |
 | [format.md](epistemic-structure/architecture/plain-prose-rules/format.md) | When checking emphasis formatting, symbols, and punctuation |
@@ -43,7 +43,7 @@ When revising plain-prose records, read the following rule documents at the time
 
 When the reason for a rule is needed, find the rationale documents through the document list in [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md).
 
-The target of revision is the text in that repository; this repository is read only. If this repository's rules and the short-form rules the target repository follows disagree, get the user's decision before revising. If you find something to fix in this repository's rules, hand it over as work for this repository.
+The target of polishing is the text in that repository; this repository is read only. If this repository's rules and the short-form rules the target repository follows disagree, get the user's decision before polishing. If you find something to fix in this repository's rules, hand it over as work for this repository.
 
 ## Structure
 
@@ -55,6 +55,6 @@ This repository inherits the [epistemic workspace scaffold](https://github.com/a
 | `epistemic-structure/knowledge/` | External facts, reviews of external writing guidelines |
 | `epistemic-structure/strategy/` | Rationale for the rules, rejected alternatives, retrospectives |
 | `epistemic-structure/architecture/` | The formal rules for each genre |
-| `implementation/` | Means of applying the rules to text (rule explanations, revision tools, revision workflows, the revision skill source) |
+| `implementation/` | Means of applying the rules to text (rule explanations, polishing tools, polishing workflows, the polishing skill source) |
 
 The single entry point for operating guidelines is [AGENTS.md](AGENTS.md).
