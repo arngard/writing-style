@@ -2,5 +2,4 @@
 
 # implementation 색인
 
-- [reference-notation/](reference-notation/) - 참조 표기 세부 규정. 본문 링크 우선, 표지 세 가지의 판정, 옛 표기 cf.와 ref.의 교정 절차
 - [revision/](revision/) - 윤문 하위 프로젝트. 규칙의 설명(예시), 기계 규칙, 검출과 수정 도구, 윤문 워크플로, 윤문 스킬 원본
