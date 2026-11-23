@@ -47,6 +47,10 @@ description: 평서문 기록 규약의 참조 규칙 문서. 본문 링크 우�
 - 절을 지정할 때는 링크 뒤에 큰따옴표로 절 이름을 붙이고, 설명은 링크 뒤에 ` - 설명`으로 붙인다.
 - 워크스페이스 안의 문서는 링크로 가리킨다. 링크할 수 없거나 링크하기 매우 어려운 대상(사람의 발언, 회의, 인쇄물, 다른 레포의 문서)은 어느 표지든 뒤에 대상을 설명으로 적어 독자가 찾아보게 한다: `ref: 사용자 지적 2026-05-19`, `see: 해당 레포의 strategy/role-and-disclaimer.md`.
 
+### 기계 규칙
+
+- [marker-form.json](../../../implementation/revision/mechanical/marker-form.json)
+
 ### 설명
 
 - [reference.md](../../../implementation/revision/explanations/reference.md) "표지 뒤에는 대상을 적는다"
