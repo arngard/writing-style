@@ -147,7 +147,7 @@ description: 평서문 기록 규약의 어휘 규칙 문서. 정확한 용어, 
 
 - [vocabulary.md](../../../implementation/revision/explanations/vocabulary.md) "'따로, 다른'의 뜻으로 "별"을 홀로 쓰지 않는다"
 
-## 미묘한 표현을 고를 때는 여러 후보를 제시한다 `expression-candidates`
+## 어감 차이가 미묘한 한국어 표현을 고르게 할 때는 여러 후보를 제시한다 `expression-candidates`
 
 - 어감 차이가 미묘한 한국어 표현을 고르게 할 때는 한두 개로 좁히지 말고 여러 후보를 제시한다.
 
