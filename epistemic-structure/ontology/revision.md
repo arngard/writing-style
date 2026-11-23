@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-21
-date modified: 2026-11-06
+date modified: 2026-11-23
 tags: [ontology, 윤문]
 description: 윤문의 정의와 이 레포에서의 쓰임
 ---
@@ -13,7 +13,7 @@ description: 윤문의 정의와 이 레포에서의 쓰임
 
 ## 이 레포에서의 쓰임
 
-다른 레포의 글을 윤문하는 에이전트는 이 레포의 정식 규약을 기준으로 삼는다. 윤문의 대상은 그 레포의 글이고, 이 레포는 읽기만 한다. 진입점은 [README.md](../../README.md)다.
+다른 레포의 글을 윤문하는 에이전트는 이 레포의 정식 규약을 기준으로 삼는다. 윤문의 대상은 그 레포의 글이고, 이 레포는 읽기만 한다. 진입점은 [README.md](../../README.md)이고, 윤문 절차는 [implementation/revision/workflows/revise.md](../../implementation/revision/workflows/revise.md)에 있다.
 
 ## 관련
 

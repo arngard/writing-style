@@ -1,6 +1,6 @@
 ---
 date created: 2026-05-19
-date modified: 2026-11-08
+date modified: 2026-11-23
 tags: [strategy]
 description: 이 레포의 목적과 포함, 미포함 범위를 정한 프로젝트 수준 결정
 importance: 상
@@ -27,7 +27,7 @@ importance 상: 이 레포의 규약은 사용자의 다른 모든 글쓰기와 
 ### 포함 범위
 
 - 갈래별 정식 규약과 그 근거. 갈래는 [ontology/writing-genres.md](../ontology/writing-genres.md)가 정의한다.
-- 어법, 표기, 문장 단위 규칙을 예시 기반으로 상세히 규정한 세부 규정.
+- 규칙의 예시, 규약을 글에 적용하는 윤문 도구와 윤문 절차.
 - 써 본 글의 회고와 거기서 얻은 교훈.
 - 외부 글쓰기 지침과 문체론의 검토.
 
