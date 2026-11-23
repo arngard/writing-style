@@ -1,6 +1,6 @@
 ---
 date created: 2026-10-21
-date modified: 2026-11-06
+date modified: 2026-11-23
 tags: [ontology, 윤문]
 description: 윤문의 정의와 이 레포에서의 쓰임
 ---
@@ -11,9 +11,11 @@ description: 윤문의 정의와 이 레포에서의 쓰임
 
 이미 쓴 글의 뜻을 유지하면서 표현, 문장, 구성을 다듬는 일. 내용의 사실관계를 새로 조사하거나 주장을 바꾸는 일은 윤문이 아니라 개정이다.
 
+영어로는 polishing으로 옮긴다(`@arngard` 2026-11-23 결정). revision은 내용과 주장까지 다시 쓰는 개정을 포함하는 말이라 쓰지 않는다.
+
 ## 이 레포에서의 쓰임
 
-다른 레포의 글을 윤문하는 에이전트는 이 레포의 정식 규약을 기준으로 삼는다. 윤문의 대상은 그 레포의 글이고, 이 레포는 읽기만 한다. 진입점은 [README.md](../../README.md)다.
+다른 레포의 글을 윤문하는 에이전트는 이 레포의 정식 규약을 기준으로 삼는다. 윤문의 대상은 그 레포의 글이고, 이 레포는 읽기만 한다. 진입점은 [README.md](../../README.md)이고, 윤문 절차는 [implementation/polishing/workflows/polish.md](../../implementation/polishing/workflows/polish.md)에 있다.
 
 ## 관련
 

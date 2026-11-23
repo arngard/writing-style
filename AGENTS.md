@@ -1,6 +1,6 @@
 ---
 date created: 2026-04-18
-date modified: 2026-11-08
+date modified: 2026-11-23
 tags: [규칙, 문서관리]
 ---
 
@@ -29,10 +29,10 @@ tags: [규칙, 문서관리]
 writing-style 고유 규범:
 
 - 글쓰기 지식의 배치: 새 글쓰기 지식, 근거, 규정을 어느 범주와 `implementation`에 둘지는 [epistemic-structure/architecture/category-placement.md](epistemic-structure/architecture/category-placement.md)를 따른다. 상류 범주 판별에 대한 보탬이며 등재는 [epistemic-structure/AGENTS.md](epistemic-structure/AGENTS.md)에 있다.
-- 평서문 기록: 평서문 기록을 쓰거나 윤문할 때는 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)와 그 하위 문서를 읽는다.
+- 평서문 기록: 평서문 기록을 쓰거나 윤문할 때는 [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)와 그 규칙 문서를 읽는다. 윤문할 때는 윤문 절차 [implementation/polishing/workflows/polish.md](implementation/polishing/workflows/polish.md)를 따른다.
 - 공개 경계: 이 레포는 공개 레포와 같게 취급한다. 비공개 레포를 이름, 경로, 내용으로 참조하지 않는다.
 - 태그 어휘: 의미 감사의 태그 병합안이나 삭제안을 검토하거나 여러 문서에 걸쳐 태그를 바꿀 때는 [AGENTS/tag-vocabulary.md](AGENTS/tag-vocabulary.md)를 읽는다. 상류 [tags.md](AGENTS/epistemic-rules/tags.md) "어휘 정리"가 정한 자리다.
 
 덮어쓰기와 보태기 목록:
 
-- 이 레포 문서의 평서문 기록 규약: 상류 [communication.md](AGENTS/epistemic-rules/communication.md) "문서 작성 스타일", "응답 언어", "대화 보고"와 [writing-style.md](AGENTS/epistemic-rules/writing-style.md), 그 하위 문서에서 겹치는 조항을 대체한다. 이 레포 자신의 평서문 기록(문서, 보고, 커밋 메시지)을 쓰거나 고칠 때 두 규약이 어긋나면 [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)와 그 하위 문서를 따른다. 정식 규약에 없는 상류 조항은 그대로 따른다.
+- 이 레포 문서의 평서문 기록 규약: 상류 [communication.md](AGENTS/epistemic-rules/communication.md) "문서 작성 스타일", "응답 언어", "대화 보고"와 [writing-style.md](AGENTS/epistemic-rules/writing-style.md), 그 하위 문서에서 겹치는 조항을 대체한다. 이 레포 자신의 평서문 기록(문서, 보고, 커밋 메시지)을 쓰거나 고칠 때 두 규약이 어긋나면 [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md)와 그 규칙 문서를 따른다. 정식 규약에 없는 상류 조항은 그대로 따른다.
