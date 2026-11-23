@@ -1,8 +1,8 @@
 ---
 date created: 2026-04-18
-date modified: 2026-11-08
+date modified: 2026-11-23
 tags: [소개]
-description: Introduction to the workspace of formal rules for all of the user's writing, with the reading order for revision and the folder layout
+description: Introduction to the formal-rules workspace for all of the user's writing. Revision definition and workflow, rule files by genre, when to read each rule document, folder layout
 ---
 
 [한국어](README.md) | English
@@ -13,12 +13,35 @@ A workspace that researches, reviews, and specifies the formal rules for all of 
 
 ## When revising text against this repository
 
-An agent revising text in another repository reads in this order.
+Revision (윤문) means refining the expression, sentences, and structure of existing text while keeping its meaning. Newly researching the facts of the content or changing its claims is not revision but amendment (개정). The definition is in [epistemic-structure/ontology/revision.md](epistemic-structure/ontology/revision.md).
 
-1. Determine the genre of the text from [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md).
-2. Find and apply the rules for that genre through the document list in [epistemic-structure/architecture/INDEX.md](epistemic-structure/architecture/INDEX.md). Plain-prose records follow [epistemic-structure/architecture/plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md); read its subdocuments along with it.
-3. For details such as usage and notation, see the example-based detailed rule sets introduced in [implementation.md](implementation.md).
-4. When the reason for a rule is needed, find the rationale documents through the document list in [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md).
+An agent revising text in another repository follows the revision workflow [implementation/revision/workflows/revise.md](implementation/revision/workflows/revise.md). To get only a report of places that break the rules, without changing the text, follow the detection workflow [implementation/revision/workflows/detect.md](implementation/revision/workflows/detect.md).
+
+First determine the genre of the text. Genres are defined in [epistemic-structure/ontology/writing-genres.md](epistemic-structure/ontology/writing-genres.md). The rule files for each genre are as follows.
+
+| Genre | Rule files |
+|-------|------------|
+| Plain-prose records (documents, reports, analyses, commit messages, conversational replies that convey facts and judgments) | [plain-prose-rules.md](epistemic-structure/architecture/plain-prose-rules.md) and its rule documents |
+| Retrospectives | None |
+| Creative writing | None |
+| Comments | None |
+
+How to handle a genre without rule files is in the first step of the revision workflow.
+
+When revising plain-prose records, read the following rule documents at the times listed. Examples for each rule are in the explanation documents that the rule's `### 설명` (explanation) section links to.
+
+| Rule document | When to read |
+|---------------|--------------|
+| [revision-principles.md](epistemic-structure/architecture/plain-prose-rules/revision-principles.md) | Every revision. Reviewers assigned to other rule documents read it too |
+| [vocabulary.md](epistemic-structure/architecture/plain-prose-rules/vocabulary.md) | When choosing terms, loanwords, words, and abbreviations |
+| [sentence.md](epistemic-structure/architecture/plain-prose-rules/sentence.md) | When checking register, the construction of a single sentence, and date and time notation |
+| [format.md](epistemic-structure/architecture/plain-prose-rules/format.md) | When checking emphasis formatting, symbols, and punctuation |
+| [bullets-and-prose.md](epistemic-structure/architecture/plain-prose-rules/bullets-and-prose.md) | When deciding between bullet points and running prose |
+| [reference.md](epistemic-structure/architecture/plain-prose-rules/reference.md) | When checking links, reference markers, and wording that points to parts of a document |
+| [composition.md](epistemic-structure/architecture/plain-prose-rules/composition.md) | When checking the structure of the text, summaries and quotations, and the separation of fact and opinion |
+| [document-temporality.md](epistemic-structure/architecture/plain-prose-rules/document-temporality.md) | When checking the point in time a whole document describes and where reasons and narrative belong |
+
+When the reason for a rule is needed, find the rationale documents through the document list in [epistemic-structure/strategy/INDEX.md](epistemic-structure/strategy/INDEX.md).
 
 The target of revision is the text in that repository; this repository is read only. If this repository's rules and the short-form rules the target repository follows disagree, get the user's decision before revising. If you find something to fix in this repository's rules, hand it over as work for this repository.
 
@@ -32,6 +55,6 @@ This repository inherits the [epistemic workspace scaffold](https://github.com/a
 | `epistemic-structure/knowledge/` | External facts, reviews of external writing guidelines |
 | `epistemic-structure/strategy/` | Rationale for the rules, rejected alternatives, retrospectives |
 | `epistemic-structure/architecture/` | The formal rules for each genre |
-| `implementation/` | Example-based detailed rules |
+| `implementation/` | Means of applying the rules to text (rule explanations, revision tools, revision workflows, the revision skill source) |
 
 The single entry point for operating guidelines is [AGENTS.md](AGENTS.md).
