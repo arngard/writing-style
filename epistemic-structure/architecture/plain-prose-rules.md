@@ -43,7 +43,7 @@ description: 평서문 기록의 정식 규약. 어휘, 문장, 서식, 개조�
 
 ## 문서는 기록하는 시점의 현재 상태를 쓴다
 
-진행 중인 문서는 지금의 상태로, 히스토리 문서는 기록 시점의 상태로 쓰고, 이유와 서사는 그 상태를 설명할 때만 남긴다. 조항 전체는 [document-temporality.md](plain-prose-rules/document-temporality.md)에 있다.
+규칙은 [document-temporality.md](plain-prose-rules/document-temporality.md)에 있다.
 
 ## 기존 글을 고칠 때는 원문의 근거를 지킨다
 
