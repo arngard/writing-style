@@ -11,6 +11,6 @@ description: 정식 규약을 글에 적용하는 수단. 윤문 하위 프로�
 
 하위 프로젝트 [revision/](implementation/revision/)은 윤문에 쓰는 것을 모은다. 규칙의 예시(고치기 전과 고친 뒤)를 담은 설명 문서는 [revision/explanations/](implementation/revision/explanations/)에 있고, 규칙 문서의 `### 설명` 절이 링크한다. 기계 규칙의 치환 데이터, 검출과 수정 도구, 윤문 워크플로, 윤문 스킬 원본도 이 하위 프로젝트에 둔다.
 
-옛 세부 규정 묶음 가운데 [punctuation/](implementation/punctuation/README.md)과 [reference-notation/](implementation/reference-notation/README.md)은 아직 규칙 문서와 설명 문서로 옮기지 않았다.
+옛 세부 규정 묶음 가운데 [reference-notation/](implementation/reference-notation/README.md)은 아직 규칙 문서와 설명 문서로 옮기지 않았다.
 
 형식 감사는 하위 프로젝트 내부를 검사하지 않지만, 설명 문서와 워크플로 문서는 front matter와 이 레포의 평서문 기록 규약을 지킨다. 다른 레포의 윤문 에이전트가 읽는 문서이기 때문이다. 배치는 [category-placement.md](epistemic-structure/architecture/category-placement.md)의 기준을, 프로젝트 폴더를 두는 방식은 [구현 폴더 규범](implementation/AGENTS/epistemic-rules.md)을 따른다.

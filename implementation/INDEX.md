@@ -2,6 +2,5 @@
 
 # implementation 색인
 
-- [punctuation/](punctuation/) - 문장 부호 세부 규정. 비ASCII 부호를 바꾸는 표기, 부호 자체를 가리키는 표기, 원형을 쓰는 영역
 - [reference-notation/](reference-notation/) - 참조 표기 세부 규정. 본문 링크 우선, 표지 세 가지의 판정, 옛 표기 cf.와 ref.의 교정 절차
 - [revision/](revision/) - 윤문 하위 프로젝트. 규칙의 설명(예시), 기계 규칙, 검출과 수정 도구, 윤문 워크플로, 윤문 스킬 원본
