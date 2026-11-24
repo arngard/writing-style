@@ -17,6 +17,7 @@
 표준 라이브러리만 쓰고 Python 3.9에서 도는 문법만 쓴다.
 """
 
+import argparse
 import bisect
 import json
 import re
@@ -234,6 +235,52 @@ class LineIndex:
         before = self.text[max(ls, start - width):start]
         after = self.text[end:min(le, end + width)].rstrip("\r\n")
         return before + "[[" + self.text[start:end] + "]]" + after
+
+
+@dataclass(frozen=True)
+class LineRange:
+    """1부터 세는 닫힌 줄 범위."""
+
+    first: int
+    last: int
+
+
+_LINE_RANGE_RE = re.compile(r"^\s*(\d+)\s*(?:-\s*(\d+)\s*)?$")
+
+
+def parse_line_range(spec: str) -> LineRange:
+    """'A-B'나 'A'를 줄 범위로 읽는다. 1 <= A <= B가 아니면 ToolError."""
+    m = _LINE_RANGE_RE.match(spec or "")
+    if not m:
+        raise ToolError(f"Invalid line range. 줄 범위는 'A-B' 형태다: {spec!r}")
+    first = int(m.group(1))
+    last = int(m.group(2)) if m.group(2) else first
+    if first < 1 or last < first:
+        raise ToolError(f"Invalid line range. 줄 범위는 1 <= A <= B여야 한다: {spec!r}")
+    return LineRange(first, last)
+
+
+def line_count(text: str) -> int:
+    """글의 줄 수. 마지막 줄바꿈 뒤의 빈 자리는 줄로 세지 않는다."""
+    if not text:
+        return 0
+    return text.count("\n") + (0 if text.endswith("\n") else 1)
+
+
+def range_span(text: str, rng: LineRange) -> Tuple[int, int]:
+    """줄 범위의 문자 위치(시작 포함, 끝 제외). 끝은 마지막 줄의 줄바꿈 뒤다."""
+    total = line_count(text)
+    if rng.last > total:
+        raise ToolError(
+            f"Line range out of text. 줄 범위 {rng.first}-{rng.last}가 글의 줄 수({total})를 넘는다")
+    starts = LineIndex(text).starts
+    end = starts[rng.last] if rng.last < len(starts) else len(text)
+    return starts[rng.first - 1], end
+
+
+def within_span(span: Optional[Tuple[int, int]], start: int, end: int) -> bool:
+    """일치(start, end)가 범위 안에 완전히 드는지. 범위가 없으면 참."""
+    return span is None or (span[0] <= start and end <= span[1])
 
 
 _FENCE_OPEN_RE = re.compile(r"^(`{3,}|~{3,})(.*)$")
@@ -1246,17 +1293,27 @@ def _expand(m: "re.Match", replace: str) -> str:
     return re.sub(r"\\([1-9])", lambda g: m.group(int(g.group(1))) or "", replace)
 
 
-def apply_mechanical(text: str, rules: Sequence[MechanicalRule]) -> Tuple[str, List[Change]]:
+def apply_mechanical(text: str, rules: Sequence[MechanicalRule],
+                     lines: Optional[LineRange] = None) -> Tuple[str, List[Change]]:
     """기계 규칙을 적힌 순서대로 한 번씩 적용한다.
 
     일치가 산문 영역 하나 안에 완전히 든 경우만 바꾼다. 치환 항목마다 영역을 다시
-    판별한다. 보고 위치는 그 치환 항목을 적용하기 직전 글 기준이다.
+    판별한다. 보고 위치는 그 치환 항목을 적용하기 직전 글 기준이다. lines를 주면
+    영역은 글 전체로 판별하고, 그 줄 범위 안에 완전히 든 일치만 바꾼다. 범위 밖은
+    바뀌지 않으므로 범위는 처음 글에서 정한 앞뒤 부분의 길이로 매번 다시 정한다.
+    범위 뒤에 줄이 있으면 범위가 줄바꿈 없이 끝나게 되는 치환(뒷줄과 이어 붙음)은
+    하지 않는다.
     """
     changes: List[Change] = []
+    head = tail = None
+    if lines:
+        head, end = range_span(text, lines)
+        tail = len(text) - end
     for rule in rules:
         for rep in rule.replacements:
             regions = segment(text)
             index = LineIndex(text)
+            span = (head, len(text) - tail) if lines else None
             parts = []
             pos = 0
             for m in rep.find.finditer(text):
@@ -1264,9 +1321,16 @@ def apply_mechanical(text: str, rules: Sequence[MechanicalRule]) -> Tuple[str, L
                     continue
                 if not within_kind(regions, m.start(), m.end(), PROSE):
                     continue
+                if not within_span(span, m.start(), m.end()):
+                    continue
                 new = _expand(m, rep.replace)
                 if new == m.group(0):
                     continue
+                if span and tail and m.end() == span[1]:
+                    # 같은 치환 항목에서 앞서 바꾼 결과까지 합쳐 범위의 끝을 본다.
+                    rest = ("".join(parts) + text[pos:m.start()] + new)[head:]
+                    if rest and not rest.endswith("\n"):
+                        continue
                 line, col = index.line_col(m.start())
                 changes.append(Change(rule.rule, line, col, m.group(0), new, rep.note,
                                       index.context(m.start(), m.end())))
@@ -1290,6 +1354,19 @@ def add_common_args(parser, path_hint: bool = True) -> None:
                             help="표준 입력일 때 경로로 정하는 예외를 판정할 경로")
     parser.add_argument("--root", metavar="DIR", default=None,
                         help="규칙을 읽을 레포 루트(기본: 이 도구가 든 레포)")
+
+
+def add_lines_arg(parser, what: str) -> None:
+    parser.add_argument("--lines", metavar="A-B", type=parse_line_range_arg,
+                        help=f"{what}의 1부터 세는 닫힌 줄 범위. 이 범위 안만 다룬다")
+
+
+def parse_line_range_arg(spec: str) -> LineRange:
+    """argparse용. 잘못된 범위는 인자 오류(종료 코드 2)로 낸다."""
+    try:
+        return parse_line_range(spec)
+    except ToolError as e:
+        raise argparse.ArgumentTypeError(str(e))
 
 
 def root_from_args(args) -> Path:
