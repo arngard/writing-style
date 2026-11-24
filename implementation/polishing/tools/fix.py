@@ -2,7 +2,7 @@
 """기계 규칙을 글에 적용한다.
 
 사용: python fix.py [INPUT] [--write | --dry-run] [--format text|json]
-                    [--path-hint PATH] [--root DIR]
+                    [--lines A-B] [--path-hint PATH] [--root DIR]
 
 - INPUT은 파일 경로나 '-'(표준 입력, 기본값)다. UTF-8만 받는다.
 - 기본: 고친 글을 표준 출력으로 낸다. 입력의 BOM 여부와 줄바꿈(LF, CRLF)을 그대로 둔다.
@@ -10,6 +10,8 @@
 - --write: 원본 파일을 고친다. 같은 폴더의 임시 파일에 쓴 뒤 교체한다. 읽은 뒤
   원본이 바뀌었으면 쓰지 않는다. 심볼릭 링크는 고치지 않고 오류로 끝낸다.
   바뀔 곳 목록을 표준 출력으로 낸다.
+- --lines A-B: 입력 글의 줄 범위. 영역은 글 전체로 판별하고, 그 범위 안에 완전히
+  든 일치만 고친다. 범위가 글의 줄 수를 넘으면 도구 오류다.
 - 기계 규칙은 <루트>/implementation/polishing/mechanical/*.json이고 산문 영역에만
   적용한다. 규칙 문서는 읽지 않는다.
 - 대상이 레포 루트 바로 아래 reference/<자료> 안의 원본이면(--path-hint나 파일
@@ -100,11 +102,13 @@ def run(args) -> int:
             raise core.ToolError(f"Refusing to write a symbolic link. 심볼릭 링크는 고치지 않는다: {p}")
     rules = core.load_all_mechanical(root)
     doc = core.read_input(args.input)
+    if args.lines:
+        core.range_span(doc.text, args.lines)
     if core.is_reference_material(args.path_hint, doc.path):
         core.warn(f"fix: reference 원본은 고치지 않는다: {args.path_hint or doc.label}")
         new_text, changes = doc.text, []
     else:
-        new_text, changes = core.apply_mechanical(doc.text, rules)
+        new_text, changes = core.apply_mechanical(doc.text, rules, args.lines)
     label = args.path_hint or doc.label
     if args.dry_run:
         _report(label, changes, args.format)
@@ -124,6 +128,7 @@ def main(argv=None) -> int:
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--write", action="store_true", help="원본 파일을 고친다")
     mode.add_argument("--dry-run", action="store_true", help="바뀔 곳만 보인다")
+    core.add_lines_arg(parser, "입력 글")
     core.add_common_args(parser)
     args = parser.parse_args(argv)
     try:

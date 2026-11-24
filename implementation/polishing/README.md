@@ -1,6 +1,6 @@
 ---
 date created: 2026-11-23
-date modified: 2026-11-23
+date modified: 2026-11-24
 tags: [implementation, 윤문, 도구]
 description: 정식 규약을 글에 적용하는 하위 프로젝트의 구성, 기술 스택, 도구 실행 방법, 시험 실행
 ---
@@ -33,13 +33,14 @@ description: 정식 규약을 글에 적용하는 하위 프로젝트의 구성,
 |---|---|---|
 | `detect.py` | `python <이 레포>/implementation/polishing/tools/detect.py <글>` | 0 위반 없음, 1 기계 규칙 위반 있음 |
 | `fix.py` | `python .../fix.py <글>`(결과를 표준 출력), `--dry-run`(바뀔 곳만), `--write`(원본을 고침) | 0 성공 |
-| `collect_review.py` | `python .../collect_review.py <글> --docs vocabulary,reference` | 0 성공 |
-| `check_preservation.py` | `python .../check_preservation.py <고치기 전> <고친 뒤> [--mechanical]` | 0 변경 없음, 1 확인할 변경 있음, 3 채택 금지 |
+| `collect_review.py` | `python .../collect_review.py <글> --bundle structure` 또는 `--docs vocabulary,reference` | 0 성공 |
+| `check_preservation.py` | `python .../check_preservation.py <고치기 전> <고친 뒤> [--mechanical] [--lines A-B]` | 0 변경 없음, 1 확인할 변경 있음, 3 채택 금지 |
 
 - `detect.py`는 기계 규칙 위반(산문 영역에서 `fix.py`가 고칠 곳)과 후보 검출 패턴이 일치한 곳을 영역 이름과 함께 보고한다. 후보는 의미 검토가 판정할 자리라 종료 코드에 넣지 않는다.
 - `fix.py --write`는 같은 폴더의 임시 파일에 쓴 뒤 교체한다. 읽은 뒤 원본이 바뀌었으면 쓰지 않는다. 줄바꿈 형식(LF, CRLF)과 BOM(byte order mark; 바이트 순서 표시) 여부를 보존하고, 심볼릭 링크는 고치지 않고 오류로 끝낸다.
-- `collect_review.py`는 윤문 원칙(`polishing-principles.md`), `--docs`로 고른 규칙 문서(기본은 윤문 원칙을 뺀 전부), 후보 위치, 설명 문서 경로를 묶는다. 대상 글은 경계 표시 안에 넣어 검토 지침과 구분한다.
+- `collect_review.py`는 윤문 원칙(`polishing-principles.md`), `--bundle`(검토 묶음)이나 `--docs`로 고른 규칙 문서(기본은 윤문 원칙을 뺀 전부), 후보 위치, 설명 문서 경로를 묶는다. 수정안 형식을 안내하고, 대상 글은 경계 표시 안에 넣어 검토 지침과 구분한다. 검토 묶음의 구성과 적용 순서는 `_polishing_core.py`의 `REVIEW_BUNDLES`에 있다.
 - `check_preservation.py`는 숫자, URL, 링크 대상, 인라인 코드, 코드 블록, 인용 블록, front matter 값의 값과 출현 횟수를 전후로 비교한다. `--mechanical`은 기계 수정 단계의 대조이며, 산문이 아닌 영역이 바뀌었으면 종료 코드 3(채택 금지)으로 끝낸다.
+- 범위 윤문에는 `--lines A-B`(1부터 세는 닫힌 줄 범위)를 쓴다. `fix.py`, `detect.py`, `collect_review.py`는 영역을 글 전체로 판별하고 일치가 범위 안에 완전히 든 것만 다룬다. `check_preservation.py --lines`는 고치기 전 글의 범위 밖이 그대로인지 보고(아니면 종료 코드 3), 고친 글에서의 현재 범위를 보고한다.
 - 표준 입력에는 경로가 없으므로 경로로 정하는 예외는 `--path-hint <경로>`로 받는다. 대상 레포 루트 바로 아래 `reference/<자료 폴더>/` 안의 원본이면 `detect.py`와 `fix.py`는 아무것도 보고하거나 고치지 않는다. 원본은 원형 부호를 그대로 쓰는 영역이고 고치지 않는 자료이기 때문이다.
 - 인자와 결과 형식의 세부는 각 도구의 docstring에 있다.
 

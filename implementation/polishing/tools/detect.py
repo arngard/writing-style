@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """기계 규칙 위반과 후보 검출 패턴 위치를 리포트한다. 글을 고치지 않는다.
 
-사용: python detect.py [INPUT ...] [--format text|json] [--path-hint PATH] [--root DIR]
+사용: python detect.py [INPUT ...] [--lines A-B] [--format text|json] [--path-hint PATH]
+                       [--root DIR]
 
 - INPUT은 파일 경로나 '-'(표준 입력)다. 없으면 표준 입력을 읽는다. UTF-8만 받는다.
 - 위반(violation): 기계 규칙(<루트>/implementation/polishing/mechanical/*.json)이
@@ -10,6 +11,8 @@
   의 이름 붙은 규칙 절 `### 후보 검출 패턴` 코드 블록의 정규식(한 줄에 하나)이
   일치한 곳. 모든 영역에서 찾고 영역 이름을 함께 보고한다. 고칠지는 의미 검토가 정한다.
 - 대상이 레포 루트 바로 아래 reference/<자료> 안의 원본이면 아무것도 보고하지 않는다.
+- --lines A-B: 입력 글의 줄 범위. 입력이 하나일 때만 받는다. 영역은 글 전체로
+  판별하고, 일치가 그 범위 안에 완전히 든 위반과 후보만 보고한다.
 
 텍스트 결과 한 줄: <경로>:<줄>:<열>: <violation|candidate> [<규칙 이름>] <일치> (<영역>)
 
@@ -25,14 +28,15 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _polishing_core as core  # noqa: E402
 
 
-def find_candidates(text, patterns, root):
-    """후보 검출 패턴의 일치를 영역과 함께 돌려준다."""
+def find_candidates(text, patterns, root, lines=None):
+    """후보 검출 패턴의 일치를 영역과 함께 돌려준다. lines를 주면 그 범위 안만."""
     regions = core.segment(text)
     index = core.LineIndex(text)
+    span = core.range_span(text, lines) if lines else None
     out = []
     for doc, sec, pat in patterns:
         for m in pat.compiled.finditer(text):
-            if m.end() == m.start():
+            if m.end() == m.start() or not core.within_span(span, m.start(), m.end()):
                 continue
             line, col = index.line_col(m.start())
             try:
@@ -48,14 +52,14 @@ def find_candidates(text, patterns, root):
     return out
 
 
-def detect_text(text, rules, patterns, root):
-    _new, changes = core.apply_mechanical(text, rules)
+def detect_text(text, rules, patterns, root, lines=None):
+    _new, changes = core.apply_mechanical(text, rules, lines)
     violations = [
         {"rule": c.rule, "line": c.line, "column": c.column, "match": c.before,
          "suggestion": c.after, "region": core.PROSE, "note": c.note, "context": c.context}
         for c in changes
     ]
-    return violations, find_candidates(text, patterns, root)
+    return violations, find_candidates(text, patterns, root, lines)
 
 
 def run(args) -> int:
@@ -63,16 +67,20 @@ def run(args) -> int:
     rules = core.load_all_mechanical(root)
     patterns = core.compiled_patterns(core.load_rule_docs(root))
     inputs = args.inputs or ["-"]
+    if args.lines and len(inputs) != 1:
+        raise core.ToolError("--lines needs exactly one input. --lines는 입력이 하나일 때만 쓴다")
     results = []
     any_violation = False
     for arg in inputs:
         doc = core.read_input(arg)
+        if args.lines:
+            core.range_span(doc.text, args.lines)
         label = args.path_hint or doc.label
         if core.is_reference_material(args.path_hint, doc.path):
             core.warn(f"detect: reference 원본은 검사하지 않는다: {label}")
             violations, candidates = [], []
         else:
-            violations, candidates = detect_text(doc.text, rules, patterns, root)
+            violations, candidates = detect_text(doc.text, rules, patterns, root, args.lines)
         any_violation = any_violation or bool(violations)
         results.append({"path": label, "violations": violations, "candidates": candidates})
     if args.format == "json":
@@ -93,6 +101,7 @@ def run(args) -> int:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="기계 규칙 위반과 후보 위치를 보고한다")
     parser.add_argument("inputs", nargs="*", help="입력 파일(없거나 '-'면 표준 입력)")
+    core.add_lines_arg(parser, "입력 글")
     core.add_common_args(parser)
     args = parser.parse_args(argv)
     try:
