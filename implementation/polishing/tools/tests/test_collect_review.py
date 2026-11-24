@@ -44,6 +44,32 @@ class CollectReviewTest(unittest.TestCase):
         token_e = text[end:].split(">>>", 1)[0].split()[-1]
         self.assertEqual(token_b, token_e)
 
+    def test_review_bundles_cover_rule_docs_once(self):
+        names = [n for _b, docs in core.REVIEW_BUNDLES for n in docs]
+        expected = [n for n in core.RULE_DOC_NAMES if n != core.PRINCIPLES_DOC]
+        self.assertEqual(sorted(names), sorted(expected))
+        self.assertEqual(len(names), len(set(names)))
+
+    def test_bundle_option(self):
+        self.fx.standard()
+        code, out, _ = run_tool("collect_review.py",
+                                ["--root", str(self.fx.root), "--format", "json", "--bundle", "reference"],
+                                stdin="가나다\n".encode("utf-8"))
+        self.assertEqual(code, 0)
+        data = json.loads(out.decode("utf-8"))
+        self.assertEqual([d["name"] for d in data["docs"]], ["reference"])
+        self.assertIn("기존 문구", data["guide"])
+
+    def test_bundle_errors(self):
+        self.fx.standard()
+        for args in (["--bundle", "nothing"], ["--bundle", ""], ["--docs", ""], ["--docs", ","],
+                     ["--bundle", "reference", "--docs", "vocabulary"],
+                     ["--bundle", "reference", "--docs", ""]):
+            code, out, err = run_tool("collect_review.py", ["--root", str(self.fx.root)] + args,
+                                      stdin=b"x\n")
+            self.assertEqual((code, out), (2, b""), args)
+        self.assertIn("not allowed with argument", err)
+
     def test_json(self):
         self.fx.standard()
         code, out, _ = run_tool("collect_review.py",

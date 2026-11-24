@@ -49,13 +49,21 @@ RULES_DIR_REL = "epistemic-structure/architecture/plain-prose-rules"
 EXPLANATIONS_DIR_REL = "implementation/polishing/explanations"
 MECHANICAL_DIR_REL = "implementation/polishing/mechanical"
 POLISHING_DIR_REL = "implementation/polishing"
-# 규칙 문서(검토 묶음)의 이름과 의미 수정에서 적용하는 순서.
+# 규칙 문서의 이름.
 RULE_DOC_NAMES = (
     "vocabulary", "sentence", "format", "bullets-and-prose",
     "reference", "composition", "document-temporality", "polishing-principles",
 )
 # 모든 검토자가 함께 읽는 윤문 원칙 문서.
 PRINCIPLES_DOC = "polishing-principles"
+# 의미 수정의 검토 묶음(이름, 규칙 문서)과 수정안을 적용하는 순서. 윤문 원칙을 뺀
+# 규칙 문서가 정확히 한 묶음에 든다. 문장 경계와 구성을 바꾸는 묶음을 먼저 적용해
+# 뒤 묶음의 수정안이 바뀐 문장 위에 얹히게 한다.
+REVIEW_BUNDLES = (
+    ("structure", ("composition", "bullets-and-prose", "document-temporality")),
+    ("wording", ("vocabulary", "sentence", "format")),
+    ("reference", ("reference",)),
+)
 # 규칙 문서 폴더에서 규칙 문서가 아닌 파일.
 NON_RULE_FILES = {"AGENTS.md", "CLAUDE.md"}
 INDEX_PAGE_RE = re.compile(r"^INDEX(?:[2-9]|[1-9]\d+)?\.md$")

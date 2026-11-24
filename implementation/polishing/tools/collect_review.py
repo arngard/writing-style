@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 """의미 검토 자료 하나를 묶는다.
 
-사용: python collect_review.py [INPUT] [--docs NAME,...] [--format text|json]
-                               [--path-hint PATH] [--root DIR]
+사용: python collect_review.py [INPUT] [--bundle NAME | --docs NAME,...]
+                               [--format text|json] [--path-hint PATH] [--root DIR]
 
 - INPUT은 파일 경로나 '-'(표준 입력, 기본값)다. UTF-8만 받는다.
 - --docs: 규칙 문서 이름(확장자 없이, 쉼표로 구분). 기본은 윤문 원칙을 뺀 규칙
   문서 전부다. 이름은 core.RULE_DOC_NAMES에 있다.
+- --bundle: 검토 묶음 이름(core.REVIEW_BUNDLES). 그 묶음의 규칙 문서를 고른다.
+  --docs와 함께 쓰지 않는다.
 - 묶는 것: 윤문 원칙(polishing-principles.md 본문, 늘 넣는다), 고른 규칙 문서의
   본문, 고른 문서의 후보 검출 패턴이 대상 글에서 일치한 위치와 영역, 고른 문서가
   가리키는 설명 문서의 경로와 절, 대상 글.
@@ -35,6 +37,9 @@ GUIDE = (
     " 자리이며, 고칠지는 조항으로 판정한다. 영역이 산문이 아닌 후보는 규약을 담은"
     " 자리인지 원문을 옮긴 자리인지 먼저 가린다.\n"
     "- 예시가 필요하면 \"설명 문서\"에 적힌 경로의 절을 읽는다.\n"
+    "- 글 전문을 다시 쓰지 않고 수정안만 낸다. 수정안마다 줄 번호, 기존 문구, 교체"
+    " 문구, 규칙 이름을 적는다. 기존 문구는 대상 글에서 그대로 베낀 연속 문자열이며,"
+    " 글 안에서 한 곳만 가리킬 만큼 길게 잡는다. 고칠 곳이 없으면 없다고 쓴다.\n"
 )
 
 
@@ -54,8 +59,12 @@ def _boundary(text):
 
 def run(args) -> int:
     root = core.root_from_args(args)
-    if args.docs:
+    if args.bundle is not None:
+        names = list(dict(core.REVIEW_BUNDLES)[args.bundle])
+    elif args.docs is not None:
         names = [n.strip() for n in args.docs.split(",") if n.strip()]
+        if not names:
+            raise core.ToolError("Empty --docs. --docs에 규칙 문서 이름이 없다")
     else:
         names = [n for n in core.RULE_DOC_NAMES if n != core.PRINCIPLES_DOC]
     unknown = [n for n in names if n not in core.RULE_DOC_NAMES]
@@ -132,7 +141,9 @@ def run(args) -> int:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser(description="의미 검토 자료를 묶는다")
     parser.add_argument("input", nargs="?", default="-", help="입력 파일(기본 '-': 표준 입력)")
-    parser.add_argument("--docs", metavar="NAMES", help="규칙 문서 이름(쉼표로 구분)")
+    pick = parser.add_mutually_exclusive_group()
+    pick.add_argument("--docs", metavar="NAMES", help="규칙 문서 이름(쉼표로 구분)")
+    pick.add_argument("--bundle", choices=[b for b, _docs in core.REVIEW_BUNDLES], help="검토 묶음 이름")
     core.add_common_args(parser)
     args = parser.parse_args(argv)
     try:
