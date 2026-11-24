@@ -84,10 +84,10 @@ class ToolTest(unittest.TestCase):
         self.fx.standard()
 
     def test_fix_lines_keeps_bom_and_crlf(self):
-        data = "﻿see:[a](b)\r\nsee:[a](b)\r\n".encode("utf-8")
+        data = "\ufeffsee:[a](b)\r\nsee:[a](b)\r\n".encode("utf-8")
         code, out, _ = run_tool("fix.py", ["--root", str(self.fx.root), "--lines", "2"], stdin=data)
         self.assertEqual(code, 0)
-        self.assertEqual(out, "﻿see:[a](b)\r\nsee: [a](b)\r\n".encode("utf-8"))
+        self.assertEqual(out, "\ufeffsee:[a](b)\r\nsee: [a](b)\r\n".encode("utf-8"))
 
     def test_fix_lines_errors(self):
         for spec in ("0", "2-1", "3"):
@@ -175,7 +175,7 @@ class CheckRangeTest(unittest.TestCase):
     def test_bom_and_crlf(self):
         code, data, _ = self.check("a\r\nb\r\nc\r\n", "a\r\nB\r\nc\r\n", "2")
         self.assertEqual((code, data["range"]), (0, {"first": 2, "last": 2}))
-        code, data, _ = self.check("a\nb\n", "﻿a\nB\n", "2")
+        code, data, _ = self.check("a\nb\n", "\ufeffa\nB\n", "2")
         self.assertEqual(code, 3)
 
     def test_no_final_newline(self):
