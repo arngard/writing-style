@@ -8,7 +8,8 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
 
 점검 항목:
   1. YAML front matter 필수 필드 (date created, date modified, tags)와 날짜
-     필드 값 형식(yyyy-MM-dd). 선택 필드 date closed는 히스토리 문서 전용.
+     필드 값 형식(yyyy-MM-dd). 키는 YAML처럼 콜론 뒤에 공백이나 줄 끝이 와야
+     인정한다(tags:[a]는 키 없음). 선택 필드 date closed는 히스토리 문서 전용.
      date created가 date modified보다 늦으면 경고. 생성 색인 쪽 파일(INDEX.md,
      INDEX2.md ...)은 면제.
   2. 문서 유형별 분량 임계 (일반 노드, 히스토리 문서, 진입층/폴더 디스크립터) - 경고
@@ -23,7 +24,8 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
      (reference/ 하위는 제외 - 원본을 재편하지 않으므로 실행 불가능한 권고다.
       순차 분류 하위 제외. 색인 파일은 세지 않음)
   9. 문서 간 상대 마크다운 링크 정합 (대소문자, 유니코드 정규화 포함)
- 10. 파일명의 크로스 플랫폼 이식성 (윈도우 금지 문자, 예약어 등)
+ 10. 파일명의 크로스 플랫폼 이식성 (윈도우 금지 문자, 예약어 등. 점으로 시작하는
+     폴더 아래도 본다. EXEMPT_DIRS 아래는 제외)
  11. 색인 정합 - 색인을 둘 폴더(규범 폴더 밖에서 AGENTS.md가 있는 폴더)의
      INDEX.md 누락은 경고, 낡은 내용과 남는 쪽과 색인을 두지 않는 폴더의 색인
      파일과 INDEX.yaml 형식 오류는 위반
@@ -63,7 +65,7 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
       플레이스홀더를 실제 내용으로 채우고 description을 갱신하지 않은 경우,
       또는 본문에서 마커만 지운 경우. 어느 쪽이 낡았는지는 사람/LLM 판단)
  22. 날짜 프리픽스 뒤를 하이픈으로 이은 문서, 폴더 - 경고
-     (규약은 띄어쓰기. reference/ 하위 제외. 하이픈 구분자도 프리픽스로는 인정)
+     (규약은 띄어쓰기. 루트 reference/ 하위 제외. 하이픈 구분자도 프리픽스로는 인정)
  23. 링크 대상에 공백이 든 로컬 파일, 폴더 링크 - 위반
      (공백은 %20으로 쓴다. 대상이 확장자나 / 로 끝나는 것만 본다. 링크 제목
       문법과 외부 URL은 제외)
@@ -80,8 +82,9 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
      (CLAUDE.md가 없거나 내용이 `@AGENTS.md`가 아님. 순차 분류 하위 제외.
       reference/<자료 폴더>는 그 폴더 자신과 아래를 모두 제외.
       implementation/<하위 프로젝트> 내부는 디스크립터 검사 대상이 아니라 보지 않음)
- 26. `@` 가져오기 줄(줄 전체가 @경로)의 대상 부재 - 위반
-     (경로는 줄을 둔 파일 위치 기준. 묶음 세부 폴더 AGENTS/epistemic-rules/ 안의
+ 26. `@` 가져오기 줄(줄 전체가 @경로)의 대상 부재와 대소문자 불일치 - 위반,
+     유니코드 정규화 불일치 - 경고
+     (판정은 항목 9와 같다. 경로는 줄을 둔 파일 위치 기준. 묶음 세부 폴더 AGENTS/epistemic-rules/ 안의
       가져오기는 경고. front matter와 코드 펜스 안은 제외)
  27. 규범 폴더(`AGENTS/`와 그 아래) 안의 AGENTS.md, CLAUDE.md - 위반
  28. 색인 설명 원본 - 경고
@@ -104,11 +107,16 @@ epistemic-auditor의 형식 점검 항목을 결정론적으로 검사한다.
      부모 문서(X.md)가 없는 폴더 - 경고
      (규범 폴더, 순차 분류 최상위와 그 자손, 이름이 날짜인 폴더 제외.
      디스크립터 없는 폴더는 항목 7 소관)
+ 32. 레포 루트 .claude/skills/<이름>/SKILL.md마다 Codex 사본
+     .agents/skills/<이름>/SKILL.md의 부재와 내용 차이 - 위반
+     (내용은 CRLF를 LF로 바꿔 비교. .agents/skills에만 있는 스킬은 허용.
+      경로 단계의 심볼릭 링크와 정션은 따라가지 않고 위반, 일반 파일이 아니거나
+      읽지 못한 SKILL.md도 위반. .claude/skills가 없으면 보지 않음)
 
 등재한 진척 기록 폴더: reference/AGENTS.md에 인라인 코드로 적은
 reference/<자료 폴더>/AGENTS/ 안의 md는 자료가 아니라 운영 파일이라 위 항목의
 문서 검사를 받는다 (ref: reference/AGENTS/epistemic-rules/reference-folder.md
-"처리 여부 식별"). 항목 22는 reference/ 전체를 보지 않는다.
+"처리 여부 식별"). 항목 22는 루트 reference/ 전체를 보지 않는다.
 
 확장 검사: 루트 AGENTS/audit-checks/ 바로 아래의 *.py(_와 .으로 시작하는
 이름과 부산물 제외)를 별도 프로세스로 실행해 표준 출력의 JSON 줄을 발견으로
@@ -123,11 +131,9 @@ reference/<자료 폴더>/AGENTS/ 안의 md는 자료가 아니라 운영 파일
         # 감사 대신 등재한 진척 기록 폴더를 루트 상대 경로(끝 /)로 한 줄에 하나씩 낸다
     (윈도우에서는 python 또는 py 런처로 동일하게 실행)
 
-종료 코드:
-    0  위반 없음 (경고만 있거나 없음)
-    1  위반 있음
-    2  사용법 오류 (인자가 디렉토리가 아님)
-    --progress-folders는 목록을 내면 0, 사용법 오류면 2
+종료 코드는 위반 없음(경고 유무 무관) 또는 목록 출력 성공 0, 위반 있음 1,
+사용법 오류(인자가 디렉토리가 아님) 2, 처리하지 못한 예외 3이다.
+처리하지 못한 예외의 traceback은 표준 오류에 출력한다.
 
 이식성 노트:
 - Python 3.9+ 표준 라이브러리만 사용. 특정 AI 도구, OS에 의존하지 않는다.
@@ -140,8 +146,12 @@ reference/<자료 폴더>/AGENTS/ 안의 md는 자료가 아니라 운영 파일
   최상위이면 git이 무시하는 미추적 경로(통째로 무시되는 폴더 포함)를 순회에서
   뺀다. 추적 파일과 무시되지 않은 미추적 파일은 본다. 그 밖의 경우(git 없음,
   작업 트리 밖, 하위 폴더를 루트로 줌)에는 이 제외 없이 디스크를 훑는다.
-- 순회는 심볼릭 링크를 따르지 않고(루트 밖 탈출/순환 방지) 중첩 git 레포와
-  도구 전용 폴더를 가지치기한다.
+- 순회는 심볼릭 링크와 윈도우 정션을 따르지 않고(루트 밖 탈출/순환 방지)
+  중첩 git 레포, 이름이 점으로 시작하는 파일과 폴더, 도구 전용 폴더
+  (node_modules 등)를 내려가기 전에 가지치기한다. 색인 항목과 같은 범위다.
+  항목 10은 clone 가능성을 보므로 EXEMPT_DIRS 밖의 점으로 시작하는 폴더 아래도 본다.
+- 문서는 이름이 .md로 끝나는(대소문자 구분) 일반 파일이다. 링크와 가져오기
+  대상은 resolve하지 않고 문자열로 이어 대소문자를 디스크 표기로 고치지 않는다.
 
 구조:
 - 공용 인프라(Finding, 상수, 순회/읽기/링크 해석 헬퍼)는 _audit_core.py.
@@ -161,39 +171,44 @@ reference/<자료 폴더>/AGENTS/ 안의 md는 자료가 아니라 운영 파일
 """
 
 import sys
+import traceback
 from pathlib import Path
+from typing import TYPE_CHECKING
 
-from _audit_core import Finding, VIOLATION, WARNING, registered_progress_dirs
-from audit_frontmatter import check_front_matter, check_strategy_fields, check_tags
-from audit_links import (
-    check_links, check_link_text, check_section_refs, check_link_whitespace,
-    check_reference_markers, check_imports,
-)
-from audit_bundle import check_bundle_identity, check_source_tags
-from audit_extensions import run_extensions
-from audit_index import check_index_files, check_index_sources
-from audit_structure import (
-    check_descriptors, check_empty_folders,
-    check_name_collision, check_filename_portability, check_scaffold_state_markers,
-    check_date_prefix_separator, check_claude_pointers, check_norms_dir_descriptors,
-    check_parent_documents,
-)
-from audit_worklog import (
-    check_status_registry, check_status_schema,
-    check_task_tree_attrs, check_task_tree_completed_branch,
-)
-from audit_content import check_size, check_temporality_mix, check_ascii_punctuation
+if TYPE_CHECKING:
+    from _audit_core import Finding
 
 
 PROGRESS_OPTION = "--progress-folders"
 
 
-def run_audit(root: Path) -> list[Finding]:
+def run_audit(root: Path) -> "list[Finding]":
     """모든 검사를 순서대로 실행해 Finding 리스트를 모은다.
 
     입출력, 종료 코드와 분리된 순수 오케스트레이션 - 단위 테스트가 이 함수를
     직접 호출해 결과를 검증할 수 있다.
     """
+    # 검사 모듈을 불러올 때 생긴 예외도 진입점에서 처리한다.
+    from audit_bundle import check_bundle_identity, check_source_tags
+    from audit_content import check_size, check_temporality_mix, check_ascii_punctuation
+    from audit_extensions import run_extensions
+    from audit_frontmatter import check_front_matter, check_strategy_fields, check_tags
+    from audit_index import check_index_files, check_index_sources
+    from audit_links import (
+        check_links, check_link_text, check_section_refs, check_link_whitespace,
+        check_reference_markers, check_imports,
+    )
+    from audit_structure import (
+        check_descriptors, check_empty_folders,
+        check_name_collision, check_filename_portability, check_scaffold_state_markers,
+        check_date_prefix_separator, check_claude_pointers, check_norms_dir_descriptors,
+        check_parent_documents, check_codex_skill_mirror,
+    )
+    from audit_worklog import (
+        check_status_registry, check_status_schema,
+        check_task_tree_attrs, check_task_tree_completed_branch,
+    )
+
     findings: list[Finding] = []
     findings += check_front_matter(root)
     findings += check_links(root)
@@ -219,6 +234,7 @@ def run_audit(root: Path) -> list[Finding]:
     findings += check_ascii_punctuation(root)
     findings += check_scaffold_state_markers(root)
     findings += check_claude_pointers(root)
+    findings += check_codex_skill_mirror(root)
     findings += check_imports(root)
     findings += check_norms_dir_descriptors(root)
     findings += check_index_sources(root)
@@ -241,6 +257,9 @@ def main() -> int:
     if not root.is_dir():
         print(f"Error: not a directory. 디렉토리가 아님 - {root}", file=sys.stderr)
         return 2
+
+    from _audit_core import VIOLATION, WARNING, registered_progress_dirs
+
     if list_progress:
         for d in registered_progress_dirs(root):
             print(d)
@@ -259,4 +278,9 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    try:
+        status = main()
+    except Exception:
+        traceback.print_exc()
+        status = 3
+    sys.exit(status)
